@@ -1,0 +1,63 @@
+.main-navigation {
+  display: block;
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    margin-right: $scale-16-32;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: $s-8;
+    height: 100%;
+
+    .icon {
+      height: 32px;
+    }
+  }
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-previous {
+    flex: 1 0 50%;
+  }
+
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
+}

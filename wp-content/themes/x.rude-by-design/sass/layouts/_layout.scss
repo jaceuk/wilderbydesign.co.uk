@@ -1,0 +1,16 @@
+.inner-wrapper {
+  max-width: 1376px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $scale-16-32;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}

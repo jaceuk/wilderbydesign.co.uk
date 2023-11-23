@@ -1,0 +1,23 @@
+/* spacing */
+$s-4: 0.4rem;
+$s-8: 0.8rem;
+$s-16: 1.6rem;
+$s-24: 2.4rem;
+$s-32: 3.2rem;
+$s-64: 6.4rem;
+$s-128: 12.8rem;
+
+/* responsive spacing */
+/* based on viewport fom min 375px to max 1200px */
+/* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport */
+
+$scale-4-8: clamp(0.4rem, 0.2182rem + 0.4848vw, 0.8rem);
+$scale-4-16: clamp(0.4rem, 0.4364rem + 0.9697vw, 1.6rem);
+$scale-4-32: clamp(0.4rem, -0.2909rem + 2.9091vw, 3.2rem);
+$scale-8-16: clamp(0.8rem, 0.4364rem + 0.9697vw, 1.6rem);
+$scale-16-24: clamp(1.6rem, 1.2364rem + 0.9697vw, 2.4rem);
+$scale-16-32: clamp(1.6rem, 0.8727rem + 1.9394vw, 3.2rem);
+$scale-16-64: clamp(1.6rem, -0.5818rem + 5.8182vw, 6.4rem);
+$scale-16-48: clamp(1.6rem, 0.1455rem + 3.8788vw, 4.8rem);
+$scale-24-32: clamp(2.4rem, 1.2364rem + 0.9697vw, 3.2rem);
+$scale-32-64: clamp(3.2rem, 1.7455rem + 3.8788vw, 6.4rem);

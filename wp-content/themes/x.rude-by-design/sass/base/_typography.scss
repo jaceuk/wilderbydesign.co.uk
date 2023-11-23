@@ -1,0 +1,75 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.25;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  color: $c-nearly-black;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body,
+.body {
+  font-size: $fs-body;
+  font-weight: $fw-regular;
+}
+
+label {
+  font-size: $fs-nav;
+}
+
+button,
+.button {
+  font-size: $fs-nav;
+  font-weight: $fw-semi-bold;
+}
+
+small,
+.small {
+  font-size: $fs-small;
+}
+
+h1,
+.h1 {
+  font-size: $fs-h1;
+  font-weight: $fw-bold;
+}
+
+h2,
+.h2 {
+  font-size: $fs-h2;
+  font-weight: $fw-bold;
+}
+
+h3,
+.h3 {
+  font-size: $fs-h3;
+  font-weight: $fw-bold;
+}
+
+h4,
+.h4 {
+  font-size: $fs-h4;
+  font-weight: $fw-bold;
+}
+
+h5,
+.h5 {
+  font-size: $fs-h5;
+  font-weight: $fw-bold;
+}
+
+strong {
+  font-weight: $fw-bold;
+}

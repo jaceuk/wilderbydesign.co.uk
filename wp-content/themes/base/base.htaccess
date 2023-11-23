@@ -1,0 +1,63 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# Prevent folder browsing
+Options All -Indexes
+
+#Alrerations specifcally for site speed
+
+<IfModule mod_deflate.c>
+#Set to gzip all output
+SetOutputFilter DEFLATE
+
+#exclude the following file types
+SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|iso|tar|bz2|sit|rar|png|jpg|gif|jpeg|flv|swf|mp3)$ no-gzip dont-vary
+
+#Handle browser specific compression requirements
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+</IfModule>
+
+# Add Proper MIME-Type for Favicon
+AddType image/x-icon .ico
+
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresDefault "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType text/html "access plus 3 days"
+ExpiresByType text/xml "access plus 1 seconds"
+ExpiresByType text/plain "access plus 1 seconds"
+ExpiresByType application/xml "access plus 1 seconds"
+ExpiresByType application/rss+xml "access plus 1 seconds"
+ExpiresByType application/json "access plus 1 seconds"
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType text/javascript "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
+ExpiresByType application/x-javascript "access plus 1 week"
+ExpiresByType image/x-ico "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType application/pdf "access plus 1 month"
+<IfModule mod_headers.c>
+   Header unset ETag
+   Header unset Pragma
+   Header unset Last-Modified
+   Header append Cache-Control "public, no-transform, must-revalidate"
+   Header set Last-modified "Tue, 1 Aug 2016 10:10:10 GMT"
+ </IfModule>
+ </IfModule>

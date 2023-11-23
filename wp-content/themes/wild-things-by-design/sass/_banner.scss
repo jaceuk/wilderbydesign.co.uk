@@ -1,0 +1,176 @@
+.strapline-wrapper {
+  background: var(--c-accent-pale);
+
+  .strapline {
+    border-radius: var(--border-radius-small);
+    padding: var(--scale-16-32) 0;
+    color: var(--c-nearly-black);
+
+    h1 {
+      font-size: var(--fs-h3);
+
+      @media (min-width: 768px) {
+        font-size: var(--fs-h2);
+      }
+    }
+
+    p {
+      margin: 0 !important;
+    }
+
+    .button {
+      background-color: var(--c-secondary-button);
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+.banner {
+  margin: var(--scale-16-32) 0;
+}
+
+.notice {
+  background: var(--c-warning-pale);
+  padding: var(--scale-8-16) 0;
+  text-align: center;
+  color: var(--c-warning-dark);
+}
+
+.general-banner-wrapper {
+  background: var(--c-white);
+  border-radius: var(--border-radius-small);
+
+  .general-banner {
+    background: var(--c-white);
+    background-image: url(images/banner.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50%;
+    border-radius: var(--border-radius-small);
+    padding: var(--scale-16-32) var(--scale-16-32) var(--scale-16-32) 50%;
+    display: grid;
+    gap: var(--scale-16-32);
+
+    @media (min-width: 768px) {
+      background-position: 3.2rem center;
+      background-size: 40%;
+    }
+
+    h1 {
+      font-size: var(--fs-h3);
+
+      @media (min-width: 768px) {
+        font-size: var(--fs-h2);
+      }
+    }
+
+    .button {
+      background-color: var(--c-secondary-button);
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+.christmas-banner-wrapper {
+  background-image: url(images/christmas-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: right -400px;
+  border-radius: var(--border-radius-small);
+
+  .christmas-banner {
+    background-image: url(images/christmas-mug.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50%;
+    border-radius: var(--border-radius-small);
+    padding: var(--scale-16-32) var(--scale-16-32) var(--scale-16-32) 50%;
+    display: grid;
+    gap: var(--scale-16-32);
+    z-index: 10;
+    position: relative;
+
+    @media (min-width: 768px) {
+      background-position: 3.2rem center;
+      background-size: 40%;
+    }
+
+    h1 {
+      font-size: var(--fs-h3);
+      color: var(--c-white);
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8),
+        0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      @media (min-width: 768px) {
+        font-size: var(--fs-h2);
+      }
+    }
+
+    .button {
+      background-color: var(--c-secondary-button);
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+.star-signs-banner-wrapper {
+  background-image: url(images/star-signs-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: right -400px;
+  border-radius: var(--border-radius-small);
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  .star-signs-banner {
+    background-image: url(images/star-signs-mug.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50%;
+    border-radius: var(--border-radius-small);
+    padding: var(--scale-16-32) var(--scale-16-32) var(--scale-16-32) 50%;
+    display: grid;
+    gap: var(--scale-16-32);
+    z-index: 10;
+    position: relative;
+
+    @media (min-width: 768px) {
+      background-position: 3.2rem center;
+      background-size: 40%;
+    }
+
+    h1 {
+      font-size: var(--fs-h3);
+      color: var(--c-white);
+      text-shadow: rgb(0, 0, 0) 2px 0px 0px,
+        rgb(0, 0, 0) 1.75517px 0.958851px 0px,
+        rgb(0, 0, 0) 1.0806px 1.68294px 0px,
+        rgb(0, 0, 0) 0.141474px 1.99499px 0px,
+        rgb(0, 0, 0) -0.832294px 1.81859px 0px,
+        rgb(0, 0, 0) -1.60229px 1.19694px 0px,
+        rgb(0, 0, 0) -1.97998px 0.28224px 0px,
+        rgb(0, 0, 0) -1.87291px -0.701566px 0px,
+        rgb(0, 0, 0) -1.30729px -1.5136px 0px,
+        rgb(0, 0, 0) -0.421592px -1.95506px 0px,
+        rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+        rgb(0, 0, 0) 1.41734px -1.41108px 0px,
+        rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+
+      @media (min-width: 768px) {
+        font-size: var(--fs-h2);
+      }
+    }
+
+    .button {
+      background-color: var(--c-secondary-button);
+      margin: 0 0 0 auto;
+    }
+  }
+}

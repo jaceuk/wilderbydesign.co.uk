@@ -1,0 +1,32 @@
+/*!
+Theme Name: Wild Things by Design
+Author:
+Author URI:
+Description:
+Version: 1.0.1
+*/
+
+@import 'reset';
+@import 'normalize';
+@import 'vars';
+@import 'typography';
+@import 'header';
+@import 'footer';
+
+@import 'buttons';
+@import 'forms';
+@import 'home';
+@import 'page';
+@import 'cookie-notice';
+@import 'banner';
+@import 'global';
+
+@import 'wpforms';
+
+@import 'woocommerce/archive';
+@import 'woocommerce/single';
+@import 'woocommerce/cart';
+@import 'woocommerce/checkout';
+@import 'woocommerce/account';
+@import 'woocommerce/order-received';
+@import 'woocommerce/common';

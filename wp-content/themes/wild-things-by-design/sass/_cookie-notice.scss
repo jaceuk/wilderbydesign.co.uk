@@ -1,0 +1,16 @@
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--c-white);
+  padding: var(--scale-16-32) 0;
+  box-shadow: var(--box-shadow-card);
+
+  .inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--scale-16-32);
+  }
+}

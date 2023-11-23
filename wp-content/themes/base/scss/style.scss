@@ -1,0 +1,30 @@
+/*!
+Theme Name: Base theme
+Author:
+Author URI:
+Description: Base theme for building new templates.
+Version: 2.0.0
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+
+// Base CSS
+@import "custom/variables";
+
+// Bootstrap 4.0
+@import "bootstrap-4/bootstrap";
+
+// Slick slider
+@import "slick/slick";
+@import "slick/slick-theme";
+
+// Custom CSS
+@import "custom/misc";
+@import "custom/nav";
+@import "custom/header";
+@import "custom/type";
+@import "custom/sections";
+@import "custom/buttons";
+@import "custom/footer";
+@import "custom/forms";
+@import "custom/page";

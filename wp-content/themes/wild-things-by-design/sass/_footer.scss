@@ -1,0 +1,42 @@
+.footer {
+  clear: both;
+  background: var(--c-grey);
+  padding: var(--scale-16-32) 0;
+
+  .inner-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--scale-16-32);
+  }
+
+  .newsletter {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    display: grid;
+  }
+
+  .legals {
+    grid-column-start: 1;
+    grid-column-end: span 4;
+    margin: 0 auto;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--scale-8-16);
+      flex-direction: row;
+    }
+  }
+
+  .facebook {
+    background: var(--c-facebook-blue);
+    border-radius: 50%;
+    display: flex;
+
+    padding: 8px;
+
+    svg {
+      fill: var(--c-white);
+    }
+  }
+}

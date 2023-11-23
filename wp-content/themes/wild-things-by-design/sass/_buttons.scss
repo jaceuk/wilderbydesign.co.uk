@@ -1,0 +1,14 @@
+button,
+.button,
+.products .button {
+  padding: var(--scale-8-16) var(--scale-16-24);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow-button);
+  border: 2px solid var(--c-button-border);
+  background-color: var(--c-white);
+  color: var(--c-nearly-black);
+  height: fit-content;
+  display: inline-block;
+  outline-offset: -2px;
+  text-decoration: none;
+}

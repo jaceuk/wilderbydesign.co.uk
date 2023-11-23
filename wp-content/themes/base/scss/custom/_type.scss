@@ -1,0 +1,5 @@
+// prevent long links from breaking out of their container
+
+a {
+    word-break: break-all;
+}
