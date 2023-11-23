@@ -31,6 +31,7 @@
       display: grid;
       gap: var(--scale-16-32);
       grid-template-columns: auto 1fr auto;
+      padding-bottom: var(--scale-16-32);
     }
 
     .account-and-basket {
@@ -61,7 +62,7 @@
 
   .logo {
     height: 49px;
-    fill: var(--c-accent);
+    fill: var(--c-white);
 
     @media (min-width: 768px) {
       height: 55px;
@@ -100,7 +101,6 @@
   grid-column-start: 1;
   grid-column-end: 5;
   background: var(--c-white);
-  margin-top: var(--scale-16-32);
 
   @media (min-width: 768px) {
     grid-row-start: 2;
@@ -146,7 +146,7 @@
     position: relative;
 
     svg {
-      fill: var(--c-accent);
+      fill: var(--c-white);
       width: 24px;
       height: 24px;
     }

@@ -1,11 +1,4 @@
 form {
-  display: grid;
-  gap: var(--scale-16-32);
-
-  &.search-form {
-    gap: 0;
-  }
-
   input,
   select,
   textarea {
@@ -57,7 +50,7 @@ input[type='submit'] {
 }
 
 .search-form {
-  border: 2px solid var(--c-accent);
+  border: 2px solid var(--c-white);
   border-radius: var(--border-radius-small);
   overflow: hidden;
 

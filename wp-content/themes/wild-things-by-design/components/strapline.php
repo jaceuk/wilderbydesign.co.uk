@@ -2,7 +2,7 @@
   <div class="inner-wrapper">
     <div class="strapline">
       <div>
-        <h1>Rude, funny and sarcastic mugs for all occasions</h1>
+        <h1>Creative gifts for animal lovers and pet owners</h1>
         <p>with worldwide shipping!</p>
       </div>
     </div>

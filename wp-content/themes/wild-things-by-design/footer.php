@@ -1,13 +1,3 @@
-<?php
-if (is_home() || is_front_page()) {
-?>
-
-	<?php get_template_part('components/star-signs-banner'); ?>
-
-<?php
-}
-?>
-
 <footer class="footer">
 	<div class="inner-wrapper">
 		<div class="footer-menu">
