@@ -2,8 +2,7 @@
   <div class="inner-wrapper">
     <div class="strapline">
       <div>
-        <h1>Creative gifts for animal lovers and pet owners</h1>
-        <p>with worldwide shipping!</p>
+        <h1>Gifts for animal lovers and pet owners</h1>
       </div>
     </div>
   </div>

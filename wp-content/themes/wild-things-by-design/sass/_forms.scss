@@ -20,7 +20,7 @@ form {
   }
 
   label {
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-medium);
   }
 
   .required {
@@ -43,7 +43,7 @@ input[type='submit'] {
   border: 2px solid var(--c-button-border);
   background-color: var(--c-accent);
   color: var(--c-nearly-black);
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-medium);
   height: fit-content;
   display: inline-block;
   outline-offset: -2px;
@@ -55,7 +55,7 @@ input[type='submit'] {
   overflow: hidden;
 
   input {
-    font-weight: var(--fw-regular);
+    font-weight: var(--fw-light);
     border: none;
 
     &[type='search'] {

@@ -45,8 +45,7 @@ li.product {
   }
 
   .woocommerce-loop-product__title {
-    font-size: var(--fs-small);
-    font-weight: var(--fw-regular);
+    font-size: var(--fs-h4);
   }
 
   .star-rating {
@@ -55,7 +54,7 @@ li.product {
 
   .price {
     font-size: var(--fs-body);
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-medium);
 
     ins {
       text-decoration: none;
@@ -79,7 +78,7 @@ li.product {
     border-top-left-radius: var(--border-radius-small);
     border-bottom-right-radius: var(--border-radius-small);
     font-size: var(--fs-small);
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-medium);
   }
 }
 
@@ -109,7 +108,7 @@ li.product {
     height: fit-content;
     display: inline-block;
     outline-offset: -2px;
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-medium);
     text-decoration: none;
   }
 }
@@ -170,7 +169,7 @@ li.product {
     gap: var(--s-8);
 
     label {
-      font-weight: var(--fw-regular);
+      font-weight: var(--fw-light);
     }
   }
 }
@@ -319,7 +318,7 @@ p.stars {
     display: inline-block;
     outline-offset: -2px;
     text-decoration: none;
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-medium);
     margin-top: var(--scale-16-32);
   }
 }

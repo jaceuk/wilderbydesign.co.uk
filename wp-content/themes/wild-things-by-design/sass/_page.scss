@@ -9,6 +9,13 @@
     }
   }
 
+  section {
+    h2,
+    p {
+      margin: 0;
+    }
+  }
+
   ul.text-list {
     padding-left: var(--scale-16-32);
     display: grid;

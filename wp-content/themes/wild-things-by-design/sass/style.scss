@@ -9,6 +9,7 @@ Version: 1.0.1
 @import 'reset';
 @import 'normalize';
 @import 'vars';
+@import 'font-face';
 @import 'typography';
 @import 'header';
 @import 'footer';
@@ -19,6 +20,7 @@ Version: 1.0.1
 @import 'page';
 @import 'cookie-notice';
 @import 'banner';
+@import 'components/components';
 @import 'global';
 
 @import 'wpforms';

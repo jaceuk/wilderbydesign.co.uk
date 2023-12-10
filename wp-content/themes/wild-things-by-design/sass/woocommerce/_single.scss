@@ -24,7 +24,7 @@
       color: var(--c-white);
       border-top-left-radius: var(--border-radius-small);
       border-bottom-right-radius: var(--border-radius-small);
-      font-weight: var(--fw-semi-bold);
+      font-weight: var(--fw-medium);
       z-index: 99;
     }
 
@@ -91,7 +91,7 @@
 
       .single_variation_wrap {
         .price {
-          font-weight: var(--fw-semi-bold);
+          font-weight: var(--fw-medium);
         }
       }
 
@@ -99,7 +99,7 @@
         margin: 0;
 
         .wcpa_field_label {
-          font-weight: var(--fw-semi-bold);
+          font-weight: var(--fw-medium);
           font-size: var(--fs-nav);
         }
 
@@ -132,6 +132,7 @@
         border: 2px solid var(--c-button-border);
         border-radius: 500px;
         padding: var(--scale-16-24);
+        font-weight: var(--fw-medium);
 
         &.disabled {
           cursor: no-drop;
@@ -261,7 +262,7 @@
       gap: var(--scale-8-16);
 
       label {
-        font-weight: var(--fw-regular);
+        font-weight: var(--fw-light);
       }
     }
 
@@ -276,7 +277,7 @@
       gap: var(--scale-16-32);
 
       .woocommerce-review__author {
-        font-weight: var(--fw-regular);
+        font-weight: var(--fw-light);
       }
     }
   }

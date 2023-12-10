@@ -1,5 +1,5 @@
 .strapline-wrapper {
-  background: var(--c-accent);
+  background: var(--c-white);
 
   .strapline {
     border-radius: var(--border-radius-small);
@@ -7,10 +7,10 @@
     color: var(--c-nearly-black);
 
     h1 {
-      font-size: var(--fs-h3);
+      font-size: var(--fs-h2);
 
       @media (min-width: 768px) {
-        font-size: var(--fs-h2);
+        font-size: var(--fs-h1);
       }
     }
 
@@ -23,15 +23,4 @@
       margin: 0 0 0 auto;
     }
   }
-}
-
-.banner {
-  margin: var(--scale-16-32) 0;
-}
-
-.notice {
-  background: var(--c-warning-pale);
-  padding: var(--scale-8-16) 0;
-  text-align: center;
-  color: var(--c-warning-dark);
 }

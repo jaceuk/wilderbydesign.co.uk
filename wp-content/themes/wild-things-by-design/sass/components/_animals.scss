@@ -1,0 +1,33 @@
+.animals {
+  display: flex;
+  gap: var(--scale-16-32);
+  flex-direction: column;
+  margin-bottom: var(--scale-32-64);
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--scale-16-32);
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .animal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--scale-16-32);
+    text-decoration: none;
+    align-items: center;
+    width: 100%;
+
+    a.image {
+      background: red;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
