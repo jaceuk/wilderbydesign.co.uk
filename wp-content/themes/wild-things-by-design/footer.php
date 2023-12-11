@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="inner-wrapper">
 		<div class="footer-menu">
-			<div class="h5">Rude by Design</div>
+			<div class="h3">Rude by Design</div>
 			<ul>
 				<li><a href="/">Homepage</a></li>
 				<li><a href="/product-category/mugs/">Mugs</a></li>
@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="footer-menu">
-			<div class="h5">Support</div>
+			<div class="h3">Support</div>
 			<ul>
 				<li><a href="/contact">Contact us</a></li>
 				<li><a href="/faq">FAQ</a></li>
