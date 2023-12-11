@@ -12,8 +12,17 @@ button,
   outline-offset: -2px;
   text-decoration: none;
 
-  &.product_type_variable.add_to_cart_button {
+  &.product_type_variable.add_to_cart_button,
+  &.product_type_simple.add_to_cart_button {
     padding: var(--s-8) var(--scale-8-16);
     font-size: var(--fs-small);
+  }
+
+  &.product_type_simple.add_to_cart_button {
+    color: var(--c-nearly-black);
+    background-color: var(--c-primary-button);
+    border: 2px solid var(--c-button-border);
+    border-radius: 500px;
+    font-weight: var(--fw-medium);
   }
 }

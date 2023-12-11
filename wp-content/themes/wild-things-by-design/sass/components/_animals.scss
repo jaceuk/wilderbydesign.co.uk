@@ -4,6 +4,24 @@
   flex-direction: column;
   margin-bottom: var(--scale-32-64);
 
+  .title-bar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--scale-16-32);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      gap: var(--scale-16-32);
+      width: auto;
+    }
+  }
+
   .row {
     display: grid;
     grid-template-columns: 1fr 1fr;

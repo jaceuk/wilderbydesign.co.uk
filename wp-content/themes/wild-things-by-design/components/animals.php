@@ -1,5 +1,12 @@
 <section class="animals">
-  <h2 class="section-heading">Gifts for animal lovers</h2>
+  <div class="title-bar">
+    <h2 class="section-heading">Gifts for animal lovers</h2>
+
+    <?php
+    get_template_part('components/animal-select');
+    ?>
+  </div>
+
   <div class="row">
     <?php
     get_template_part(

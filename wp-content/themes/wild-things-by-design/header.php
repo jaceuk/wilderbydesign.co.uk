@@ -125,6 +125,10 @@
 						<li><a href="/product-category/clothing/">Clothing</a></li>
 						<li><a href="/product-category/home-living/">Home & Living</a></li>
 					</ul>
+
+					<?php
+					get_template_part('components/animal-select');
+					?>
 				</div>
 			</div>
 		</nav>

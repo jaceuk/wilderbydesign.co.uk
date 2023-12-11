@@ -37,6 +37,11 @@
       display: grid;
       gap: var(--scale-16-32);
 
+      form.cart {
+        display: grid;
+        gap: var(--scale-8-16);
+      }
+
       h1 {
         font-size: var(--fs-h2);
       }
@@ -59,6 +64,11 @@
 
         ins {
           text-decoration: none;
+        }
+
+        .woocommerce-Price-amount {
+          font-size: var(--fs-h3);
+          font-weight: var(--fw-medium);
         }
       }
 
@@ -169,6 +179,7 @@
     display: grid;
     gap: var(--scale-16-32);
     max-width: var(--max-readable-width);
+    margin-bottom: var(--scale-16-32);
 
     @media (min-width: 768px) {
       grid-column-start: 1;
@@ -226,6 +237,12 @@
     .comment-form {
       display: grid;
       gap: var(--scale-16-32);
+
+      input[type='submit'] {
+        width: auto;
+        background: var(--c-nearly-black);
+        color: var(--c-white);
+      }
     }
 
     .comment-form-comment,
@@ -268,7 +285,7 @@
 
     .comment-reply-title {
       font-size: var(--fs-h4);
-      font-weight: var(--fw-bold);
+      font-weight: var(--fw-semi-bold);
     }
 
     .commentlist {

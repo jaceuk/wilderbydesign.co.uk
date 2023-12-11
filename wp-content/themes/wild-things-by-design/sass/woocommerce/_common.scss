@@ -322,3 +322,8 @@ p.stars {
     margin-top: var(--scale-16-32);
   }
 }
+
+del {
+  text-decoration: line-through;
+  color: var(--c-error-dark);
+}
