@@ -8,42 +8,24 @@
   </div>
 
   <div class="row">
+
     <?php
-    get_template_part(
-      'components/animal',
-      null,
-      array(
-        'url' => 'tiger',
-        'title' => 'Tiger',
-      )
-    );
+    $terms = get_terms('product_tag');
 
-    get_template_part(
-      'components/animal',
-      null,
-      array(
-        'url' => 'tiger',
-        'title' => 'Tiger',
-      )
-    );
-
-    get_template_part(
-      'components/animal',
-      null,
-      array(
-        'url' => 'tiger',
-        'title' => 'Tiger',
-      )
-    );
-
-    get_template_part(
-      'components/animal',
-      null,
-      array(
-        'url' => 'tiger',
-        'title' => 'Tiger',
-      )
-    );
+    if (!empty($terms) && !is_wp_error($terms)) {
+      foreach ($terms as $term) {
+        get_template_part(
+          'components/animal',
+          null,
+          array(
+            'url' => $term->slug,
+            'title' => $term->name,
+            'term_id' => $term->term_id,
+            'taxonomy' => $term->taxonomy
+          )
+        );
+      }
+    }
     ?>
   </div>
 </section>
