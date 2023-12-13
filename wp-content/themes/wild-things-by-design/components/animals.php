@@ -26,7 +26,7 @@
             }
             ?>
           </a>
-          <h3><?php echo $title; ?></h3>
+          <h3><?php echo $term->name; ?></h3>
           <a class="button outline" href="/product-tag/<?php echo $term->url; ?>">Shop now</a>
         </div>
     <?php
