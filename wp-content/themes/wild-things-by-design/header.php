@@ -134,9 +134,3 @@
 		</nav>
 	<?php } ?>
 	</header>
-
-	<?php
-	if (is_home() || is_front_page()) {
-		get_template_part('components/strapline');
-	}
-	?>

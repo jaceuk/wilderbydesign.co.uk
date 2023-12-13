@@ -14,16 +14,22 @@
 
     if (!empty($terms) && !is_wp_error($terms)) {
       foreach ($terms as $term) {
-        get_template_part(
-          'components/animal',
-          null,
-          array(
-            'url' => $term->slug,
-            'title' => $term->name,
-            'term_id' => $term->term_id,
-            'taxonomy' => $term->taxonomy
-          )
-        );
+    ?>
+        <div class="animal">
+          <a class="image" href="/product-tag/<?php echo $term->url; ?>">
+            <?php
+            $image = get_field('image', $term->taxonomy . '_' . $term->term_id);
+            $size = 'medium';
+
+            if (!empty($image)) {
+              echo wp_get_attachment_image($image, $size);
+            }
+            ?>
+          </a>
+          <h3><?php echo $title; ?></h3>
+          <a class="button outline" href="/product-tag/<?php echo $term->url; ?>">Shop now</a>
+        </div>
+    <?php
       }
     }
     ?>

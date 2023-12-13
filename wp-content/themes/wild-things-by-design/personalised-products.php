@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Home
+ * Template Name: Personalised products
  */
 
 get_header();
@@ -19,8 +19,6 @@ get_header('shop');
 
     <?php
     get_template_part('components/highlights');
-
-    get_template_part('components/animals');
     ?>
   </div>
 
