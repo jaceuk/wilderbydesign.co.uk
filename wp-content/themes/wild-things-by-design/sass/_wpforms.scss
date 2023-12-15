@@ -28,6 +28,11 @@
       background: var(--c-nearly-black);
       color: var(--c-white);
       border-radius: 100px;
+      transition: var(--transition);
+
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }

@@ -16,7 +16,7 @@
       foreach ($terms as $term) {
     ?>
         <div class="animal">
-          <a class="image" href="/product-tag/<?php echo $term->url; ?>">
+          <a class="image" href="/product-tag/<?php echo $term->slug; ?>">
             <?php
             $image = get_field('image', $term->taxonomy . '_' . $term->term_id);
             $size = 'medium';
@@ -27,7 +27,7 @@
             ?>
           </a>
           <h3><?php echo $term->name; ?></h3>
-          <a class="button outline" href="/product-tag/<?php echo $term->url; ?>">Shop now</a>
+          <a class="button outline" href="/product-tag/<?php echo $term->slug; ?>">Shop now</a>
         </div>
     <?php
       }

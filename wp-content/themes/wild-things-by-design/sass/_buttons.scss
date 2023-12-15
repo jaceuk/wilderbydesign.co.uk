@@ -11,6 +11,11 @@ button,
   display: inline-block;
   outline-offset: -2px;
   text-decoration: none;
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: none;
+  }
 
   &.product_type_variable.add_to_cart_button,
   &.product_type_simple.add_to_cart_button {

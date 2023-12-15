@@ -318,3 +318,13 @@ add_action('woocommerce_after_shop_loop_item_title', 'custom_template_loop_price
 
 // replace single product price with new snippet
 add_action('woocommerce_single_product_summary', 'custom_template_loop_price', 6);
+
+// add personalisation section to the order confirmation page
+add_action('woocommerce_thankyou', 'personalisation', 10, 2);
+
+function personalisation($order_id)
+{
+	echo "<section class='woocommerce-personalisation'>
+	<p>If your order contains a personalised item that requires a photo please email it, along with your order number, to <a href='mailto:info@wildthingsbydesign.com'>info@wildthingsbydesign.com</a>. Please make sure your order number is in the email title and that the photo is of good quality and resolution. If your order contains more than one item that requires a photo please make it clear in the email which item each photo belongs to.</p>
+</section>";
+}
