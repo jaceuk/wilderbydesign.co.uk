@@ -69,10 +69,6 @@
 
 
 <body <?php body_class(); ?>>
-	<?php if (!is_checkout() || !is_wc_endpoint_url('order-received')) { ?>
-		<?php get_template_part('components/christmas-cutoff-banner'); ?>
-	<?php } ?>
-
 	<header class="header">
 		<div class="inner-wrapper grid">
 			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" aria-label="Home">
