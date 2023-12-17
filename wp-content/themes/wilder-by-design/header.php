@@ -26,7 +26,7 @@
 
 	<?php if (!file_exists('c:\windows')) { ?>
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZLPMWB8YG"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DR0DTLB52E"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 
@@ -35,7 +35,7 @@
 			}
 			gtag('js', new Date());
 
-			gtag('config', 'G-WZLPMWB8YG');
+			gtag('config', 'G-DR0DTLB52E');
 		</script>
 	<?php } ?>
 
