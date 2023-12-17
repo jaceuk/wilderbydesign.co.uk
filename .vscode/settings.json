@@ -7,7 +7,7 @@
     }
   ],
   "liveSassCompile.settings.includeItems": [
-    "**/wp-content/themes/wild-things-by-design/sass/style.scss"
+    "**/wp-content/themes/wilder-by-design/sass/style.scss"
   ],
   "liveSassCompile.settings.generateMap": true,
   "liveSassCompile.settings.autoprefix": null
