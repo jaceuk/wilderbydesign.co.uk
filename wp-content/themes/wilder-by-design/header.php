@@ -116,12 +116,11 @@
 					<ul>
 						<li><a href="/">Home</a></li>
 						<li><a href="/product-category/clothing/">Clothing</a></li>
-						<li><a href="/product-category/home-living/">Home & Living</a></li>
+						<li><a href="/product-category/home-living/">Home & living</a></li>
+						<li><a href="/product-category/home-living/">Shop by animal</a></li>
 					</ul>
 
-					<?php
-					get_template_part('components/animal-select');
-					?>
+					<div class="currency-switcher"><?php dynamic_sidebar('currency-switcher'); ?></div>
 				</div>
 			</div>
 		</nav>

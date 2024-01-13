@@ -1,0 +1,11 @@
+.partial-personalisation {
+  background: var(--c-grey-pale);
+  margin-bottom: var(--scale-32-64);
+  padding: var(--scale-16-32) 0;
+
+  .inner-wrapper {
+    .text {
+      max-width: calc(2 * var(--scale-16-32) + var(--max-readable-width));
+    }
+  }
+}

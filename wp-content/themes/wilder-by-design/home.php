@@ -18,22 +18,31 @@ get_header('shop');
     </header>
 
     <?php
-    get_template_part('components/highlights');
-
-    get_template_part('components/animals');
+    $top_categories = get_field_object('top_categories');
+    get_template_part('components/category-callouts', null, $top_categories);
     ?>
   </div>
 
   <?php
-  get_template_part('components/newsletter-signup');
+  get_template_part('components/partial-personalisation');
   ?>
 
   <div class="inner-wrapper">
-    <h2 class="section-heading">Featured</h2>
     <?php
-    echo do_shortcode('[products limit="4" columns="4" orderby="id" order="DESC" visibility="featured"]');
+    $middle_categories = get_field_object('middle_categories');
+    get_template_part('components/category-callouts', null, $middle_categories);
     ?>
+  </div>
 
+  <?php
+  get_template_part('components/partial-personalisation');
+  ?>
+
+  <div class="inner-wrapper">
+    <?php
+    $bottom_categories = get_field_object('bottom_categories');
+    get_template_part('components/category-callouts', null, $bottom_categories);
+    ?>
   </div>
 </main>
 
