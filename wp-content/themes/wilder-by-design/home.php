@@ -18,8 +18,19 @@ get_header('shop');
     </header>
 
     <?php
-    $top_categories = get_field_object('top_categories');
-    get_template_part('components/category-callouts', null, $top_categories);
+    $top_callouts = get_field_object('top_callouts');
+    get_template_part('components/callouts', null, $top_callouts);
+    ?>
+  </div>
+
+  <?php
+  get_template_part('components/personalisation');
+  ?>
+
+  <div class="inner-wrapper">
+    <?php
+    $middle_callouts = get_field_object('middle_callouts');
+    get_template_part('components/callouts', null, $middle_callouts);
     ?>
   </div>
 
@@ -29,19 +40,8 @@ get_header('shop');
 
   <div class="inner-wrapper">
     <?php
-    $middle_categories = get_field_object('middle_categories');
-    get_template_part('components/category-callouts', null, $middle_categories);
-    ?>
-  </div>
-
-  <?php
-  get_template_part('components/partial-personalisation');
-  ?>
-
-  <div class="inner-wrapper">
-    <?php
-    $bottom_categories = get_field_object('bottom_categories');
-    get_template_part('components/category-callouts', null, $bottom_categories);
+    $bottom_callouts = get_field_object('bottom_callouts');
+    get_template_part('components/callouts', null, $bottom_callouts);
     ?>
   </div>
 </main>

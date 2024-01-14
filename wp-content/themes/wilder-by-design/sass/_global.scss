@@ -5,6 +5,10 @@ html {
 
 body {
   background-color: var(--c-white);
+
+  &.mobile-menu-visible {
+    overflow: hidden;
+  }
 }
 
 main.inner-wrapper {
