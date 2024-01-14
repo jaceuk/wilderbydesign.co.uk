@@ -6,7 +6,7 @@ html {
 body {
   background-color: var(--c-white);
 
-  &.mobile-menu-visible {
+  &.dialog-visible {
     overflow: hidden;
   }
 }

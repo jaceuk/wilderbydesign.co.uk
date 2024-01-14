@@ -126,8 +126,8 @@
 	</header>
 
 	<dialog id="mobile-menu" class="mobile-menu">
-		<div class="mobile-menu-inner-wrapper	">
-			<button id="mobile-menu-close-button" class="mobile-menu-close-button">
+		<div class="dialog-inner-wrapper">
+			<button id="mobile-menu-close-button" class="dialog-close-button">
 				<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
 					<path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
 				</svg>

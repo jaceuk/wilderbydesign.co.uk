@@ -1,0 +1,29 @@
+.personalisation {
+  margin-bottom: var(--scale-32-64);
+  background: var(--c-grey-pale);
+  padding: var(--scale-16-32);
+  text-align: center;
+
+  .steps {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    @media (min-width: 768px) {
+      grid-template-columns: auto auto auto auto;
+    }
+
+    .step {
+      border-right: 1px solid var(--c-nearly-black);
+      padding: 0 var(--scale-16-32);
+    }
+
+    .step:first-child {
+      padding-left: 0;
+    }
+
+    .step:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+}
