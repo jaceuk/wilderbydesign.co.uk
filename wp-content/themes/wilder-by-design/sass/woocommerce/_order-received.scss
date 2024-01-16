@@ -7,6 +7,16 @@
       display: grid;
       gap: var(--scale-16-32);
 
+      .wc-item-meta {
+        li {
+          margin-top: var(--s-8);
+        }
+
+        p {
+          display: inline-block;
+        }
+      }
+
       .woocommerce-thankyou-order-received {
         background: var(--c-success-pale);
         border: 1px solid var(--c-button-border);
@@ -20,6 +30,7 @@
         padding: var(--scale-8-16);
         overflow: hidden;
         font-weight: var(--fw-medium);
+        margin: 0;
       }
 
       .woocommerce-order-overview {

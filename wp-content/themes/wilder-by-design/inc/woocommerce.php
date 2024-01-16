@@ -325,6 +325,97 @@ add_action('woocommerce_thankyou', 'personalisation', 10, 2);
 function personalisation($order_id)
 {
 	echo "<section class='woocommerce-personalisation'>
-	<p>If your order contains a personalised item that requires a photo please email it, along with your order number, to <a href='mailto:info@wildthingsbydesign.com'>info@wildthingsbydesign.com</a>. Please make sure your order number is in the email title and that the photo is of good quality and resolution. If your order contains more than one item that requires a photo please make it clear in the email which item each photo belongs to.</p>
+	<h2>Personalisation</h2>
+	<p>If your order contains a personalised item that requires a photo please email it, along with your order number, to <a href='mailto:info@wilderbydesign.co.uk'>info@wildthingsbydesign.com</a>. Please make sure your order number is in the email title and that the photo is of good quality and resolution. If your order contains more than one item that requires a photo please make it clear in the email which item each photo belongs to.</p>
 </section>";
+}
+
+
+// Personalisation / Product add-ons
+// -----------------------------------------
+// 1. Show custom input field above Add to Cart
+
+add_action('woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9);
+
+function bbloomer_product_add_on()
+{
+	$value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
+	echo '<div><label>Name (optional)</label><p><input name="name" value="' . $value . '"></p></div>';
+	echo '<p class="small">If required, please enter the name you would like printed on your item.</p>';
+
+	// get parent category
+	global $post;
+	$tags = get_the_terms($post->ID, 'product_tag');
+
+	foreach ($tags as $tag) {
+		if (str_contains($tag->slug, 'personalised')) {
+			echo '<p class="small">When you have completed your purchase please send your photo and order number to info@wilderbydesign.co.uk.</p>';
+		}
+	}
+}
+
+// -----------------------------------------
+// 2. Throw error if custom input field empty
+
+// add_filter('woocommerce_add_to_cart_validation', 'bbloomer_product_add_on_validation', 10, 3);
+
+// function bbloomer_product_add_on_validation($passed, $product_id, $qty)
+// {
+// 	if (isset($_POST['name']) && sanitize_text_field($_POST['name']) == '') {
+// 		wc_add_notice('Custom Text Add-On is a required field', 'error');
+// 		$passed = false;
+// 	}
+// 	return $passed;
+// }
+
+// -----------------------------------------
+// 3. Save custom input field value into cart item data
+
+add_filter('woocommerce_add_cart_item_data', 'bbloomer_product_add_on_cart_item_data', 10, 2);
+
+function bbloomer_product_add_on_cart_item_data($cart_item, $product_id)
+{
+	if (isset($_POST['name'])) {
+		$cart_item['name'] = sanitize_text_field($_POST['name']);
+	}
+	return $cart_item;
+}
+
+// -----------------------------------------
+// 4. Display custom input field value @ Cart
+
+add_filter('woocommerce_get_item_data', 'bbloomer_product_add_on_display_cart', 10, 2);
+
+function bbloomer_product_add_on_display_cart($data, $cart_item)
+{
+	if (isset($cart_item['name'])) {
+		$data[] = array(
+			'name' => 'Name',
+			'value' => sanitize_text_field($cart_item['name'])
+		);
+	}
+	return $data;
+}
+
+// -----------------------------------------
+// 5. Save custom input field value into order item meta
+
+add_action('woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_item_meta', 10, 2);
+
+function bbloomer_product_add_on_order_item_meta($item_id, $values)
+{
+	if (!empty($values['name'])) {
+		wc_add_order_item_meta($item_id, 'Name', $values['name'], true);
+	}
+}
+
+// -----------------------------------------
+// 7. Display custom input field value into order emails
+
+add_filter('woocommerce_email_order_meta_fields', 'bbloomer_product_add_on_display_emails');
+
+function bbloomer_product_add_on_display_emails($fields)
+{
+	$fields['name'] = 'Name';
+	return $fields;
 }
