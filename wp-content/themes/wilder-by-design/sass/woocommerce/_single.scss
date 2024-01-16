@@ -51,12 +51,14 @@
         gap: var(--scale-16-32);
       }
 
-      .callout {
+      .personalisation-callout {
         background: var(--c-accent-pale);
         border: 1px solid var(--c-button-border);
         color: var(--c-nearly-black);
         border-radius: var(--border-radius-small);
         padding: var(--scale-8-16);
+        display: grid;
+        gap: var(--scale-8-16);
       }
 
       .price {

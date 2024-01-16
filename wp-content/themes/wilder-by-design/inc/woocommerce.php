@@ -174,14 +174,6 @@ function custom_my_account_menu_items($items)
 }
 add_filter('woocommerce_account_menu_items', 'custom_my_account_menu_items');
 
-// 'large mug' upsell message after buy button
-function add_content_after_addtocart_button_func()
-{
-	if (has_term(array('mugs'), 'product_cat'))
-		echo '<div class="callout">Stand out from the mug crowd with our super-sized 20oz mug!</div>';
-}
-add_action('woocommerce_after_add_to_cart_button', 'add_content_after_addtocart_button_func');
-
 
 /**
  * Customize product data tabs
@@ -254,24 +246,6 @@ function new_loop_shop_per_page($cols)
 	return $cols;
 }
 
-
-/**
- * @snippet       Add "Quantity:" before Add to Cart Button - WooCommerce
- * @how-to        Get CustomizeWoo.com FREE
- * @author        Rodolfo Melogli
- * @testedwith    WooCommerce 8
- * @donate $9     https://businessbloomer.com/bloomer-armada/
- */
-
-add_action('woocommerce_before_add_to_cart_quantity', 'bbloomer_echo_qty_front_add_cart');
-
-function bbloomer_echo_qty_front_add_cart()
-{
-	global $product;
-	if ($product->get_min_purchase_quantity() == $product->get_max_purchase_quantity()) return;
-	echo '<label>Quantity: </label>';
-}
-
 // Show the regular price in product card if item is on sale
 function custom_template_loop_price()
 {
@@ -324,24 +298,51 @@ add_action('woocommerce_thankyou', 'personalisation', 10, 2);
 
 function personalisation($order_id)
 {
-	echo "<section class='woocommerce-personalisation'>
+	echo '<section class="woocommerce-personalisation">
 	<h2>Personalisation</h2>
-	<p>If your order contains a personalised item that requires a photo please email it, along with your order number, to <a href='mailto:info@wilderbydesign.co.uk'>info@wildthingsbydesign.com</a>. Please make sure your order number is in the email title and that the photo is of good quality and resolution. If your order contains more than one item that requires a photo please make it clear in the email which item each photo belongs to.</p>
-</section>";
+	<p>If your order contains a personalised item that requires a photo please see the <a href="/faq#send-photo">FAQ page</a> for details of how to get you photo to us.</p>
+</section>';
 }
 
 
-// Personalisation / Product add-ons
+/**
+ * @snippet       Add "Quantity:" before Add to Cart Button - WooCommerce
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 8
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+
+add_action('woocommerce_before_add_to_cart_quantity', 'bbloomer_echo_qty_front_add_cart', 10);
+
+function bbloomer_echo_qty_front_add_cart()
+{
+	global $product;
+	if ($product->get_min_purchase_quantity() == $product->get_max_purchase_quantity()) return;
+	echo '<label>Quantity: </label>';
+}
+
+
+/**
+ * @snippet       Add input field to products - WooCommerce
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 8
+ * @community     https://businessbloomer.com/club/
+ */
+
 // -----------------------------------------
 // 1. Show custom input field above Add to Cart
 
-add_action('woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9);
+add_action('woocommerce_after_add_to_cart_quantity', 'bbloomer_product_add_on', 9);
 
 function bbloomer_product_add_on()
 {
 	$value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
-	echo '<div><label>Name (optional)</label><p><input name="name" value="' . $value . '"></p></div>';
+	echo '<div class="personalisation-callout">';
+	echo '<div class="label-container"><label>Name (optional)</label></div><input name="name" value="' . $value . '">';
 	echo '<p class="small">If required, please enter the name you would like printed on your item.</p>';
+	echo '<p class="small">Please leave this empty if you don\'t want a name printed on it.</p>';
 
 	// get parent category
 	global $post;
@@ -349,9 +350,12 @@ function bbloomer_product_add_on()
 
 	foreach ($tags as $tag) {
 		if (str_contains($tag->slug, 'personalised')) {
-			echo '<p class="small">When you have completed your purchase please send your photo and order number to info@wilderbydesign.co.uk.</p>';
+			echo '<p class="small semi-bold">Getting your photo to us</p>';
+			echo '<p class="small">When you have completed your purchase please check your order confirmation page for details on how to get your photo to us.</p>';
 		}
 	}
+
+	echo '</div>';
 }
 
 // -----------------------------------------

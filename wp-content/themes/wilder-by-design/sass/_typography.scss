@@ -43,6 +43,11 @@ small,
   font-size: var(--fs-small);
 }
 
+strong,
+.semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
 h1,
 .h1 {
   font-size: var(--fs-h1);
@@ -70,8 +75,4 @@ h5,
 
 .accent-text {
   color: var(--c-accent);
-}
-
-strong {
-  font-weight: var(--fw-bold);
 }
