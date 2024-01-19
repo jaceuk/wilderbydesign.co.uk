@@ -300,7 +300,8 @@ function personalisation($order_id)
 {
 	echo '<section class="woocommerce-personalisation">
 	<h2>Personalisation</h2>
-	<p>If your order contains a personalised item that requires a photo please see the <a href="/faq#send-photo">FAQ page</a> for details of how to get you photo to us.</p>
+	<p>If your order contains a personalised item that requires a photo you\'ll need to email your photo along with your order number to info@wilderbydesign.co.uk.</p>
+	<p>Please check our FAQ for more details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>
 </section>';
 }
 
@@ -341,8 +342,7 @@ function bbloomer_product_add_on()
 	$value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
 	echo '<div class="personalisation-callout">';
 	echo '<div class="label-container"><label>Name (optional)</label></div><input name="name" value="' . $value . '">';
-	echo '<p class="small">If required, please enter the name you would like printed on your item.</p>';
-	echo '<p class="small">Please leave this empty if you don\'t want a name printed on it.</p>';
+	echo '<p class="small">Please enter the name you\' like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
 
 	// get parent category
 	global $post;
@@ -351,7 +351,8 @@ function bbloomer_product_add_on()
 	foreach ($tags as $tag) {
 		if (str_contains($tag->slug, 'personalised')) {
 			echo '<p class="small semi-bold">Getting your photo to us</p>';
-			echo '<p class="small">When you have completed your purchase please check your order confirmation page for details on how to get your photo to us.</p>';
+			echo '<p class="small">When you have completed your purchase you\'ll need to email your photo along with your order number to info@wilderbydesign.co.uk..</p>';
+			echo '<p class="small">Please check our FAQ for more details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>';
 		}
 	}
 

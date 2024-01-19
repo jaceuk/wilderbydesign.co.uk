@@ -26,11 +26,13 @@
 
       <h3>Step 2</h3>
       <p>Enter the name you would like printed on your gift in the Personalisation section.</p>
+      <p>Please leave this empty if you'd rather not have a name.</p>
 
       <h3>Step 3</h3>
       <p>Complete your purchase.</p>
 
       <h3>Step 4</h3>
       <p>Email your photo along with your order number to info@wilderbydesign.co.uk.</p>
+      <p class="small">Please check our FAQ for details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>
     </div>
 </dialog>

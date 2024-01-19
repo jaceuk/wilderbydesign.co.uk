@@ -38,6 +38,12 @@
         gap: var(--scale-8-16);
       }
 
+      .woocommerce-order-details,
+      .woocommerce-personalisation {
+        display: grid;
+        gap: var(--scale-16-32);
+      }
+
       .shop_table tr:last-child td {
         text-align: left;
         padding: var(--scale-8-16);
