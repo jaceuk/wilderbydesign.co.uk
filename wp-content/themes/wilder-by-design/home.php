@@ -32,12 +32,12 @@ get_header('shop');
     ?>
 
     <?php
-    get_template_part('components/personalisation');
+    // get_template_part('components/personalisation');
     ?>
 
     <?php
-    $bottom_callouts = get_field_object('bottom_callouts');
-    get_template_part('components/callouts', null, $bottom_callouts);
+    // $bottom_callouts = get_field_object('bottom_callouts');
+    // get_template_part('components/callouts', null, $bottom_callouts);
     ?>
   </div>
 </main>
