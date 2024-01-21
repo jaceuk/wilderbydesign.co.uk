@@ -18,21 +18,6 @@
     </a>
 
     <div class="dialog-content">
-      <h2>How to personalise your gift</h2>
-      <p>Personalising your gift couldn't be simpler.</p>
-
-      <h3>Step 1</h3>
-      <p>Choose your gift.</p>
-
-      <h3>Step 2</h3>
-      <p>Enter the name you would like printed on your gift in the Personalisation section.</p>
-      <p>Please leave this empty if you'd rather not have a name.</p>
-
-      <h3>Step 3</h3>
-      <p>Complete your purchase.</p>
-
-      <h3>Step 4</h3>
-      <p>Email your photo along with your order number to info@wilderbydesign.co.uk.</p>
-      <p class="small">Please check our FAQ for details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>
+      <?php echo the_field('personlisation_dialog_content', 'options'); ?>
     </div>
 </dialog>

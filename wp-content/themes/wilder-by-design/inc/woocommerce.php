@@ -175,8 +175,33 @@ function custom_my_account_menu_items($items)
 add_filter('woocommerce_account_menu_items', 'custom_my_account_menu_items');
 
 
+// Show description tab even if there is no description
+function woocommerce_default_description($content)
+{
+	$empty = empty($content) || trim($content) === '';
+	if (is_product() && $empty) {
+		$content = ' ';
+	}
+	return $content;
+}
+add_filter('the_content', 'woocommerce_default_description');
+
+function rmg_woocommerce_default_product_tabs($tabs)
+{
+	if (empty($tabs['description'])) {
+		$tabs['description'] = array(
+			'title'    => __('Description', 'woocommerce'),
+			'priority' => 10,
+			'callback' => 'woocommerce_product_description_tab',
+		);
+	}
+	return $tabs;
+}
+add_filter('woocommerce_product_tabs', 'rmg_woocommerce_default_product_tabs');
+
+
 /**
- * Customize product data tabs
+ * Automatically add product details below the description
  */
 add_filter('the_content', 'woocommerce_custom_product_description', 20, 1);
 function woocommerce_custom_product_description($content)
@@ -188,47 +213,11 @@ function woocommerce_custom_product_description($content)
 	// get parent category
 	global $post;
 	$categories = get_the_terms($post->ID, 'product_cat');
+	$term_id =  $categories[0]->term_id;
 
-	foreach ($categories as $category) {
-		if ($category->parent == 0) {
-			$product_parent_cat_name =  $category->name;
-		}
-	}
-
-	if ($product_parent_cat_name === 'Mugs') {
-		$content .= '<h3>Details</h3><p>This sturdy, glossy, ceramic mug comes in the following sizes:</p>
-		<ul>
-			<li>
-				11 oz mug dimensions: 3.8″ (9.6 cm) in height, 3.2″ (8.2 cm) in diameter
-			</li>
-			<li>
-				15 oz mug dimensions: 4.7″ (11.9 cm) in height, 3.3″ (8.5 cm) in diameter
-			</li>
-			<li>
-				20 oz mug dimensions: 4.3″ (10.9 cm) in height, 3.7″ (9.3 cm) in diameter
-			</li>
-		</ul>
-		<p>This mug features a vivid print and is dishwasher and microwave safe.</p>
-		';
-	}
-
-	if ($product_parent_cat_name === 'Coasters') {
-		$content .= '<h3>Details</h3><p>The coaster is waterproof and heat-resistant, designed to last a long time. Features:</p>
-		<p>Size:</p>
-		<ul>
-			<li>Hardboard MDF 0.12″ (3 mm)</li>
-			<li>Cork 0.04″ (1 mm)</li>
-			<li>Size: 3.74″ × 3.74″ × 0.16″ (95 × 95 × 4 mm)</li>
-		</ul>
-		<p>Features:</p>
-		<ul>
-		<li>High-gloss coating on top</li>
-		<li>Rounded corners</li>
-		<li>Water-repellent, heat-resistant, and non-slip</li>
-		<li>Easy to clean</li>
-	</ul>
-		';
-	}
+	$content .= '<h3>' . get_field('product_details_title', 'option') . '</h3>';
+	$content .= get_field('description_for_the_single_product_page', 'product_cat_' . $term_id);
+	$content .= get_field('made_to_order_message', 'option');
 
 	return $content;
 }
@@ -424,3 +413,7 @@ function bbloomer_product_add_on_display_emails($fields)
 	$fields['name'] = 'Name';
 	return $fields;
 }
+
+
+// remove add to cart button from archive page
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
