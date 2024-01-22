@@ -18,12 +18,13 @@
 
     .onsale {
       position: absolute;
-      top: 0;
-      padding: var(--scale-8-16);
+      top: calc(var(--scale-8-16) * -1);
+      left: calc(var(--scale-8-16) * -1);
+      padding: var(--s-8) var(--s-16);
       background: var(--c-error-dark);
       color: var(--c-white);
-      border-top-left-radius: var(--border-radius-small);
-      border-bottom-right-radius: var(--border-radius-small);
+      border-radius: 100px;
+      font-size: var(--fs-small);
       font-weight: var(--fw-medium);
       z-index: 99;
     }
