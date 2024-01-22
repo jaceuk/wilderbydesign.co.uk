@@ -328,3 +328,13 @@ del {
   text-decoration: line-through;
   color: var(--c-error-dark);
 }
+
+// archive product personalisation notice
+.archive-img-wrap {
+  position: relative;
+}
+
+.personalisation-notice {
+  font-size: var(--fs-small);
+  padding-top: var(--s-8);
+}
