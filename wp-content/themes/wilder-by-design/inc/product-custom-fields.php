@@ -18,7 +18,8 @@ function bbloomer_product_add_on()
   $value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
   echo '<div class="personalisation-callout">';
   echo '<p>Personalisation</p>';
-  echo '<div class="label-container"><label>Name (optional)</label></div><input name="name" value="' . $value . '">';
+  echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
+  echo '<input name="name" value="' . $value . '" maxlength="12">';
   echo '<p class="small">Please enter the name you\' like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
 
   // get parent category
