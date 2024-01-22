@@ -330,6 +330,7 @@ function bbloomer_product_add_on()
 {
 	$value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
 	echo '<div class="personalisation-callout">';
+	echo '<p>Personalisation</p>';
 	echo '<div class="label-container"><label>Name (optional)</label></div><input name="name" value="' . $value . '">';
 	echo '<p class="small">Please enter the name you\' like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
 
@@ -339,7 +340,7 @@ function bbloomer_product_add_on()
 
 	foreach ($tags as $tag) {
 		if (str_contains($tag->slug, 'personalised')) {
-			echo '<p class="small semi-bold">Getting your photo to us</p>';
+			echo '<p class="label">Getting your photo to us (required)</p>';
 			echo '<p class="small">When you have completed your purchase you\'ll need to email your photo along with your order number to info@wilderbydesign.co.uk..</p>';
 			echo '<p class="small">Please check our FAQ for more details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>';
 		}

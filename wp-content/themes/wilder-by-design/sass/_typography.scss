@@ -28,8 +28,10 @@ body,
   font-weight: var(--fw-light);
 }
 
-label {
+label,
+.label {
   font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
 }
 
 button,
