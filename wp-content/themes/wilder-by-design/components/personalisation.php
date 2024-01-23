@@ -1,4 +1,5 @@
 <section class="personalisation">
+  <div class="h2">Make your gift extra special</div>
   <button type="button" class="personalisation-dialog-open-button">Find out more about personalisation</button>
 </section>
 
