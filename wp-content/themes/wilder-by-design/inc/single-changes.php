@@ -83,6 +83,3 @@ function woo_remove_product_tabs($tabs)
   unset($tabs['additional_information']);
   return $tabs;
 }
-
-// remove product meta from single product page
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);

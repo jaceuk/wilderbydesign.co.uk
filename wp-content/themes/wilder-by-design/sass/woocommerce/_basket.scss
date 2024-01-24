@@ -237,3 +237,11 @@ a.wc-block-cart__submit-button {
     }
   }
 }
+
+.wc-block-cart__payment-options.wp-block-woocommerce-cart-express-payment-block {
+  padding: 0 !important;
+}
+
+.wc-block-components-totals-footer-item-tax {
+  margin: 0 !important;
+}

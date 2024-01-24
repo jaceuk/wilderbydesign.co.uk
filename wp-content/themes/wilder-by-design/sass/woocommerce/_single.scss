@@ -124,9 +124,6 @@
           width: 100%;
           height: auto;
         }
-
-        .wcpa_field_bottom {
-        }
       }
 
       .woocommerce-variation-add-to-cart {
@@ -151,6 +148,14 @@
           cursor: no-drop;
           opacity: 0.5;
         }
+      }
+
+      .sku_wrapper {
+        display: none;
+      }
+
+      .wcpay-payment-request-wrapper {
+        margin: 0;
       }
     }
 
