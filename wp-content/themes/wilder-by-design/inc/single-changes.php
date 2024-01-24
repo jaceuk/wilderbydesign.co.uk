@@ -30,10 +30,23 @@ function woocommerce_custom_product_description($content)
   // get parent category
   global $post;
   $categories = get_the_terms($post->ID, 'product_cat');
-  $term_id =  $categories[0]->term_id;
+  $cat_id =  $categories[0]->term_id;
 
+  $tags = get_the_terms($post->ID, 'product_tag');
+
+  // show the design description
+  if (!empty($tags) && !is_wp_error($tags)) {
+    foreach ($tags as $tag) {
+      $tag_type = get_field('tag_type',  $tag->taxonomy . '_' . $tag->term_id);
+      if (strtolower($tag_type) === 'design') {
+        $content .= wpautop($tag->description);
+      }
+    }
+  }
+
+  // show the product the category description
   $content .= '<h3>' . get_field('product_details_title', 'option') . '</h3>';
-  $content .= get_field('description_for_the_single_product_page', 'product_cat_' . $term_id);
+  $content .= get_field('description_for_the_single_product_page', 'product_cat_' . $cat_id);
   $content .= get_field('made_to_order_message', 'option');
 
   return $content;

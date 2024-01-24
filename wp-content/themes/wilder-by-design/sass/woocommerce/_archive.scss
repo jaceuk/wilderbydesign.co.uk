@@ -58,4 +58,6 @@
 
 .term-description {
   max-width: var(--max-readable-width);
+  display: grid;
+  gap: var(--scale-8-16);
 }
