@@ -34,6 +34,7 @@ function woocommerce_custom_product_description($content)
 
   $tags = get_the_terms($post->ID, 'product_tag');
 
+  // show the product description
   $content .= get_field('description_for_the_single_product_page', 'product_cat_' . $cat_id);
 
   // show the design description
@@ -46,7 +47,7 @@ function woocommerce_custom_product_description($content)
     }
   }
 
-  // show the product the category description
+  // show the product bullet points
   $content .= '<h3>' . get_field('product_details_title', 'option') . '</h3>';
   $content .= get_field('bullet_points_for_the_single_product_page', 'product_cat_' . $cat_id);
   $content .= get_field('made_to_order_message', 'option');
