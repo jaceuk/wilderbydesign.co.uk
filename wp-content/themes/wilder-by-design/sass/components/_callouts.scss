@@ -8,6 +8,22 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  &.animals {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .callout {
+      .image {
+        img {
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+  }
+
   .callout {
     width: 100%;
     text-decoration: none;

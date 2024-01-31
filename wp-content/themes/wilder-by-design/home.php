@@ -27,8 +27,7 @@ get_header('shop');
     ?>
 
     <?php
-    $middle_callouts = get_field_object('middle_callouts');
-    get_template_part('components/callouts', null, $middle_callouts);
+    get_template_part('components/animal-callouts');
     ?>
 
     <?php
