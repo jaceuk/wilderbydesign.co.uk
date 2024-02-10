@@ -20,40 +20,7 @@
 			</ul>
 		</div>
 
-		<div class="footer-menu">
-			<div class="h3">Shop by category</div>
-			<ul>
-				<?php
-				$terms = get_terms('product_cat');
 
-				if (!empty($terms) && !is_wp_error($terms)) {
-					foreach ($terms as $term) {
-						if (!str_contains($term->name, 'Uncategorised')) {
-							echo '<li><a href="/product-category/' . $term->slug . '">' . $term->name . '</a></li>';
-						}
-					}
-				}
-				?>
-			</ul>
-		</div>
-
-		<div class="footer-menu">
-			<div class="h3">Shop by animal</div>
-			<ul>
-				<?php
-				$terms = get_terms('product_tag');
-
-				if (!empty($terms) && !is_wp_error($terms)) {
-					foreach ($terms as $term) {
-						$term_type = get_field('tag_type',  $term->taxonomy . '_' . $term->term_id);
-						if (strtolower($term_type) === 'animal') {
-							echo '<li><a href="/product-tag/' . $term->slug . '">' . $term->name . '</a></li>';
-						}
-					}
-				}
-				?>
-			</ul>
-		</div>
 
 		<!-- <div class="newsletter">
 			<h2>Signup for exclusive deals</h2>

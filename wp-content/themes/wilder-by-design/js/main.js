@@ -35,6 +35,7 @@ mobileMenuCloseButton.addEventListener('click', () => {
 
 // desktop menu dropdowns
 const dropDownTrigers = document.querySelectorAll('.drop-down-trigger');
+const dropDownMenus = document.querySelectorAll('.drop-down');
 
 dropDownTrigers.forEach((el) =>
   el.addEventListener('click', (el) => {
@@ -51,6 +52,17 @@ dropDownTrigers.forEach((el) =>
     }
   })
 );
+
+document.onclick = function (e) {
+  if (
+    !e.target.classList.contains('drop-down') &&
+    !e.target.classList.contains('drop-down-trigger')
+  ) {
+    dropDownMenus.forEach((el) => {
+      el.classList.add('hidden');
+    });
+  }
+};
 
 // personalisation dialog
 const personalisationOpenButtons = document.querySelectorAll(

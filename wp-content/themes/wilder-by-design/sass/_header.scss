@@ -157,9 +157,8 @@
         position: absolute;
         background: var(--c-white);
         z-index: 10;
-        width: 100%;
-        left: 0;
         box-shadow: var(--box-shadow-menu);
+        padding: var(--scale-8-16) 0;
 
         &.hidden {
           @media (min-width: 768px) {
@@ -167,10 +166,15 @@
           }
         }
 
+        a {
+          padding: 0;
+        }
+
         .inner-wrapper {
           display: flex;
           justify-content: flex-start;
-          gap: var(--scale-16-32);
+          gap: var(--scale-8-16);
+          flex-direction: column;
         }
       }
     }
