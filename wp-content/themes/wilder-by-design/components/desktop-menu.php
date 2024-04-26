@@ -20,20 +20,48 @@
     </ul>
   </li>
 
-  <li><a href="#" class="drop-down-trigger">Shop by category</a>
+  <?php
+  $taxonomy = 'product_cat';
+  $terms = get_terms($taxonomy);
+  ?>
+
+  <li><a href="#" class="drop-down-trigger">Clothing</a>
     <ul class="drop-down hidden">
       <div class="inner-wrapper">
-        <?php
-        $terms = get_terms('product_cat');
+        <li><a href="/product-category/sweatshirts">Sweatshirts</a></li>
+        <li><a href="/product-category/t-shirts">T-shirts</a></li>
+      </div>
+    </ul>
+  </li>
 
-        if (!empty($terms) && !is_wp_error($terms)) {
-          foreach ($terms as $term) {
-            if (!str_contains($term->name, 'Uncategorised')) {
-              echo '<li><a href="/product-category/' . $term->slug . '">' . $term->name . '</a></li>';
-            }
-          }
-        }
-        ?>
+  <li><a href="#" class="drop-down-trigger">Home & Living</a>
+    <ul class="drop-down hidden">
+      <div class="inner-wrapper">
+        <li><a href="/product-category/bags">Bags</a>
+          <ul>
+            <li><a href="/product-category/all-over-print-tote-bags">All Print Tote Bags</a></li>
+            <li><a href="/product-category/eco-tote-bags">ECO Tote Bags</a></li>
+          </ul>
+        </li>
+        <li><a href="/product-category/blankets">Blankets</a>
+          <ul>
+            <li><a href="/product-category/sherpa-blankets">Sherpa Blankets</a></li>
+            <li><a href="/product-category/throw-blankets">Throw Blankets</a></li>
+          </ul>
+        </li>
+        <li><a href="/product-category/drinkware">Drinkware</a>
+          <ul>
+            <li><a href="/product-category/coasters">Coasters</a></li>
+            <li><a href="/product-category/mugs">Mugs</a></li>
+          </ul>
+        </li>
+        <li><a href="/product-category/wall-art">Wall Art</a>
+          <ul>
+            <li><a href="/product-category/flags">Flags</a></li>
+          </ul>
+        </li>
+        <li><a href="/product-category/beach-bath-towels">Beach/Bath Towels</a></li>
+        <li><a href="/product-category/orangic-cotton-aprons">Organic Cotton Aprons</a></li>
       </div>
     </ul>
   </li>

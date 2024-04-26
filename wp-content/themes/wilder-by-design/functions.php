@@ -84,6 +84,24 @@ function rude_by_design_content_width()
 add_action('after_setup_theme', 'rude_by_design_content_width', 0);
 
 /**
+ * Add support for menus.
+ *
+ */
+add_theme_support('menus');
+
+add_action('init', 'register_my_menus');
+
+function register_my_menus()
+{
+	register_nav_menus(
+		array(
+			'home-and-living-menu' => __('Home & Living Menu'),
+			'clothing-menu' => __('Clothing Menu')
+		)
+	);
+}
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar

@@ -175,6 +175,22 @@
           justify-content: flex-start;
           gap: var(--scale-8-16);
           flex-direction: column;
+
+          li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--scale-8-16);
+            flex-direction: column;
+
+            ul {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: var(--scale-8-16);
+              flex-direction: column;
+              margin-left: var(--scale-8-16);
+            }
+          }
         }
       }
     }
