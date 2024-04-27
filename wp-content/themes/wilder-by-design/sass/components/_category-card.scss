@@ -1,0 +1,14 @@
+a.category-card {
+  display: grid;
+  gap: var(--scale-16-32);
+  text-align: center;
+  text-decoration: none;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--c-nearly-black);
+    border-radius: var(--border-radius-small);
+  }
+}

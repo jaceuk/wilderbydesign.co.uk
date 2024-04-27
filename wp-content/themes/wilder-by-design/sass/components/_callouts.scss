@@ -39,10 +39,6 @@
       height: 100%;
       position: relative;
 
-      &:before {
-        @extend .image-border;
-      }
-
       img {
         object-fit: cover;
         width: 100%;

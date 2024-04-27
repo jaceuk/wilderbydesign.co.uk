@@ -39,7 +39,7 @@
 
 		<div class="legals">
 			<ul>
-				<li>&copy; Rude by Designs <?php echo date("Y"); ?>, all rights reserved.</li>
+				<li>&copy; Wilder by Design <?php echo date("Y"); ?>, all rights reserved.</li>
 				<li>
 					<a class="facebook" href="https://www.facebook.com/rudebydesignuk" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="16" height="16" focusable="false" aria-hidden="true">

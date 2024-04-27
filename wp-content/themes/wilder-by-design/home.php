@@ -12,33 +12,63 @@ get_header('shop');
 
 <main>
 
-  <div class="inner-wrapper">
-    <header>
-      <?php the_title('<h1>', '</h1>'); ?>
-    </header>
+  <section class="home-section hero-section">
+    <div class="inner-wrapper">
+      <?php the_title('<h1 class="hero">', '</h1>'); ?>
+      <img class="hero-image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero.jpg" alt="" />
+    </div>
+  </section>
 
-    <?php
-    $top_callouts = get_field_object('top_callouts');
-    get_template_part('components/callouts', null, $top_callouts);
-    ?>
+  <section class="home-section">
+    <div class="inner-wrapper">
+      <h2>Personalised Gifts</h2>
+      <div class="col-2">
+        <div class="text">
+          <p>A personalised gift shows thoughtfulness and effort, making your loved ones feel extra special.</p>
+          <p>You can also treat yourself and create something that’s uniquely yours.</p>
+          <p>Most of our products have optional personalisation where you can add a name to the design.</p>
+          <p>We also have a range of fully personalised products for pet owners that feature a photo of their pet.</p>
+        </div>
+        <div class="col-2">
+          <?php
+          get_template_part(
+            'components/category-card',
+            null,
+            array(
+              'text' => 'Personalised Dog Gifts',
+              'url' => '/',
+              'image_id' => 3396,
+            )
+          );
 
-    <?php
-    get_template_part('components/personalisation');
-    ?>
+          get_template_part(
+            'components/category-card',
+            null,
+            array(
+              'text' => 'Personalised Cat Gifts',
+              'url' => '/',
+              'image_id' => 3396,
+            )
+          );
+          ?>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <?php
-    get_template_part('components/animal-callouts');
-    ?>
 
-    <?php
-    // get_template_part('components/personalisation');
-    ?>
 
-    <?php
-    // $bottom_callouts = get_field_object('bottom_callouts');
-    // get_template_part('components/callouts', null, $bottom_callouts);
-    ?>
-  </div>
+  <section class="home-section">
+    <div class="inner-wrapper">
+      <h2>Gifts for Animal Lovers</h2>
+      <div class="col-4">
+        <?php
+        $top_callouts = get_field_object('top_callouts');
+        get_template_part('components/callouts', null, $top_callouts);
+        ?>
+      </div>
+    </div>
+  </section>
 </main>
 
 <?php

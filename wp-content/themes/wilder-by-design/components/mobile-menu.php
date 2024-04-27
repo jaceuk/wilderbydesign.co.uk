@@ -9,9 +9,9 @@
 
   <li><span class="title">Home & Living</span>
     <ul>
-      <li><a href="/product-category/bags">Bags</a>
+      <li><a href="/product-category/tote-bags">Tote Bags</a>
         <ul>
-          <li><a href="/product-category/all-over-print-tote-bags">All Print Tote Bags</a></li>
+          <li><a href="/product-category/all-over-print-tote-bags">All Over Print Tote Bags</a></li>
           <li><a href="/product-category/eco-tote-bags">ECO Tote Bags</a></li>
         </ul>
       </li>
