@@ -19,7 +19,7 @@ get_header('shop');
     </div>
   </section>
 
-  <section class="home-section">
+  <section class="home-section personalisation-section">
     <div class="inner-wrapper">
       <h2>Personalised Gifts</h2>
       <div class="col-2">
@@ -31,25 +31,8 @@ get_header('shop');
         </div>
         <div class="col-2">
           <?php
-          get_template_part(
-            'components/category-card',
-            null,
-            array(
-              'text' => 'Personalised Dog Gifts',
-              'url' => '/',
-              'image_id' => 3396,
-            )
-          );
-
-          get_template_part(
-            'components/category-card',
-            null,
-            array(
-              'text' => 'Personalised Cat Gifts',
-              'url' => '/',
-              'image_id' => 3396,
-            )
-          );
+          $top_callouts = get_field_object('top_callouts');
+          get_template_part('components/category-cards', null, $top_callouts);
           ?>
         </div>
       </div>
@@ -58,13 +41,13 @@ get_header('shop');
 
 
 
-  <section class="home-section">
+  <section class="home-section category-section">
     <div class="inner-wrapper">
       <h2>Gifts for Animal Lovers</h2>
       <div class="col-4">
         <?php
-        $top_callouts = get_field_object('top_callouts');
-        get_template_part('components/callouts', null, $top_callouts);
+        $top_callouts = get_field_object('bottom_callouts');
+        get_template_part('components/category-cards', null, $top_callouts);
         ?>
       </div>
     </div>
