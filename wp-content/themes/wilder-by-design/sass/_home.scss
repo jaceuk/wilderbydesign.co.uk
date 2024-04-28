@@ -86,3 +86,14 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+.col-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--scale-16-32);
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

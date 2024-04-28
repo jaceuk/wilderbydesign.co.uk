@@ -31,8 +31,8 @@ get_header('shop');
         </div>
         <div class="col-2">
           <?php
-          $top_callouts = get_field_object('top_callouts');
-          get_template_part('components/category-cards', null, $top_callouts);
+          $callouts = get_field_object('top_callouts');
+          get_template_part('components/category-cards', null, $callouts);
           ?>
         </div>
       </div>
@@ -46,8 +46,8 @@ get_header('shop');
       <h2>Gifts for Animal Lovers</h2>
       <div class="col-4">
         <?php
-        $top_callouts = get_field_object('bottom_callouts');
-        get_template_part('components/category-cards', null, $top_callouts);
+        $callouts = get_field_object('bottom_callouts');
+        get_template_part('components/category-cards', null, $callouts);
         ?>
       </div>
     </div>
