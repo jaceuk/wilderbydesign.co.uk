@@ -14,17 +14,24 @@ function add_img_wrapper_close()
 {
   global $post;
   $tags = get_the_terms($post->ID, 'product_tag');
-  $fully_personalised = 0;
+  $personalised = 0;
+  $optional_personalisation = 0;
 
   foreach ($tags as $tag) {
-    if (str_contains($tag->slug, 'personalised')) {
-      $fully_personalised = 1;
+    if ($tag->slug === 'personalised') {
+      $personalised = 1;
+    }
+
+    if ($tag->slug !== 'personalised' && $tag->slug === 'optional-personalisation') {
+      $optional_personalisation = 1;
     }
   }
 
-  if ($fully_personalised) {
+  if ($personalised) {
     echo '<p class="personalisation-notice">Fully personalised</p>';
-  } else {
+  }
+
+  if ($optional_personalisation) {
     echo '<p class="personalisation-notice">Optional personalisation</p>';
   }
   echo '</div>';

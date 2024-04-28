@@ -16,25 +16,34 @@ add_action('woocommerce_after_add_to_cart_quantity', 'bbloomer_product_add_on', 
 function bbloomer_product_add_on()
 {
   $value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
-  echo '<div class="personalisation-callout">';
-  echo '<p>Personalisation</p>';
-  echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
-  echo '<input name="name" value="' . $value . '" maxlength="12">';
-  echo '<p class="small">Please enter the name you\' like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
+
 
   // get parent category
   global $post;
   $tags = get_the_terms($post->ID, 'product_tag');
 
   foreach ($tags as $tag) {
-    if (str_contains($tag->slug, 'personalised')) {
+    if ($tag->slug === 'personalised') {
+      echo '<div class="personalisation-callout">';
+      echo '<p>Personalisation</p>';
+      echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
+      echo '<input name="name" value="' . $value . '" maxlength="12">';
+      echo '<p class="small">Please enter the name you\'d like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
       echo '<p class="label">Getting your photo to us (required)</p>';
       echo '<p class="small">When you have completed your purchase you\'ll need to email your photo along with your order number to info@wilderbydesign.co.uk..</p>';
       echo '<p class="small">Please check our FAQ for more details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>';
+      echo '</div>';
+    }
+
+    if ($tag->slug !== 'personalised' && $tag->slug === 'optional-personalisation') {
+      echo '<div class="personalisation-callout">';
+      echo '<p>Personalisation</p>';
+      echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
+      echo '<input name="name" value="' . $value . '" maxlength="12">';
+      echo '<p class="small">Please enter the name you\'d like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
+      echo '</div>';
     }
   }
-
-  echo '</div>';
 }
 
 // -----------------------------------------
