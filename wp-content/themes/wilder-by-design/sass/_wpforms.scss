@@ -1,6 +1,6 @@
 .wpforms-form {
   display: grid;
-  gap: var(--s-16);
+  gap: var(--s-8);
 }
 
 .wpforms-container {
@@ -40,4 +40,17 @@
 .wpforms-field-container {
   display: grid;
   gap: var(--scale-16-24);
+}
+
+.wpforms-confirmation-container {
+  background: var(--c-success-pale);
+  color: var(--c-success-dark);
+  padding: var(--scale-16-24);
+  border: 1px solid var(--c-success-dark);
+  border-left: none;
+  border-right: none;
+}
+
+.page:not(.woocommerce-account) .wpforms-confirmation-container p {
+  margin: 0;
 }

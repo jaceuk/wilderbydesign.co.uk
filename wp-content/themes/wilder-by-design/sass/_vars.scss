@@ -70,7 +70,7 @@
   /* font size */
   /* based on viewport fom min 375px to max 1400px */
   /* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport */
-  --fs-h1-hero: clamp(3rem, 1.8231rem + 3.2692vw, 6.4rem);
+  --fs-h1-hero: clamp(3rem, 1.7561rem + 3.3171vw, 6.4rem);
   --fs-h1: clamp(2.8rem, 2.0958rem + 1.8779vw, 4.8rem);
   --fs-h2: clamp(2.2rem, 1.5636rem + 1.697vw, 3.6rem);
   --fs-h3: clamp(1.8rem, 1.5273rem + 0.7273vw, 3rem);

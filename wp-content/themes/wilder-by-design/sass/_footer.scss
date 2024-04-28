@@ -4,15 +4,18 @@
   padding: var(--scale-16-32) 0;
 
   .inner-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--scale-16-32);
+    display: block;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: var(--scale-16-32);
+    }
   }
 
   .newsletter {
-    grid-column-start: 3;
-    grid-column-end: span 2;
     display: grid;
+    gap: var(--scale-8-16);
   }
 
   .legals {
@@ -46,5 +49,12 @@
     svg {
       fill: var(--c-white);
     }
+  }
+}
+
+.page:not(.woocommerce-account) .newsletter {
+  h2,
+  p {
+    margin: 0;
   }
 }
