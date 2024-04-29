@@ -51,6 +51,15 @@
   border-right: none;
 }
 
+.wpforms-error-container {
+  background: var(--c-error-pale);
+  color: var(--c-error-dark);
+  padding: var(--scale-16-24);
+  border: 1px solid var(--c-success-dark);
+  border-left: none;
+  border-right: none;
+}
+
 .page:not(.woocommerce-account) .wpforms-confirmation-container p {
   margin: 0;
 }
