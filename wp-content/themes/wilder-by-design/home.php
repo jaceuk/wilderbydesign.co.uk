@@ -21,7 +21,7 @@ get_header('shop');
 
   <section class="home-section personalisation-section">
     <div class="inner-wrapper">
-      <h2>Personalised Gifts</h2>
+      <h2 class="underline">Personalised Gifts</h2>
       <div class="col-2">
         <div class="text">
           <p>A personalised gift shows thoughtfulness and effort, making your loved ones feel extra special.</p>
@@ -43,7 +43,7 @@ get_header('shop');
 
   <section class="home-section category-section">
     <div class="inner-wrapper">
-      <h2>Gifts for Animal Lovers</h2>
+      <h2 class="underline">Gifts for Animal Lovers</h2>
       <div class="col-4">
         <?php
         $callouts = get_field_object('bottom_callouts');
