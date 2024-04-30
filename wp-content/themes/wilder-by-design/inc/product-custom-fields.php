@@ -8,6 +8,8 @@
  * @community     https://businessbloomer.com/club/
  */
 
+use const Avifinfo\UNDEFINED;
+
 // -----------------------------------------
 // 1. Show custom input field above Add to Cart
 
@@ -22,27 +24,29 @@ function bbloomer_product_add_on()
   global $post;
   $tags = get_the_terms($post->ID, 'product_tag');
 
-  foreach ($tags as $tag) {
-    if ($tag->slug === 'personalised') {
-      echo '<div class="personalisation-callout">';
-      echo '<p>Personalisation</p>';
-      echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
-      echo '<input name="name" value="' . $value . '" maxlength="12">';
-      echo '<p class="small">Please enter the name you\'d like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
+  $pers_product = get_field('pers_product');
+  $pers_required = get_field('pers_required') ? 'Required' : 'Optional';
+  $pers_instructions = get_field('pers_instructions');
+  $pers_max_characters = get_field('pers_max_characters') ? get_field('pers_max_characters') : 144;
+  $pers_photo_required = get_field('pers_photo_required');
+  $required = get_field('pers_required') ? 'required' : null;
+
+  if ($pers_product == 1) {
+    echo '<div class="personalisation-callout">';
+    echo '<div class="label-container"><label for="name">Personalisation (' . $pers_required . ')</label></div>';
+    echo '<p class="small">' . $pers_instructions . '</p>';
+    echo '<div>';
+    echo '<textarea id="name" name="name" rows="4" maxlength="' . $pers_max_characters . '" ' . $required . '>' . $value . '</textarea>';
+    echo '<p class="small">Max. ' . $pers_max_characters . ' characters</p>';
+    echo '</div>';
+
+    if ($pers_photo_required == 1) {
       echo '<p class="label">Getting your photo to us (required)</p>';
-      echo '<p class="small">When you have completed your purchase you\'ll need to email your photo along with your order number to info@wilderbydesign.co.uk..</p>';
+      echo '<p class="small">When you have completed your purchase you\'ll need to email your photo along with your order number.</p>';
       echo '<p class="small">Please check our FAQ for more details on <a href="/faq#send-photo">how to get your photo to us</a>.</p>';
-      echo '</div>';
     }
 
-    if ($tag->slug !== 'personalised' && $tag->slug === 'optional-personalisation') {
-      echo '<div class="personalisation-callout">';
-      echo '<p>Personalisation</p>';
-      echo '<div class="label-container"><label>Name (optional)</label><p class="small">Maximum 12 characters</p></div>';
-      echo '<input name="name" value="' . $value . '" maxlength="12">';
-      echo '<p class="small">Please enter the name you\'d like printed on your item. Leave this empty if you\'d rather not have a name.</p>';
-      echo '</div>';
-    }
+    echo '</div>';
   }
 }
 

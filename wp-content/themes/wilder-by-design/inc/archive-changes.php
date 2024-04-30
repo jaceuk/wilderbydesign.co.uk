@@ -13,27 +13,13 @@ add_action('woocommerce_before_shop_loop_item_title', 'add_img_wrapper_start', 5
 function add_img_wrapper_close()
 {
   global $post;
-  $tags = get_the_terms($post->ID, 'product_tag');
-  $personalised = 0;
-  $optional_personalisation = 0;
+  $fully_personalised = get_field('pers_photo_required') || get_field('pers_required');
+  $optional_personalisation = get_field('pers_product') && !get_field('pers_required') && !get_field('pers_photo_required');
 
-  foreach ($tags as $tag) {
-    if ($tag->slug === 'personalised') {
-      $personalised = 1;
-    }
+  if ($fully_personalised) echo '<p class="personalisation-notice">Personalised</p>';
 
-    if ($tag->slug !== 'personalised' && $tag->slug === 'optional-personalisation') {
-      $optional_personalisation = 1;
-    }
-  }
+  if ($optional_personalisation) echo '<p class="personalisation-notice">Optional personalisation</p>';
 
-  if ($personalised) {
-    echo '<p class="personalisation-notice">Fully personalised</p>';
-  }
-
-  if ($optional_personalisation) {
-    echo '<p class="personalisation-notice">Optional personalisation</p>';
-  }
   echo '</div>';
 }
 add_action('woocommerce_before_shop_loop_item_title', 'add_img_wrapper_close', 12, 2);
