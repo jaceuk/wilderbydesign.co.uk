@@ -17,7 +17,7 @@ add_action('woocommerce_after_add_to_cart_quantity', 'bbloomer_product_add_on', 
 
 function bbloomer_product_add_on()
 {
-  $value = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
+  $value = isset($_POST['personalisation']) ? sanitize_text_field($_POST['personalisation']) : '';
 
 
   // get parent category
@@ -33,10 +33,10 @@ function bbloomer_product_add_on()
 
   if ($pers_product == 1) {
     echo '<div class="personalisation-callout">';
-    echo '<div class="label-container"><label for="name">Personalisation (' . $pers_required . ')</label></div>';
+    echo '<div class="label-container"><label for="personalisation">Personalisation (' . $pers_required . ')</label></div>';
     echo '<p class="small">' . $pers_instructions . '</p>';
     echo '<div>';
-    echo '<textarea id="name" name="name" rows="4" maxlength="' . $pers_max_characters . '" ' . $required . '>' . $value . '</textarea>';
+    echo '<textarea id="personalisation" name="personalisation" rows="4" maxlength="' . $pers_max_characters . '" ' . $required . '>' . $value . '</textarea>';
     echo '<p class="small">Max. ' . $pers_max_characters . ' characters</p>';
     echo '</div>';
 
@@ -71,8 +71,8 @@ add_filter('woocommerce_add_cart_item_data', 'bbloomer_product_add_on_cart_item_
 
 function bbloomer_product_add_on_cart_item_data($cart_item, $product_id)
 {
-  if (isset($_POST['name'])) {
-    $cart_item['name'] = sanitize_text_field($_POST['name']);
+  if (isset($_POST['personalisation'])) {
+    $cart_item['personalisation'] = sanitize_text_field($_POST['personalisation']);
   }
   return $cart_item;
 }
@@ -84,10 +84,10 @@ add_filter('woocommerce_get_item_data', 'bbloomer_product_add_on_display_cart', 
 
 function bbloomer_product_add_on_display_cart($data, $cart_item)
 {
-  if (isset($cart_item['name'])) {
+  if (isset($cart_item['personalisation'])) {
     $data[] = array(
-      'name' => 'Name',
-      'value' => sanitize_text_field($cart_item['name'])
+      'name' => 'Personalisation',
+      'value' => sanitize_text_field($cart_item['personalisation'])
     );
   }
   return $data;
@@ -100,8 +100,8 @@ add_action('woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_ite
 
 function bbloomer_product_add_on_order_item_meta($item_id, $values)
 {
-  if (!empty($values['name'])) {
-    wc_add_order_item_meta($item_id, 'Name', $values['name'], true);
+  if (!empty($values['personalisation'])) {
+    wc_add_order_item_meta($item_id, 'Personalisation', $values['personalisation'], true);
   }
 }
 
@@ -112,6 +112,6 @@ add_filter('woocommerce_email_order_meta_fields', 'bbloomer_product_add_on_displ
 
 function bbloomer_product_add_on_display_emails($fields)
 {
-  $fields['name'] = 'Name';
+  $fields['name'] = 'Personalisation';
   return $fields;
 }
