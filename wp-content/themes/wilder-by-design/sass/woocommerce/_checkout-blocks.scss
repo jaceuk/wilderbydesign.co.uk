@@ -1,0 +1,15 @@
+// checkout page
+button.wc-block-components-checkout-place-order-button {
+  color: var(--c-nearly-black);
+  background-color: var(--c-primary-button);
+  border: 2px solid var(--c-button-border);
+  border-radius: 500px;
+  width: 100%;
+  text-align: center;
+  padding: var(--scale-16-24);
+  font-weight: var(--fw-medium);
+}
+
+.wc-block-components-express-payment.wc-block-components-express-payment--checkout {
+  margin-top: var(--scale-16-32);
+}
