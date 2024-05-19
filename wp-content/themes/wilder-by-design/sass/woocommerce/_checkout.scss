@@ -74,6 +74,7 @@ form.woocommerce-checkout {
   .col-2 {
     gap: var(--scale-16-32);
     display: grid;
+    grid-template-columns: 1fr;
 
     textarea {
       width: 100%;
