@@ -21,6 +21,19 @@ get_header('shop');
 
   <section class="home-section personalisation-section">
     <div class="inner-wrapper">
+      <h2 class="underline">Featured Collections</h2>
+      <div class="col-2">
+        <?php
+        $collections = get_field_object('collections');
+        get_template_part('components/collection-card', null, $collections);
+        ?>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="home-section personalisation-section">
+    <div class="inner-wrapper">
       <h2 class="underline">Personalised Gifts</h2>
       <div class="col-2">
         <div class="text">
