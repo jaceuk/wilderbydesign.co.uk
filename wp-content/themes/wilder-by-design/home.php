@@ -39,7 +39,7 @@ get_header('shop');
         <div class="text">
           <p>A personalised gift shows thoughtfulness and effort, making your loved ones feel extra special.</p>
           <p>You can also treat yourself and create something that’s uniquely yours.</p>
-          <p>Most of our products have optional personalisation where you can add a name to the design.</p>
+          <p>Some of our products have optional personalisation where you can add a name to the design.</p>
           <p>We also have a range of fully personalised products for pet owners that feature a photo of their pet.</p>
         </div>
         <div class="col-2">
