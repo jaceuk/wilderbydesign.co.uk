@@ -46,7 +46,8 @@ li.product {
   }
 
   .woocommerce-loop-product__title {
-    font-size: var(--fs-h4);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
   }
 
   .star-rating {
@@ -55,7 +56,7 @@ li.product {
 
   .price {
     font-size: var(--fs-body);
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-regular);
 
     ins {
       text-decoration: none;

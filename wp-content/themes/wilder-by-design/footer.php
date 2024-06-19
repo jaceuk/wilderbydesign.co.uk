@@ -1,9 +1,22 @@
+<?php
+if (is_front_page()) {
+	get_template_part('components/newsletter');
+}
+get_template_part('components/benefits');
+?>
+
 <footer class="footer">
 	<div class="inner-wrapper">
 		<div class="footer-menu">
-			<div class="h3">Wilder by Design</div>
+			<div class="h4">Wilder by Design</div>
 			<ul>
 				<li><a href="/">Homepage</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-menu">
+			<div class="h4">Legal Notices</div>
+			<ul>
 				<li><a href="/privacy">Privacy policy</a></li>
 				<li><a href="/terms">Terms of service</a></li>
 				<li><a href="/wp-sitemap.xml">Sitemap</a></li>
@@ -11,7 +24,7 @@
 		</div>
 
 		<div class="footer-menu">
-			<div class="h3">Support</div>
+			<div class="h4">Support</div>
 			<ul>
 				<li><a href="/contact">Contact us</a></li>
 				<li><a href="/faq">FAQ</a></li>
@@ -19,18 +32,9 @@
 				<li><a href="/shipping">Shipping info</a></li>
 			</ul>
 		</div>
+	</div>
 
-
-
-		<div class="newsletter">
-			<h2>Signup for exclusive deals</h2>
-			<p>Sign up to our newsletter to stay up to date on new arrivals and get exclusive offers. You can cancel at any time.</p>
-
-			<?php
-			echo do_shortcode('[wpforms id=1007]');
-			?>
-		</div>
-
+	<div class="inner-wrapper">
 		<div class="legals">
 			<ul>
 				<li>&copy; Wilder by Design <?php echo date("Y"); ?>, all rights reserved.</li>

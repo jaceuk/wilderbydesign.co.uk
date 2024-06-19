@@ -27,7 +27,7 @@
   /* colours */
   --c-grey: #e9e9ec;
   --c-grey-pale: #f4f4f5;
-  --c-grey-med: #d7d7db;
+  --c-grey-med: #bdbdbd;
   --c-grey-dark: #7b7b7b;
   --c-nearly-black: #151922;
   --c-black: #000;
@@ -70,7 +70,7 @@
   /* font size */
   /* based on viewport fom min 375px to max 1400px */
   /* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport */
-  --fs-h1-hero: clamp(3rem, 1.7561rem + 3.3171vw, 6.4rem);
+  --fs-h1-hero: clamp(3rem, 2.0488rem + 2.5366vw, 5.6rem);
   --fs-h1: clamp(2.8rem, 2.0958rem + 1.8779vw, 4.8rem);
   --fs-h2: clamp(2.2rem, 1.5636rem + 1.697vw, 3.6rem);
   --fs-h3: clamp(1.8rem, 1.5273rem + 0.7273vw, 3rem);
@@ -91,7 +91,7 @@
   /* misc */
   --max-readable-width: 750px;
   --transition: 0.2s ease;
-  --box-shadow-card: 0px 11px 48px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-card: 0px 11px 38px 0px rgba(0, 0, 0, 0.15);
   --box-shadow-menu: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
   --box-shadow-button: 0px 4px 4px 0px var(--c-button-border);
   --border-radius-med: var(--scale-8-16);

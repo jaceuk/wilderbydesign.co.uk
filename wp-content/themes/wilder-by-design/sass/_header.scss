@@ -1,7 +1,7 @@
 .header {
   box-shadow: var(--box-shadow-menu);
   padding: var(--scale-16-32) 0 0 0;
-  background: var(--c-nearly-black);
+  background: var(--c-white);
   position: relative;
 
   .currency-switcher {
@@ -30,7 +30,7 @@
       display: grid;
       gap: var(--scale-16-32);
       grid-template-columns: auto 1fr auto;
-      padding-bottom: var(--scale-16-32);
+      padding-bottom: var(--scale-8-16);
     }
 
     .account-and-basket {
@@ -61,10 +61,10 @@
 
   .logo {
     height: 49px;
-    fill: var(--c-white);
+    fill: var(--c-nearly-black);
 
     @media (min-width: 768px) {
-      height: 55px;
+      height: 52px;
     }
   }
 
@@ -85,6 +85,7 @@
     svg {
       height: 32px;
       width: 32px;
+      fill: var(--c-nearly-black);
     }
 
     @media (min-width: 768px) {
@@ -207,12 +208,11 @@ nav.account-and-basket {
       display: grid;
       justify-items: center;
       gap: var(--s-4);
-      font-weight: var(--fw-light);
-      color: var(--c-white);
+      color: var(--c-nearly-black);
       position: relative;
 
       svg {
-        fill: var(--c-white);
+        fill: var(--c-nearly-black);
         width: 24px;
         height: 24px;
       }
@@ -227,7 +227,8 @@ nav button {
 }
 
 .badge {
-  background: red;
+  background: var(--c-error-dark);
+  color: var(--c-white);
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 100%;

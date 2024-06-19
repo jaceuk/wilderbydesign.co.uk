@@ -8,26 +8,23 @@
 
     @media (min-width: 768px) {
       display: grid;
-      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: var(--scale-16-32);
     }
-  }
-
-  .newsletter {
-    display: grid;
-    gap: var(--scale-8-16);
   }
 
   .legals {
     grid-column-start: 1;
     grid-column-end: span 4;
     margin: 0 auto;
+    padding: var(--scale-16-32) 0 0 0;
 
     ul {
       display: flex;
       align-items: center;
       gap: var(--scale-8-16);
       flex-direction: row;
+      justify-content: center;
     }
   }
 
@@ -49,12 +46,5 @@
     svg {
       fill: var(--c-white);
     }
-  }
-}
-
-.page:not(.woocommerce-account) .newsletter {
-  h2,
-  p {
-    margin: 0;
   }
 }

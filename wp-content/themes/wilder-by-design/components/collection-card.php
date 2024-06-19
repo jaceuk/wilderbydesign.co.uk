@@ -21,7 +21,7 @@ foreach ($args['value'] as $arg) {
       }
       ?>
     </div>
-    <dv class="h4"><?php echo $term_name; ?></dv>
+    <?php echo $term_name; ?>
   </a>
 
 <?php
