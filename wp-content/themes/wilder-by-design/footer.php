@@ -1,8 +1,6 @@
 <?php
-if (is_front_page()) {
-	get_template_part('components/newsletter');
-}
 get_template_part('components/benefits');
+get_template_part('components/newsletter');
 ?>
 
 <footer class="footer">
