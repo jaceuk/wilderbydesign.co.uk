@@ -4,19 +4,21 @@
 
   .inner-wrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--scale-16-32);
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
   }
 
   .benefit {
     display: flex;
     gap: var(--scale-8-16);
+    flex-direction: column;
     align-items: center;
     margin: auto;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
 
     .icon {
       width: 24px;

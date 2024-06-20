@@ -4,6 +4,8 @@
 }
 
 .wpforms-container {
+  margin-bottom: 0;
+
   div.wpforms-field {
     padding: 0;
     display: grid;
@@ -55,7 +57,7 @@
   background: var(--c-error-pale);
   color: var(--c-error-dark);
   padding: var(--scale-16-24);
-  border: 1px solid var(--c-success-dark);
+  border: 1px solid var(--c-error-dark);
   border-left: none;
   border-right: none;
 }
