@@ -3,6 +3,7 @@ get_header();
 ?>
 
 
+
 <main class="inner-wrapper">
 
 	<?php
@@ -37,7 +38,6 @@ get_header();
 
 	endif;
 	?>
-
 </main>
 
 <?php

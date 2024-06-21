@@ -33,7 +33,7 @@ $personalised_text = get_field('personalised_text');
               }
               ?>
             </div>
-            <?php echo $term_name; ?>
+            <h3 class="body"><?php echo $term_name; ?></h3>
           </a>
         <?php
         }

@@ -3,25 +3,29 @@ $collections = get_field('collections');
 $collections_title = get_field('collections_title');
 ?>
 
-<section class="home-section products-section">
-  <div class="inner-wrapper">
-    <div class="title">
-      <h2><?php echo $collections_title; ?></h2>
-      <div class="divider"></div>
-      <a href="/collections" class="more">View all</a>
-    </div>
 
-    <div class="col-2">
-      <?php
-      $size = 'large';
+<header>
+  <?php the_title('<h1>', '</h1>'); ?>
+</header>
 
-      foreach ($collections as $collection) {
-        $id = $collection['collection'];
-        $term_name = get_term($id)->name;
-        $term_meta = get_term_meta($id);
+<div class="col-2">
+  <?php
+  $size = 'large';
+  $terms = get_terms(array(
+    'taxonomy' => 'product_tag',
+    'order'   => 'DESC'
+  ));
+
+  $collection_ids = [];
+  if (!empty($terms) && !is_wp_error($terms)) {
+    foreach ($terms as $term) {
+      $term_type = get_field('tag_type',  $term->taxonomy . '_' . $term->term_id);
+
+      if (strtolower($term_type) === 'collection') {
+        $term_meta = get_term_meta($term->term_id);
         $url = get_tag_link($id);
         $image_id = $term_meta['image'][0];
-      ?>
+  ?>
         <a class="collection-card" href="<?php echo $url; ?>">
           <div class="image">
             <?php
@@ -30,12 +34,12 @@ $collections_title = get_field('collections_title');
             }
             ?>
           </div>
-          <?php echo $term_name; ?>
+          <h2><?php echo $term->name; ?></h2>
+          <p><?php echo $term->description; ?></p>
         </a>
-      <?php
+  <?php
       }
-      ?>
-    </div>
-  </div>
-  </div>
-</section>
+    }
+  }
+  ?>
+</div>

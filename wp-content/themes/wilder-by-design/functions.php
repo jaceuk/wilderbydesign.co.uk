@@ -106,13 +106,24 @@ function register_my_menus()
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function rude_by_design_widgets_init()
+function wilder_by_design_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Currency Switcher', 'rude-by-design'),
+			'name'          => esc_html__('Currency Switcher', 'wilder-by-design'),
 			'id'            => 'currency-switcher',
-			'description'   => esc_html__('Add widgets here.', 'rude-by-design'),
+			'description'   => esc_html__('Add widgets here.', 'wilder-by-design'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Product Filters', 'wilder-by-design'),
+			'id'            => 'product-filters',
+			'description'   => esc_html__('Add widgets here.', 'wilder-by-design'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -120,7 +131,7 @@ function rude_by_design_widgets_init()
 		)
 	);
 }
-add_action('widgets_init', 'rude_by_design_widgets_init');
+add_action('widgets_init', 'wilder_by_design_widgets_init');
 
 /**
  * Enqueue scripts and styles.

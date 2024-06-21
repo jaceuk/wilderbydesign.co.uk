@@ -149,11 +149,11 @@ if (!function_exists('rude_by_design_woocommerce_wrapper_after')) {
 add_action('woocommerce_after_main_content', 'rude_by_design_woocommerce_wrapper_after');
 
 // disable sidebar
-function disable_woo_commerce_sidebar()
-{
-	remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-}
-add_action('init', 'disable_woo_commerce_sidebar');
+// function disable_woo_commerce_sidebar()
+// {
+// 	remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+// }
+// add_action('init', 'disable_woo_commerce_sidebar');
 
 require get_template_directory() . '/inc/product-custom-fields.php';
 require get_template_directory() . '/inc/archive-changes.php';
