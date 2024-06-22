@@ -26,7 +26,7 @@ $collections_title = get_field('collections_title');
         $url = get_tag_link($id);
         $image_id = $term_meta['image'][0];
   ?>
-        <a class="collection-card" href="<?php echo $url; ?>">
+        <a class="collection-card" href="/product-tag/<?php echo $term->slug; ?>">
           <div class="image">
             <?php
             if (!empty($image_id)) {
