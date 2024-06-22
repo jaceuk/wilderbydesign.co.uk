@@ -1,14 +1,29 @@
 .woocommerce-account {
+  .woocommerce {
+    padding-bottom: var(--scale-16-32);
+  }
+
   .u-column1,
   .u-column2 {
     display: grid;
     gap: var(--scale-16-32);
+    grid-template-columns: 1fr;
     width: 100%;
     padding: 0;
     float: none;
 
     @media (min-width: 768px) {
       width: 50%;
+    }
+
+    .woocommerce-form-register,
+    .woocommerce-form-login {
+      display: grid;
+      gap: var(--scale-16-32);
+    }
+
+    wc-order-attribution-inputs {
+      display: none;
     }
   }
 
@@ -170,4 +185,10 @@
   @media (min-width: 768px) {
     flex-direction: row;
   }
+}
+
+#payment_method_woocommerce_payments {
+  width: auto;
+  display: inline-block;
+  margin-right: 8px;
 }

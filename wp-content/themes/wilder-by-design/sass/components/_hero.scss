@@ -73,7 +73,7 @@
     height: clamp(5rem, -4.0909rem + 24.2424vw, 25rem);
     border-radius: var(--border-radius-small);
     overflow: hidden;
-    outline: 8px solid rgba(255, 255, 255, 0.1);
+    outline: var(--s-4) solid rgba(255, 255, 255, 0.1);
 
     img {
       margin: 0;

@@ -84,7 +84,10 @@
 					?>
 				</div>
 		</div>
+	<?php } ?>
+	</header>
 
+	<?php if (!is_checkout() || is_wc_endpoint_url('order-received')) { ?>
 		<nav class="nav">
 			<div class="inner-wrapper">
 				<div class="menu">
@@ -97,7 +100,6 @@
 			</div>
 		</nav>
 	<?php } ?>
-	</header>
 
 	<dialog id="mobile-menu" class="mobile-menu">
 		<div class="dialog-inner-wrapper">

@@ -1,25 +1,8 @@
 .header {
-  box-shadow: var(--box-shadow-menu);
   padding: var(--scale-16-32) 0 0 0;
   background: var(--c-white);
   position: relative;
-
-  .currency-switcher {
-    display: flex;
-    flex-direction: row;
-    gap: var(--scale-8-16);
-    align-items: center;
-    color: var(--c-accent);
-
-    select[name='currency'] {
-      padding: var(--s-8) var(--s-32) var(--s-8) var(--s-8) !important;
-      color: var(--c-nearly-black) !important;
-
-      option {
-        color: var(--c-nearly-black);
-      }
-    }
-  }
+  z-index: 20;
 
   a {
     text-decoration: none;
@@ -116,12 +99,16 @@
 .nav {
   display: none;
   background: var(--c-white);
+  box-shadow: var(--box-shadow-menu);
+  z-index: 10;
 
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
   }
 
   .inner-wrapper {
@@ -134,6 +121,23 @@
     color: var(--c-accent);
   }
 
+  .currency-switcher {
+    display: flex;
+    flex-direction: row;
+    gap: var(--scale-8-16);
+    align-items: center;
+    color: var(--c-accent);
+
+    select[name='currency'] {
+      padding: var(--s-8) var(--s-32) var(--s-8) var(--s-8) !important;
+      color: var(--c-nearly-black) !important;
+
+      option {
+        color: var(--c-nearly-black);
+      }
+    }
+  }
+
   .menu {
     display: flex;
     flex-direction: row;
@@ -144,6 +148,8 @@
 
     a {
       padding: var(--scale-8-16) 0;
+      text-decoration: none;
+      display: flex;
     }
 
     ul {
