@@ -358,7 +358,18 @@
     box-shadow: none;
 
     &.selected {
-      border: 2px solid var(--c-primary-button);
+      border: 2px solid var(--c-nearly-black);
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--c-white);
+        border-radius: calc(var(--border-radius-small) - 2px);
+      }
     }
   }
 
