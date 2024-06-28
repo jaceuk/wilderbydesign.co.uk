@@ -36,3 +36,8 @@ function new_loop_shop_per_page($cols)
   $cols = 16;
   return $cols;
 }
+
+/**
+ * Show a dropdown menu on product archive pages for variable products with variations.
+ * When a user selects a product variable from the dropdown menu the product should be added to the cart.
+ */
