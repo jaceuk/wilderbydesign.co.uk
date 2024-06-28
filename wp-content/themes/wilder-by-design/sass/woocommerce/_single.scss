@@ -354,12 +354,11 @@
     min-width: fit-content;
     position: relative;
     font-weight: var(--fw-semi-bold);
+    border: 1px solid var(--c-grey-med);
+    box-shadow: none;
 
     &.selected {
-      background: var(--c-nearly-black);
-      color: var(--c-white);
-      box-shadow: none;
-      border: 4px solid var(--c-primary-button);
+      border: 2px solid var(--c-primary-button);
     }
   }
 
