@@ -39,9 +39,9 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 					<tr>
 						<td class="full-width" colspan="2">
 							<div class="variation-container">
-								<div class="label">
-									<?php echo wc_attribute_label($attribute_name); // WPCS: XSS ok.
-									?>
+								<?php $lower_case_attribute_name =  strtolower(wc_attribute_label($attribute_name)); ?>
+								<div class="label" data-variation="<?php echo $lower_case_attribute_name; ?>">
+									Select <?php echo $lower_case_attribute_name; ?>
 								</div>
 
 								<div class="value">

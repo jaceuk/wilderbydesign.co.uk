@@ -95,7 +95,6 @@ variationButtons.forEach((variationButton) => {
     'select[name = "' + variationName + '"]'
   );
 
-  console.log(variationValue);
   // select the button if the variation is preselected on load
   if (variationValue === select.value) {
     variationButton.classList.add('selected');
@@ -109,7 +108,9 @@ variationButtons.forEach((variationButton) => {
     variationButtons.forEach((variationButton) => {
       const name = variationButton.dataset.name;
 
-      if (name === variationName) variationButton.classList.remove('selected');
+      if (name === variationName) {
+        variationButton.classList.remove('selected');
+      }
     });
 
     // add selected class to selected variation
@@ -133,6 +134,7 @@ variationButtons.forEach((variationButton) => {
       if (variationLabelText.includes(trimmedVariationName)) {
         variationLabel.innerText =
           trimmedVariationName + ': ' + trimmedVariationValue;
+        variationLabel.classList.add('selected');
       }
     });
   });

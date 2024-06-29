@@ -387,6 +387,14 @@
   }
 
   .label {
-    text-transform: capitalize;
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    &.selected {
+      text-transform: capitalize;
+    }
   }
 }
