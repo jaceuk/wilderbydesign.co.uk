@@ -1,0 +1,67 @@
+.mailpoet_form {
+  .mailpoet_submit {
+    padding: var(--scale-8-16) var(--scale-16-32) !important;
+    border-color: var(--c-grey-dark);
+    background: var(--c-nearly-black);
+    color: var(--c-white);
+    border-radius: 100px;
+    transition: var(--transition);
+    width: fit-content;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  input.mailpoet_text {
+    padding: var(--scale-8-16) !important;
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--c-grey-med);
+    outline-offset: -2px;
+    width: 100%;
+  }
+
+  .mailpoet_validate_success {
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    background: var(--c-success-pale);
+    color: var(--c-success-dark);
+    padding: var(--scale-16-24);
+    border: 1px solid var(--c-success-dark);
+    border-left: none;
+    border-right: none;
+  }
+
+  .mailpoet_validate_error {
+    top: 10px !important;
+    left: 0 !important;
+    transform: none !important;
+    background: var(--c-error-pale);
+    color: var(--c-error-dark);
+    padding: var(--scale-16-24);
+    border: 1px solid var(--c-error-dark);
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.mailpoet-manage-subscription {
+  display: grid;
+  gap: var(--scale-8-16);
+  max-width: var(--max-readable-width);
+
+  .mailpoet_submit {
+    padding: var(--scale-8-16) var(--scale-16-32) !important;
+    border-color: var(--c-grey-dark);
+    background: var(--c-nearly-black);
+    color: var(--c-white);
+    border-radius: 100px;
+    transition: var(--transition);
+    width: fit-content;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
