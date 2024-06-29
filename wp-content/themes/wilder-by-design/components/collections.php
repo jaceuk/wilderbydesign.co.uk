@@ -3,43 +3,53 @@ $collections = get_field('collections');
 $collections_title = get_field('collections_title');
 ?>
 
-
 <header>
   <?php the_title('<h1>', '</h1>'); ?>
 </header>
 
-<div class="col-2">
-  <?php
-  $size = 'large';
-  $terms = get_terms(array(
-    'taxonomy' => 'product_tag',
-    'order'   => 'DESC'
-  ));
+<?php
+$terms = get_terms(array(
+  'taxonomy' => 'product_tag',
+  'orderby' => 'date',
+  'order'   => 'ASC'
+));
 
-  $collection_ids = [];
-  if (!empty($terms) && !is_wp_error($terms)) {
-    foreach ($terms as $term) {
-      $term_type = get_field('tag_type',  $term->taxonomy . '_' . $term->term_id);
+echo '<div class="collections">';
 
-      if (strtolower($term_type) === 'collection') {
-        $term_meta = get_term_meta($term->term_id);
-        $url = get_tag_link($id);
-        $image_id = $term_meta['image'][0];
-  ?>
-        <a class="collection-card" href="/product-tag/<?php echo $term->slug; ?>">
-          <div class="image">
-            <?php
-            if (!empty($image_id)) {
-              echo wp_get_attachment_image($image_id, $size);
-            }
-            ?>
+$collection_ids = [];
+if (!empty($terms) && !is_wp_error($terms)) {
+  foreach ($terms as $term) {
+    $term_type = get_field('tag_type',  $term->taxonomy . '_' . $term->term_id);
+
+    if (strtolower($term_type) === 'collection') {
+      $term_meta = get_term_meta($term->term_id);
+      $url = get_tag_link($id);
+
+      $args = array(
+        'posts_per_page' => -1,
+        'post_type' => 'product',
+        'product_tag' => $term->slug
+      );
+      $query = new WP_Query($args);
+
+      $count = $query->post_count;
+?>
+      <section class="products-section archive">
+        <div>
+          <div class="title">
+            <h2><?php echo $term->name; ?></h2>
+            <div class="divider"></div>
+            <a href="/product-tag/<?php echo $term->slug; ?>" class="more">View all (<?php echo $count; ?> results)</a>
           </div>
-          <h2><?php echo $term->name; ?></h2>
-          <p><?php echo $term->description; ?></p>
-        </a>
-  <?php
-      }
+          <?php
+          echo do_shortcode('[products limit="4" columns="4" orderby="popularity" tag="' . $term->slug . '"]');
+          ?>
+        </div>
+      </section>
+<?php
     }
   }
-  ?>
-</div>
+}
+
+echo '</div>';
+?>

@@ -27,7 +27,7 @@
 }
 
 .products-section {
-  .inner-wrapper {
+  > div {
     display: grid;
     gap: var(--scale-16-32);
   }
