@@ -5,6 +5,10 @@
 
 .wpforms-container {
   margin-bottom: 0;
+  max-width: var(--max-readable-width);
+  border: 1px solid var(--c-grey);
+  border-radius: var(--border-radius-med);
+  padding: var(--scale-8-16);
 
   div.wpforms-field {
     padding: 0;
