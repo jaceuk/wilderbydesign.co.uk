@@ -1,0 +1,10 @@
+.inner-wrapper .lightweight-accordion {
+  max-width: var(--max-readable-width);
+
+  .lightweight-accordion-title {
+    span {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-semi-bold);
+    }
+  }
+}
