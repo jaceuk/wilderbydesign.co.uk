@@ -1,27 +1,3 @@
-.page:not(.woocommerce-account) a.collection-card p,
-.page:not(.woocommerce-account) a.collection-card h2 {
-  margin-bottom: 0;
-}
-
-a.collection-card {
-  display: grid;
-  gap: var(--scale-8-16);
-  text-align: center;
-  text-decoration: none;
-
-  .image {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: var(--border-radius-small);
-
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 2 / 1;
-      display: block;
-    }
-  }
+.collections-header {
+  margin-bottom: var(--scale-32-64);
 }
