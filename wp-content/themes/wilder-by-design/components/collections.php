@@ -26,7 +26,7 @@ foreach ($cats as $cat) {
       <div class="title">
         <h2><?php echo $cat->name; ?></h2>
         <div class="divider"></div>
-        <a href="/product-tag/<?php echo $cat->slug; ?>" class="more">View all (<?php echo $cat->count; ?> results)</a>
+        <a href="/product-category/<?php echo $cat->slug; ?>" class="more">View all (<?php echo $cat->count; ?> results)</a>
       </div>
       <?php
       echo do_shortcode('[products limit="4" columns="4" orderby="popularity" category="' . $cat->slug . '"]');
