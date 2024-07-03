@@ -29,8 +29,17 @@ function woocommerce_custom_product_description($content)
 
   // get parent category
   global $post;
+
+  $category = get_term_by('slug', 'collections', 'product_cat');
+  $collections_cat_id = $category->term_id;
+
+  $cat_id = '';
   $categories = get_the_terms($post->ID, 'product_cat');
-  $cat_id =  $categories[0]->term_id;
+
+  foreach ($categories as $category) {
+    // skip if category is a collection
+    if ($category->parent !== $collections_cat_id) $cat_id =  $category->term_id;
+  }
 
   $tags = get_the_terms($post->ID, 'product_tag');
 
