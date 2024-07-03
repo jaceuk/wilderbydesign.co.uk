@@ -35,7 +35,7 @@ function add_img_wrapper_close()
   $uniqueColours = array_unique($colours);
   $noOfColours = count($uniqueColours);
 
-  if ($noOfColours > 1) echo '<p class="personalisation-notice">Availabe in ' . $noOfColours . ' colours</p>';
+  if ($noOfColours > 1) echo '<p class="personalisation-notice">Available in ' . $noOfColours . ' colours</p>';
 
   echo '</div>';
 }

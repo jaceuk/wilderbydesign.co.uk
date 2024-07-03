@@ -16,13 +16,6 @@
     </ul>
   </li>
 
-  <li><span class="title">Shop by animal</span>
-    <ul>
-      <?php
-      get_template_part('components/animal-menu-items');
-      ?>
-    </ul>
-
   <li><span class="title">Support</span>
     <ul>
       <li><a href="/contact">Contact us</a></li>

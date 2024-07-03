@@ -1,14 +1,6 @@
 <ul>
   <li><a href="/">Home</a></li>
 
-  <li><a href="#" class="drop-down-trigger">Shop by animal</a>
-    <ul class="drop-down hidden">
-      <?php
-      get_template_part('components/animal-menu-items');
-      ?>
-    </ul>
-  </li>
-
   <li><a href="#" class="drop-down-trigger">Clothing</a>
     <ul class="drop-down hidden">
       <?php
