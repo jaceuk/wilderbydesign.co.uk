@@ -9,7 +9,13 @@ get_header();
 
 <main>
   <?php
-  get_template_part('components/hero');
+  global $LAUNCH_EVENT;
+  if ($LAUNCH_EVENT) {
+    get_template_part('components/hero-launch-event');
+  } else {
+    get_template_part('components/hero');
+  }
+
   get_template_part('components/benefits-slim');
   get_template_part('components/best-sellers');
   get_template_part('components/featured-collections');

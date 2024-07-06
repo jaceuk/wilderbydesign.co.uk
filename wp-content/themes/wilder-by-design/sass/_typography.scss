@@ -85,6 +85,11 @@ h5,
   line-height: 1;
 }
 
+.super {
+  font-size: var(--fs-h1-super);
+  line-height: 1;
+}
+
 p {
   max-width: var(--max-readable-width);
 }

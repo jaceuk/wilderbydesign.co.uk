@@ -41,6 +41,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php
+	global $LAUNCH_EVENT;
+	if ($LAUNCH_EVENT) get_template_part('components/top-banner');
+	?>
+
 	<header class="header">
 		<div class="inner-wrapper grid">
 			<button type="button" id="mobile-menu-open-button" class="menu-button">

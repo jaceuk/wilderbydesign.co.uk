@@ -246,3 +246,5 @@ function change_variable_products_price_display($price, $product)
 	return apply_filters('woocommerce_variable_price_html', $prefix . wc_price($min_price) . $product->get_price_suffix(), $product);
 }
 add_filter('woocommerce_get_price_html', 'change_variable_products_price_display', 10, 2);
+
+require get_template_directory() . '/inc/global-vars.php';

@@ -17,6 +17,22 @@
     }
   }
 
+  .title-with-text {
+    text-transform: uppercase;
+
+    h1 {
+      padding-top: 0;
+      font-size: var(--fs-h1-super);
+    }
+
+    .pre-text {
+      color: var(--c-white);
+      padding-top: var(--scale-32-64);
+      font-size: var(--fw-light);
+      font-size: var(--fs-h2);
+    }
+  }
+
   .inner-wrapper {
     display: grid;
     grid-template-columns: 1fr;
