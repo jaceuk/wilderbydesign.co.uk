@@ -327,6 +327,7 @@ p.stars {
 
 del {
   color: var(--c-error-dark);
+  display: block;
   font-size: var(--fs-small);
 
   bdi {
@@ -334,9 +335,9 @@ del {
   }
 }
 
-.product-type-variable {
+.wc-block-cart-item__prices {
   del {
-    display: block;
+    display: inline-block;
   }
 }
 

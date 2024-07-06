@@ -6,6 +6,10 @@
     rgba(129, 129, 129, 1)
   );
 
+  .brown-gradient {
+    background: linear-gradient(to bottom right, #999383, #c9c3b3);
+  }
+
   .inner-wrapper {
     text-align: center;
     color: var(--c-white);
