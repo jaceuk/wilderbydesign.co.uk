@@ -1,10 +1,17 @@
 <?php
-$left_products = get_field('hero_left_products');
-$right_products = get_field('hero_right_products');
-
 // print "<pre>";
 // print_r($left_products);
 // print "</pre>";
+
+$args = array(
+  'post_type' => 'product',
+  'meta_key' => 'total_sales',
+  'orderby' => 'meta_value_num',
+  'posts_per_page' => 8,
+);
+$loop = new WP_Query( $args );
+$left_products = array_slice($loop->posts,0,4);
+$right_products = array_slice($loop->posts,4,4);
 ?>
 
 <section class="hero-section">
@@ -15,12 +22,10 @@ $right_products = get_field('hero_right_products');
       <div class="col">
         <?php
         $size = 'medium';
-
-        foreach ($left_products as $product) {
-          $product = $product['product'];
-          $id = $product->ID;
-          $url = $product->guid;
-          $thumbnail_id = get_post_thumbnail_id($id);
+        foreach($left_products as $product) {
+        $id = $product->ID;
+        $url = $product->guid;
+        $thumbnail_id = get_post_thumbnail_id($id);
         ?>
           <a href="<?php echo $url; ?>" class="tile">
             <?php
@@ -39,12 +44,10 @@ $right_products = get_field('hero_right_products');
       <div class="col">
         <?php
         $size = 'medium';
-
-        foreach ($right_products as $product) {
-          $product = $product['product'];
-          $id = $product->ID;
-          $url = $product->guid;
-          $thumbnail_id = get_post_thumbnail_id($id);
+        foreach($right_products as $product) {
+        $id = $product->ID;
+        $url = $product->guid;
+        $thumbnail_id = get_post_thumbnail_id($id);
         ?>
           <a href="<?php echo $url; ?>" class="tile">
             <?php

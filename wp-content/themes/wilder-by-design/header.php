@@ -9,7 +9,7 @@
 	<?php
 	if (is_home() || is_front_page()) {
 	?>
-		<meta name="description" content="Treat someone you love to a rude, funny or sarcastic mug.">
+		<meta name="description" content="Animal-themed gifts for friends, loved ones or yourself.">
 	<?php
 	}
 	?>

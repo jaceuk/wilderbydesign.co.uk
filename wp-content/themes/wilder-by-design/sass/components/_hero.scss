@@ -63,8 +63,8 @@
     gap: var(--scale-16-32);
     flex-direction: column;
 
-    &:last-child {
-      margin-top: -30%;
+    &:first-child {
+      margin-top: 20%;
     }
   }
 

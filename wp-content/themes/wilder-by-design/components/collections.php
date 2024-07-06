@@ -12,8 +12,8 @@ $category = get_term_by('slug', 'collections', 'product_cat');
 $cat_id = $category->term_id;
 $cats = get_categories(array(
   'taxonomy' => 'product_cat',
-  'orderby' => 'date',
-  'order'   => 'ASC',
+  'orderby' => 'id',
+  'order'   => 'DESC',
   'parent' => $cat_id,
 ));
 
