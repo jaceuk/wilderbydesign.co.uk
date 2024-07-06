@@ -27,7 +27,7 @@
         </svg>
       </div>
       <div class="title">Satisfaction Guaranteed</div>
-      <small>14 day money-back guarantee</small>
+      <small>14 day money-back guarantee, please see our <a href="/returns-policy">Returns Policy</a></small>
     </div>
   </div>
 </section>
