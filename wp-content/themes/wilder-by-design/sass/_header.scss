@@ -3,6 +3,11 @@
   background: var(--c-white);
   position: relative;
   z-index: 20;
+  box-shadow: var(--box-shadow-menu);
+
+  @media (min-width: 768px) {
+    box-shadow: none;
+  }
 
   a {
     text-decoration: none;
