@@ -16,7 +16,7 @@ $personalised_text = get_field('personalised_text');
       </div>
       <div class="col-2">
         <?php
-        $size = 'large';
+        $size = 'medium';
 
         foreach ($personalised_tags as $personalised_tag) {
           $id = $personalised_tag['personalised_tag'];
