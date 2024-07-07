@@ -8,28 +8,30 @@ $collections_title = get_field('collections_title');
 </header>
 
 <?php
-$category = get_term_by('slug', 'collections', 'product_cat');
-$cat_id = $category->term_id;
-$cats = get_categories(array(
-  'taxonomy' => 'product_cat',
+$args = array(
+  'taxonomy' => 'product_tag',
   'orderby' => 'id',
   'order'   => 'DESC',
-  'parent' => $cat_id,
-));
+  'number' => 4,
+  'meta_key'      => 'tag_type',
+  'meta_value'    => 'Collection'
+
+);
+$collections = get_terms($args);
 
 echo '<div class="collections">';
 
-foreach ($cats as $cat) {
+foreach ($collections as $collection) {
 ?>
   <section class="products-section archive">
     <div>
       <div class="title">
-        <h2><?php echo $cat->name; ?></h2>
+        <h2><?php echo $collection->name; ?></h2>
         <div class="divider"></div>
-        <a href="/product-category/<?php echo $cat->slug; ?>" class="more">View all (<?php echo $cat->count; ?> results)</a>
+        <a href="/product-tag/<?php echo $collection->slug; ?>" class="more">View all (<?php echo $collection->count; ?> results)</a>
       </div>
       <?php
-      echo do_shortcode('[products limit="4" columns="4" orderby="popularity" category="' . $cat->slug . '"]');
+      echo do_shortcode('[products limit="4" columns="4" orderby="popularity" tag="' . $collection->slug . '"]');
       ?>
     </div>
   </section>

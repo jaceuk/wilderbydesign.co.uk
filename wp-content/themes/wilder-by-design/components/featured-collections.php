@@ -7,32 +7,35 @@
     </div>
 
     <?php
-    $category = get_term_by('slug', 'collections', 'product_cat');
-    $cat_id = $category->term_id;
-    $cats = get_categories(array(
-      'taxonomy' => 'product_cat',
+    $args = array(
+      'taxonomy' => 'product_tag',
       'orderby' => 'id',
       'order'   => 'DESC',
-      'parent' => $cat_id,
       'number' => 4,
-    ));
+      'meta_key'      => 'tag_type',
+      'meta_value'    => 'Collection'
+
+    );
+    $collections = get_terms($args);
 
     echo '<div class="col-4">';
 
-    $size = 'large';
+    $size = 'medium';
 
-    foreach ($cats as $cat) {
-      $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+    foreach ($collections as $collection) {
+      $image_id = get_term_meta($collection->term_id, 'image', true);
     ?>
-      <a class="personalised-card" href="/product-category/collections/<?php echo $cat->slug; ?>">
+      <a class="personalised-card" href="/product-tag/<?php echo $collection->slug; ?>">
         <div class="image">
           <?php
-          if (!empty($thumbnail_id)) {
-            echo wp_get_attachment_image($thumbnail_id, $size);
+          if ($image_id) {
+            echo wp_get_attachment_image($image_id, $size);
+          } else {
+            echo '<img class="hero-image" src="' . get_stylesheet_directory_uri() . '/images/placeholder.png" alt="" />';
           }
           ?>
         </div>
-        <h3 class="body"><?php echo $cat->name; ?></h3>
+        <h3 class="body"><?php echo $collection->name; ?></h3>
       </a>
     <?php
     }

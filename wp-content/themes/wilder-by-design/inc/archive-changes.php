@@ -9,33 +9,13 @@ function add_img_wrapper_start()
   echo '<div class="archive-img-wrap">';
 }
 add_action('woocommerce_before_shop_loop_item_title', 'add_img_wrapper_start', 5, 2);
-// Close the div that we just added
 function add_img_wrapper_close()
 {
   $fully_personalised = get_field('pers_photo_required') || get_field('pers_required');
   $optional_personalisation = get_field('pers_product') && !get_field('pers_required') && !get_field('pers_photo_required');
 
   if ($fully_personalised) echo '<p class="personalisation-notice">Personalised</p>';
-
   if ($optional_personalisation) echo '<p class="personalisation-notice">Optional personalisation</p>';
-
-  global $product;
-
-  // get number of colour variations
-  $colours = [];
-  if ($product->is_type('variable')) {
-    $variations = $product->get_available_variations();
-    foreach ($variations as $variation) {
-      if (array_key_exists('attribute_pa_color', $variation['attributes'])) {
-        $colours[] = $variation['attributes']['attribute_pa_color'];
-      }
-    }
-  }
-
-  $uniqueColours = array_unique($colours);
-  $noOfColours = count($uniqueColours);
-
-  if ($noOfColours > 1) echo '<p class="personalisation-notice">Available in ' . $noOfColours . ' colours</p>';
 
   echo '</div>';
 }
