@@ -354,6 +354,7 @@
 
     #wcpay-payment-request-button-separator {
       margin: var(--scale-16-32);
+      max-width: 100%;
     }
 
     &.processing {
@@ -410,4 +411,15 @@
 
 #wcpay-payment-request-button-separator {
   margin-bottom: var(--scale-16-32) !important;
+}
+
+.review {
+  border: 1px solid var(--c-grey);
+  padding: var(--scale-8-16);
+  border-radius: var(--border-radius-small);
+
+  .review-author {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-small);
+  }
 }

@@ -183,6 +183,55 @@ add_filter('acf/location/rule_match/wc_prod_attr', function ($match, $rule, $opt
 	return $match;
 }, 10, 3);
 
+// Get 5 star reviews
+// USAGE: [woo_reviews] or [woo_reviews limit="3"] for 3 random reviews for example.
+function get_random_five_stars_products_reviews($atts)
+{
+	// Extract shortcode attributes
+	extract(shortcode_atts(array(
+		'limit' => 5, // number of reviews to be displayed by default
+	), $atts, 'woo_reviews'));
+
+	$comments = get_comments(array(
+		'status'      => 'approve',
+		'post_status' => 'publish',
+		'post_type'   => 'product',
+		'meta_query'  => array(array(
+			'key'     => 'rating',
+			'value'   => '5',
+		)),
+	));
+
+	shuffle($comments);
+
+	$comments = array_slice($comments, 0, $limit);
+
+	$html = '<ul class="products-reviews">';
+	foreach ($comments as $comment) {
+		$rating = intval(get_comment_meta($comment->comment_ID, 'rating', true));
+		$html .= '<li class="review">';
+		$html .= '<div>' . get_the_title($comment->comment_post_ID) . '</div>';
+		if ($rating > 4) $html .= wc_get_rating_html($rating);
+		$html .= '<div>' . $comment->comment_content . '</div>';
+		$html .= "<div>Posted By :" . $comment->comment_author . " On " . $comment->comment_date . "</div>";
+		$html .= '</li>';
+	}
+	return $html . '</ul>';
+}
+add_shortcode('woo_reviews', 'get_random_five_stars_products_reviews');
+
+function get_review()
+{
+	$html = '<ul>';
+	$html .= '<li class="review">';
+	$html .= wc_get_rating_html(5);
+	$html .= '<div class="review-text">Great design and excellent quality. Highly recommended.</div>';
+	$html .= '<div class="review-author">A Fresier</div>';
+	$html .= '</li>';
+	echo $html . '</ul>';
+}
+add_action('woocommerce_review_order_after_submit', 'get_review', 10);
+
 require get_template_directory() . '/inc/product-custom-fields.php';
 require get_template_directory() . '/inc/archive-changes.php';
 require get_template_directory() . '/inc/single-changes.php';
