@@ -157,7 +157,8 @@ function rudr_radio_variations($html, $args)
 //   printf('<button id="sbw_wc-adding-button" type="submit" name="sbw-wc-buy-now" value="%d" class="single_add_to_cart_button buy_now_button button alt">%s</button>', $product->get_ID(), esc_html__('Buy Now', 'sbw-wc'));
 // }
 // add_action('woocommerce_after_add_to_cart_button', 'sbw_wc_add_buy_now_button_single');
-// /*** Handle for click on buy now ***/ function sbw_wc_handle_buy_now()
+// /*** Handle for click on buy now ***/
+// function sbw_wc_handle_buy_now()
 // {
 //   if (!isset($_REQUEST['sbw-wc-buy-now'])) {
 //     return false;
