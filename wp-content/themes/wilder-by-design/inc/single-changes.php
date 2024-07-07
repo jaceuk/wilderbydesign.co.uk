@@ -30,15 +30,11 @@ function woocommerce_custom_product_description($content)
   // get parent category
   global $post;
 
-  $category = get_term_by('slug', 'collections', 'product_cat');
-  $collections_cat_id = $category->term_id;
-
-  $cat_id = '';
   $categories = get_the_terms($post->ID, 'product_cat');
 
   foreach ($categories as $category) {
     // skip if category is a collection
-    if ($category->parent !== $collections_cat_id) $cat_id =  $category->term_id;
+    $cat_id =  $category->term_id;
   }
 
   $tags = get_the_terms($post->ID, 'product_tag');
@@ -149,3 +145,33 @@ function rudr_radio_variations($html, $args)
 
   return $html . $radios;
 }
+
+
+/* Dynamic Button for Simple & Variable Product */
+/**
+ * Main Functions
+ */
+// function sbw_wc_add_buy_now_button_single()
+// {
+//   global $product;
+//   printf('<button id="sbw_wc-adding-button" type="submit" name="sbw-wc-buy-now" value="%d" class="single_add_to_cart_button buy_now_button button alt">%s</button>', $product->get_ID(), esc_html__('Buy Now', 'sbw-wc'));
+// }
+// add_action('woocommerce_after_add_to_cart_button', 'sbw_wc_add_buy_now_button_single');
+// /*** Handle for click on buy now ***/ function sbw_wc_handle_buy_now()
+// {
+//   if (!isset($_REQUEST['sbw-wc-buy-now'])) {
+//     return false;
+//   }
+//   WC()->cart->empty_cart();
+//   $product_id = absint($_REQUEST['sbw-wc-buy-now']);
+//   $quantity = absint($_REQUEST['quantity']);
+//   if (isset($_REQUEST['variation_id'])) {
+//     $variation_id = absint($_REQUEST['variation_id']);
+//     WC()->cart->add_to_cart($product_id, $quantity, $variation_id);
+//   } else {
+//     WC()->cart->add_to_cart($product_id, $quantity);
+//   }
+//   wp_safe_redirect(wc_get_checkout_url());
+//   exit;
+// }
+// add_action('wp_loaded', 'sbw_wc_handle_buy_now');
