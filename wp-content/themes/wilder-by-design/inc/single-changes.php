@@ -33,7 +33,6 @@ function woocommerce_custom_product_description($content)
   $categories = get_the_terms($post->ID, 'product_cat');
 
   foreach ($categories as $category) {
-    // skip if category is a collection
     $cat_id =  $category->term_id;
   }
 
@@ -46,7 +45,7 @@ function woocommerce_custom_product_description($content)
   if (!empty($tags) && !is_wp_error($tags)) {
     foreach ($tags as $tag) {
       $tag_type = get_field('tag_type',  $tag->taxonomy . '_' . $tag->term_id);
-      if (strtolower($tag_type) === 'design') {
+      if (strtolower($tag_type) === 'design' || strtolower($tag_type) === 'collection') {
         $content .= wpautop($tag->description);
       }
     }

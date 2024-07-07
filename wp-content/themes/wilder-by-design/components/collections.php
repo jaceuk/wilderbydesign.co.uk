@@ -12,7 +12,6 @@ $args = array(
   'taxonomy' => 'product_tag',
   'orderby' => 'id',
   'order'   => 'DESC',
-  'number' => 4,
   'meta_key'      => 'tag_type',
   'meta_value'    => 'Collection'
 
