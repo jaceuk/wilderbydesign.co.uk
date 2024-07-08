@@ -45,16 +45,15 @@ function woocommerce_custom_product_description($content)
   if (!empty($tags) && !is_wp_error($tags)) {
     foreach ($tags as $tag) {
       $tag_type = get_field('tag_type',  $tag->taxonomy . '_' . $tag->term_id);
-      if (strtolower($tag_type) === 'design' || strtolower($tag_type) === 'collection') {
+      if (strtolower($tag_type) === 'design') {
         $content .= wpautop($tag->description);
       }
     }
   }
 
   // show the product bullet points
-  $content .= '<h3>' . get_field('product_details_title', 'option') . '</h3>';
+  $content .= '<h3>Details</h3>';
   $content .= get_field('bullet_points_for_the_single_product_page', 'product_cat_' . $cat_id);
-  $content .= get_field('made_to_order_message', 'option');
 
   return $content;
 }
