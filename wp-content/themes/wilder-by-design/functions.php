@@ -226,25 +226,10 @@ function custom_add_to_cart_message_html($message, $products)
 add_filter('wc_add_to_cart_message_html', 'custom_add_to_cart_message_html', 10, 2);
 
 // change variabe price format
-function change_variable_products_price_display($price, $product)
+function asnp_woocommerce_format_price_range($price, $from, $to)
 {
-
-	// Only for variable products type
-	if (!$product->is_type('variable')) return $price;
-
-	$prices = $product->get_variation_prices(true);
-
-	if (empty($prices['price']))
-		return apply_filters('woocommerce_variable_empty_price_html', '', $product);
-
-	$min_price = current($prices['price']);
-	$max_price = end($prices['price']);
-	$prefix_html = '<span class="price-prefix">' . __('From ') . '</span>';
-
-	$prefix = $min_price !== $max_price ? $prefix_html : ''; // HERE the prefix
-
-	return apply_filters('woocommerce_variable_price_html', $prefix . wc_price($min_price) . $product->get_price_suffix(), $product);
+	return sprintf(__('From: %s', 'woocommerce'), is_numeric($from) ? wc_price($from) : $from);
 }
-add_filter('woocommerce_get_price_html', 'change_variable_products_price_display', 10, 2);
+add_filter('woocommerce_format_price_range', 'asnp_woocommerce_format_price_range', 100, 3);
 
 require get_template_directory() . '/inc/global-vars.php';
