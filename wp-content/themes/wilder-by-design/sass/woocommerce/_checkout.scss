@@ -311,7 +311,8 @@
       gap: var(--scale-16-32);
     }
 
-    label[for='payment_method_woocommerce_payments'] {
+    label[for='payment_method_woocommerce_payments']
+      label[for='payment_method_ppcp'] {
       font-size: var(--fs-h3);
       font-weight: var(--fw-bold);
     }
@@ -354,7 +355,6 @@
 
     #wcpay-payment-request-button-separator {
       margin: var(--scale-16-32);
-      max-width: 100%;
     }
 
     &.processing {
@@ -379,18 +379,24 @@
   border-radius: var(--border-radius-small);
 
   li {
-    display: flex;
+    display: grid;
     gap: var(--scale-8-16);
     align-items: center;
-    flex-wrap: wrap;
+    // grid-template-columns: 24px auto;
+    grid-template-rows: auto;
   }
 
   .payment_box {
     width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
-  label[for='payment_method_woocommerce_payments'] {
+  label[for='payment_method_woocommerce_payments'],
+  label[for='payment_method_ppcp'] {
     width: 100%;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
   }
 }
 
