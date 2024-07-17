@@ -315,6 +315,10 @@
     .place-order {
       display: grid;
       gap: var(--scale-16-32);
+
+      .form-row {
+        margin: 0;
+      }
     }
 
     label[for='payment_method_woocommerce_payments']
@@ -435,4 +439,16 @@
     font-weight: var(--fw-bold);
     font-size: var(--fs-small);
   }
+}
+
+.woocommerce-privacy-policy-text {
+  padding-bottom: var(--scale-16-32);
+}
+
+#mailpoet_woocommerce_checkout_optin_present_field {
+  display: none;
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+  display: none;
 }

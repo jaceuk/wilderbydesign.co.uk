@@ -232,6 +232,14 @@ function get_review()
 }
 add_action('woocommerce_review_order_after_submit', 'get_review', 10);
 
+function privacy_terms_notice()
+{
+	$html = '<div><small>';
+	$html .= 'By placing this order, you agree to our <a href="/terms-of-service">Terms of Service</a> and understand our <a href="/privacy-policy">Privacy Policy</a>.';
+	echo $html . '</small></div>';
+}
+add_action('woocommerce_review_order_before_submit', 'privacy_terms_notice', 10);
+
 require get_template_directory() . '/inc/product-custom-fields.php';
 require get_template_directory() . '/inc/archive-changes.php';
 require get_template_directory() . '/inc/single-changes.php';
