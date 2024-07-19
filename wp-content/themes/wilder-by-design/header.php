@@ -41,6 +41,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<?php
+	$site_url = site_url();
+	if ($site_url === 'http://dev.wilderbydesign.co.uk') get_template_part('components/dev-banner');
+	?>
+
 	<?php
 	global $LAUNCH_EVENT;
 	if ($LAUNCH_EVENT) get_template_part('components/top-banner');

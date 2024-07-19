@@ -59,6 +59,11 @@ get_template_part('components/benefits');
 
 <?php wp_footer(); ?>
 
+<?php
+$site_url = site_url();
+if ($site_url === 'http://dev.wilderbydesign.co.uk') get_template_part('components/dev-banner');
+?>
+
 </body>
 
 </html>
