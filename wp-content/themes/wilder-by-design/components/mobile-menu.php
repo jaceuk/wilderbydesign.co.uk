@@ -1,4 +1,5 @@
 <ul>
+  <li class="mobile-currency-switcher"><?php dynamic_sidebar('currency-switcher'); ?></li>
   <li><a href="/">Home</a></li>
   <li><span class="title">Clothing</span>
     <ul>

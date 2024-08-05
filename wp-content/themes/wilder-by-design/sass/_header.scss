@@ -138,7 +138,7 @@
       color: var(--c-nearly-black) !important;
 
       option {
-        color: var(--c-nearly-black);
+        color: var(--c-nearly-black) !important;
       }
     }
   }
@@ -282,6 +282,20 @@ nav button {
 
     ul ul {
       margin-left: var(--s-16);
+    }
+  }
+}
+
+.mobile-currency-switcher .widget {
+  margin-left: auto;
+
+  select[name='currency'] {
+    padding: var(--s-8) var(--s-32) var(--s-8) var(--s-8) !important;
+    color: var(--c-nearly-black) !important;
+    border-color: var(--c-nearly-black) !important;
+
+    option {
+      color: var(--c-nearly-black) !important;
     }
   }
 }

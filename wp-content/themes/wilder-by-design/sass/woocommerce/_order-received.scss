@@ -2,6 +2,7 @@
   .inner-wrapper {
     display: grid;
     gap: var(--scale-16-32);
+    justify-content: normal;
 
     .woocommerce-order {
       display: grid;
