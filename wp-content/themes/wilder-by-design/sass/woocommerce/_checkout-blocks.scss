@@ -13,3 +13,19 @@ button.wc-block-components-checkout-place-order-button {
 .wc-block-components-express-payment.wc-block-components-express-payment--checkout {
   margin-top: var(--scale-16-32);
 }
+
+.wc-block-components-address-form__address_2-toggle {
+  box-shadow: none;
+  padding: 0;
+}
+
+.review {
+  border: 1px solid var(--c-primary-button);
+  padding: var(--scale-8-16);
+  border-radius: var(--border-radius-small);
+
+  .review-author {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-small);
+  }
+}
