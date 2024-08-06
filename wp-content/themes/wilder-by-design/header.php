@@ -106,7 +106,11 @@
 					get_template_part('components/desktop-menu');
 					?>
 
-					<div class="currency-switcher"><?php dynamic_sidebar('currency-switcher'); ?></div>
+					<div class="currency-switcher">
+						<?php
+						echo do_shortcode('[woo_multi_currency_layout5 flag_size=0.4]');
+						?>
+					</div>
 				</div>
 			</div>
 		</nav>
