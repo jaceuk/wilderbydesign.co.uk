@@ -44,7 +44,7 @@
 
 	<?php
 	$site_url = site_url();
-	if ($site_url === 'http://dev.wilderbydesign.co.uk') get_template_part('components/dev-banner');
+	if ($site_url === 'https://dev.wilderbydesign.co.uk') get_template_part('components/dev-banner');
 	?>
 
 	<?php
@@ -138,3 +138,8 @@
 			</nav>
 		</div>
 	</dialog>
+
+
+
+	<?php // get_sidebar('filters');
+	?>

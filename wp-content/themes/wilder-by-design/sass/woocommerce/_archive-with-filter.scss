@@ -1,0 +1,280 @@
+.shop {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: var(--scale-32-64);
+  }
+
+  .filters-toggle {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &.close-button {
+      border-radius: 100px;
+      border: 1px solid var(--c-nearly-black);
+      background: none;
+      padding: var(--s-4);
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: var(--scale-16-32);
+      right: var(--scale-16-32);
+
+      svg {
+        height: 24px;
+        width: 24px;
+        fill: var(--c-nearly-black);
+      }
+    }
+
+    &.show-items {
+      box-shadow: none;
+      font-size: var(--fs-body);
+      color: var(--c-nearly-black);
+      background-color: var(--c-secondary-button);
+      border: 1px solid var(--c-button-border);
+      font-weight: var(--fw-medium);
+      margin-top: calc(var(--s-16) * -1);
+    }
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .inner-wrapper {
+    padding: 0;
+    display: grid;
+    gap: var(--scale-16-32);
+
+    // applied filters
+    .berocket_single_filter_widget {
+      .bapf_sfa_inline {
+        margin: 0;
+
+        .berocket_aapf_widget_selected_filter {
+          display: flex;
+          align-items: center;
+          gap: var(--scale-8-16);
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .berocket_aapf_widget_selected_area ul,
+          ul {
+            display: flex;
+            align-items: center;
+            gap: var(--scale-8-16);
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            li {
+              margin: 0 !important;
+
+              a {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+
+      h3 {
+        display: none;
+      }
+
+      .bapf_sfa_taxonomy {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .woocommerce-result-count {
+    margin: 0;
+  }
+
+  .woocommerce-ordering {
+    padding: 0;
+  }
+
+  .shop-results-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--scale-16-32);
+
+    .woocommerce-result-count {
+      margin-right: var(--scale-8-16);
+    }
+  }
+
+  .woocommerce-breadcrumb {
+    margin: 0;
+    padding-top: var(--scale-16-32);
+  }
+
+  .product {
+    margin: 0;
+  }
+
+  .product-filters {
+    display: none;
+
+    // desktop filters
+    @media (min-width: 768px) {
+      display: block;
+      position: relative;
+      border: none;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      background-color: transparent;
+      padding: var(--scale-16-32) 0 0 0;
+      max-height: fit-content;
+      min-width: 200px;
+
+      .close-button,
+      a[aria-label='Home'] {
+        display: none;
+      }
+    }
+
+    // mobile filters
+    &.visible {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background-color: var(--c-white);
+      width: 100%;
+      padding: var(--scale-16-32);
+      margin: 0;
+      border-radius: 0;
+      max-width: 100%;
+      border: none;
+      height: 100%;
+
+      .filters {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+      }
+    }
+
+    // both mobile and desktop filters
+    .filters {
+      display: grid;
+      gap: var(--scale-24-32);
+      grid-auto-rows: min-content;
+
+      .bapf_sfilter {
+        margin: 0;
+        display: grid;
+        gap: var(--s-16);
+
+        &[data-taxonomy='pa_size'] {
+          li {
+            display: flex;
+            gap: var(--s-4);
+            justify-items: center;
+            flex-direction: row;
+            width: 100%;
+          }
+
+          input {
+            margin: 0;
+          }
+        }
+
+        &[data-taxonomy='product_cat'] {
+          li {
+            width: 100%;
+          }
+        }
+
+        .bapf_head {
+          h3 {
+            font-size: var(--fs-h4);
+            font-weight: var(--fw-semi-bold);
+          }
+        }
+
+        .bapf_body {
+          ul {
+            display: flex;
+            align-items: center;
+            gap: var(--s-8);
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            li {
+              label {
+                font-size: var(--fs-body);
+                font-weight: var(--fw-regular);
+              }
+
+              .bapf_clr_span {
+                margin: 0;
+                border-radius: var(--border-radius-small);
+                border: 1px solid var(--c-button-border);
+                transform: none;
+              }
+
+              &.checked {
+                .bapf_clr_span {
+                  border: 2px solid var(--c-nearly-black);
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid var(--c-white);
+                    border-radius: calc(var(--border-radius-small) - 2px);
+                  }
+                }
+              }
+
+              input[type='checkbox'] {
+                border: 1px solid var(--c-button-border);
+                border-radius: calc(var(--border-radius-extra-small));
+                width: 24px;
+                height: 24px;
+
+                &:checked {
+                  &:after {
+                    width: 8px;
+                    height: 14px;
+                    left: 6px;
+                    top: 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .bapf_button {
+          box-shadow: none;
+          font-size: var(--fs-body);
+          width: 100%;
+          font-weight: var(--fw-regular);
+          margin-top: var(--s-16);
+        }
+      }
+    }
+  }
+}

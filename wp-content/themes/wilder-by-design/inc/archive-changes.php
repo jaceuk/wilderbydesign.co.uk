@@ -30,11 +30,26 @@ function new_loop_shop_per_page($cols)
 {
   // $cols contains the current number of products per page based on the value stored on Options –> Reading
   // Return the number of products you wanna show per page.
-  $cols = 16;
+  $cols = 18;
   return $cols;
 }
 
-/**
- * Show a dropdown menu on product archive pages for variable products with variations.
- * When a user selects a product variable from the dropdown menu the product should be added to the cart.
- */
+
+// define the woocommerce_pagination_args callback
+function filter_woocommerce_pagination_args($array)
+{
+  $array = array(
+    'base' => esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false)))),
+    'format' => '',
+    'current' => max(1, get_query_var('paged')),
+    'prev_text' => '←',
+    'next_text' => '→',
+    'type' => 'list',
+    'end_size' => 1,
+    'mid_size' => 1
+  );
+  return $array;
+};
+
+// add the filter
+add_filter('woocommerce_pagination_args', 'filter_woocommerce_pagination_args', 10, 1);
