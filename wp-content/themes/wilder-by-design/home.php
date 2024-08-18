@@ -11,8 +11,8 @@ get_header();
   <?php
   global $LAUNCH_EVENT;
   if ($LAUNCH_EVENT) {
-    // get_template_part('components/hero-halloween');
-    get_template_part('components/hero-launch-event');
+    get_template_part('components/hero-halloween');
+    // get_template_part('components/hero-launch-event');
   } else {
     get_template_part('components/hero');
   }

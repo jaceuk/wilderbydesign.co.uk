@@ -138,8 +138,3 @@
 			</nav>
 		</div>
 	</dialog>
-
-
-
-	<?php // get_sidebar('filters');
-	?>
