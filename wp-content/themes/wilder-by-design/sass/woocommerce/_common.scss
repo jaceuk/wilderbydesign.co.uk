@@ -228,7 +228,7 @@ li.product {
     top: 0;
     position: absolute;
     left: 0;
-    color: var(--c-primary-button);
+    color: var(--c-primary-button) !important;
   }
 }
 

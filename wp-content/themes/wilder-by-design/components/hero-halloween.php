@@ -8,6 +8,7 @@ $args = array(
   'meta_key' => 'total_sales',
   'orderby' => 'meta_value_num',
   'posts_per_page' => 8,
+  'post_status' => 'publish',
   'tax_query' => array(array(
     'taxonomy' => 'product_tag',
     'field' => 'slug',
@@ -22,11 +23,12 @@ $right_products = array_slice($loop->posts, 4, 4);
 <section class="hero-section halloween">
   <div class="inner-wrapper">
     <div class="title-with-text">
-      <h1 class="super">Halloween!</h1>
-      <p class="h1">Check out our spooktacular Halloween range</p>
+      <h1 class="hero">Everyday is a treat</h1>
+      <p class="h2">Halloween treats for dog lovers</p>
 
       <div class="actions">
-        <a href="/product-tag/halloween/" class="button">Shop now</a>
+        <a href="/product-tag/halloween-dog-t-shirts/" class="button">Shop t-shirts</a>
+        <a href="/product-tag/halloween-dog-mugs/" class="button">Shop mugs</a>
       </div>
     </div>
 

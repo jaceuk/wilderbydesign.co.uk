@@ -107,7 +107,7 @@
 }
 
 .halloween {
-  background: linear-gradient(to bottom right, #cd5600, #6a2d00) !important;
+  background: linear-gradient(to bottom right, #d25800, #994000) !important;
   padding: var(--scale-32-64) 0;
 
   .title-with-text {
@@ -128,9 +128,11 @@
 
   .actions {
     padding-top: var(--scale-8-16);
+    display: flex;
+    align-items: center;
+    gap: var(--s-16);
 
     .button {
-      font-weight: var(--fw-bold);
       white-space: nowrap;
 
       &:hover {

@@ -12,6 +12,7 @@ button,
   outline-offset: -2px;
   text-decoration: none;
   transition: var(--transition);
+  font-weight: var(--fw-bold);
 
   &:hover {
     box-shadow: none;

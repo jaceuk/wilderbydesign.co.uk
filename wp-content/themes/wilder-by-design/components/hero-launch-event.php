@@ -8,6 +8,7 @@ $args = array(
   'meta_key' => 'total_sales',
   'orderby' => 'meta_value_num',
   'posts_per_page' => 8,
+  'post_status' => 'publish',
 );
 $loop = new WP_Query($args);
 $left_products = array_slice($loop->posts, 0, 4);

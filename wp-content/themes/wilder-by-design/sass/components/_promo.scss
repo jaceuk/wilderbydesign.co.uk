@@ -1,0 +1,57 @@
+.promo-row {
+  display: grid;
+  gap: var(--scale-16-32);
+  margin-bottom: var(--scale-32-64);
+  margin-top: calc(var(--scale-32-64) * -1);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.promo {
+  background: red;
+  border-radius: var(--border-radius-small);
+  position: relative;
+  border: 1px solid var(--c-grey);
+  overflow: hidden;
+  height: 150px;
+
+  @media (min-width: 768px) {
+    height: 200px;
+  }
+
+  @media (min-width: 1000px) {
+    height: 302px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--scale-8-16);
+    background-color: var(--c-black-60);
+    display: grid;
+    gap: var(--scale-16-32);
+    align-items: center;
+    grid-template-columns: 1fr auto;
+  }
+
+  &.halloween-promo {
+    h2 {
+      font-family: 'Risque', serif;
+      color: var(--c-white);
+      font-weight: var(--fw-regular);
+      padding: 0;
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8),
+        0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

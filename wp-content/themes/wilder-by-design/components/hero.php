@@ -8,10 +8,11 @@ $args = array(
   'meta_key' => 'total_sales',
   'orderby' => 'meta_value_num',
   'posts_per_page' => 8,
+  'post_status' => 'publish',
 );
-$loop = new WP_Query( $args );
-$left_products = array_slice($loop->posts,0,4);
-$right_products = array_slice($loop->posts,4,4);
+$loop = new WP_Query($args);
+$left_products = array_slice($loop->posts, 0, 4);
+$right_products = array_slice($loop->posts, 4, 4);
 ?>
 
 <section class="hero-section">
@@ -22,10 +23,10 @@ $right_products = array_slice($loop->posts,4,4);
       <div class="col">
         <?php
         $size = 'medium';
-        foreach($left_products as $product) {
-        $id = $product->ID;
-        $url = $product->guid;
-        $thumbnail_id = get_post_thumbnail_id($id);
+        foreach ($left_products as $product) {
+          $id = $product->ID;
+          $url = $product->guid;
+          $thumbnail_id = get_post_thumbnail_id($id);
         ?>
           <a href="<?php echo $url; ?>" class="tile">
             <?php
@@ -44,10 +45,10 @@ $right_products = array_slice($loop->posts,4,4);
       <div class="col">
         <?php
         $size = 'medium';
-        foreach($right_products as $product) {
-        $id = $product->ID;
-        $url = $product->guid;
-        $thumbnail_id = get_post_thumbnail_id($id);
+        foreach ($right_products as $product) {
+          $id = $product->ID;
+          $url = $product->guid;
+          $thumbnail_id = get_post_thumbnail_id($id);
         ?>
           <a href="<?php echo $url; ?>" class="tile">
             <?php
