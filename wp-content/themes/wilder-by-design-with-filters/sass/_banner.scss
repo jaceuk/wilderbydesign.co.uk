@@ -1,0 +1,26 @@
+.strapline-wrapper {
+  background: var(--c-white);
+
+  .strapline {
+    border-radius: var(--border-radius-small);
+    padding: var(--scale-16-32) 0;
+    color: var(--c-nearly-black);
+
+    h1 {
+      font-size: var(--fs-h2);
+
+      @media (min-width: 768px) {
+        font-size: var(--fs-h1);
+      }
+    }
+
+    p {
+      margin: 0 !important;
+    }
+
+    .button {
+      background-color: var(--c-secondary-button);
+      margin: 0 0 0 auto;
+    }
+  }
+}

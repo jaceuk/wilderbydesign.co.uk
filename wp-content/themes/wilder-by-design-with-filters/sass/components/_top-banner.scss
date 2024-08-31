@@ -1,0 +1,14 @@
+.top-banner {
+  padding: var(--scale-8-16) 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 1),
+    rgba(129, 129, 129, 1)
+  );
+  text-transform: uppercase;
+
+  .inner-wrapper {
+    text-align: center;
+    color: var(--c-white);
+  }
+}

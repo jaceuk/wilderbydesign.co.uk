@@ -1,0 +1,43 @@
+.promo-row {
+  display: grid;
+  gap: var(--scale-16-32);
+  margin-bottom: var(--scale-32-64);
+  margin-top: calc(var(--scale-16-32) * -1);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+a.promo {
+  display: grid;
+  gap: var(--scale-8-16);
+  width: 100%;
+
+  img {
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--c-grey);
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+
+    @media (min-width: 768px) {
+      height: 200px;
+    }
+
+    @media (min-width: 1000px) {
+      height: 250px;
+    }
+  }
+
+  &.halloween-promo {
+    text-decoration: none;
+
+    h2 {
+      font-family: 'Risque', serif;
+      font-weight: var(--fw-regular);
+      text-align: center;
+      margin: 0;
+    }
+  }
+}

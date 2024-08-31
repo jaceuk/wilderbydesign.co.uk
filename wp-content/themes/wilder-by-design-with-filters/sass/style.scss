@@ -1,0 +1,33 @@
+/*!
+Theme Name: Wilder by Design
+Author:
+Author URI:
+Description:
+Version: 2.0.0
+*/
+
+@import 'reset';
+@import 'normalize';
+@import 'vars';
+@import 'font-face';
+@import 'typography';
+@import 'header';
+@import 'footer';
+
+@import 'buttons';
+@import 'forms';
+@import 'home';
+@import 'collections';
+@import 'page';
+@import 'cookie-notice';
+@import 'banner';
+@import 'dialog';
+@import 'components/components';
+@import 'global';
+
+@import 'wpforms';
+@import 'lightweight-accordion';
+@import 'mailpoet';
+@import 'curcy';
+
+@import 'woocommerce/woocommerce';

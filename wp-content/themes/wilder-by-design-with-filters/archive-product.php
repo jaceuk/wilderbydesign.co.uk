@@ -17,7 +17,7 @@ get_header();
 
 <div class="shop inner-wrapper">
 
-	<?php get_sidebar('filters'); ?>
+	<?php get_sidebar('filters');	?>
 
 	<div>
 		<div> <!-- Change this depending on your theme’s grid -->

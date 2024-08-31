@@ -1,0 +1,71 @@
+.wpforms-form {
+  display: grid;
+  gap: var(--s-8);
+}
+
+.wpforms-container {
+  margin-bottom: 0;
+  max-width: var(--max-readable-width);
+  border: 1px solid var(--c-grey);
+  border-radius: var(--border-radius-med);
+  padding: var(--scale-8-16);
+
+  div.wpforms-field {
+    padding: 0;
+    display: grid;
+    gap: var(--s-8);
+  }
+
+  label.wpforms-field-label {
+    font-weight: var(--fw-medium);
+    display: inline-block;
+  }
+
+  input[type='email'].wpforms-field-medium {
+    max-width: 100%;
+  }
+
+  div.wpforms-submit-container {
+    padding: 0;
+
+    button.wpforms-submit {
+      padding: var(--scale-8-16) var(--scale-16-32);
+      border-color: var(--c-grey-dark);
+      background: var(--c-nearly-black);
+      color: var(--c-white);
+      border-radius: 100px;
+      transition: var(--transition);
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.wpforms-field-container {
+  display: grid;
+  gap: var(--scale-16-24);
+}
+
+.wpforms-confirmation-container {
+  background: var(--c-success-pale);
+  color: var(--c-success-dark);
+  padding: var(--scale-16-24);
+  border: 1px solid var(--c-success-dark);
+  border-left: none;
+  border-right: none;
+}
+
+.wpforms-error-container {
+  background: var(--c-error-pale);
+  color: var(--c-error-dark);
+  padding: var(--scale-16-24);
+  border: 1px solid var(--c-error-dark);
+  border-left: none;
+  border-right: none;
+}
+
+.page:not(.woocommerce-account) .wpforms-confirmation-container p {
+  margin: 0;
+}

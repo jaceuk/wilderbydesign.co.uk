@@ -1,0 +1,34 @@
+button,
+.button,
+.products .button {
+  padding: var(--scale-8-16) var(--scale-16-32);
+  border-radius: 100px;
+  box-shadow: var(--box-shadow-button);
+  border: 1px solid var(--c-grey-dark);
+  background-color: var(--c-white);
+  color: var(--c-nearly-black);
+  height: fit-content;
+  display: inline-block;
+  outline-offset: -2px;
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: var(--fw-bold);
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &.product_type_variable.add_to_cart_button,
+  &.product_type_simple.add_to_cart_button {
+    padding: var(--s-8) var(--scale-8-16);
+    font-size: var(--fs-small);
+  }
+
+  &.product_type_simple.add_to_cart_button {
+    color: var(--c-nearly-black);
+    background-color: var(--c-primary-button);
+    border: 2px solid var(--c-button-border);
+    border-radius: 500px;
+    font-weight: var(--fw-medium);
+  }
+}

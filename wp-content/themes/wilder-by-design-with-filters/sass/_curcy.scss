@@ -1,0 +1,50 @@
+.woo-multi-currency {
+  &.wmc-shortcode.plain-vertical {
+    .wmc-currency-wrapper {
+      span.wmc-current-currency {
+        padding: var(--s-8);
+        font-weight: var(--fw-regular);
+        font-size: var(--fs-small);
+        display: flex;
+        align-items: center;
+        gap: var(--s-8);
+
+        .wmc-current-currency-arrow {
+          position: relative;
+          padding: 0 !important;
+          top: 0;
+          right: 0;
+          transform: none;
+          line-height: 1em;
+        }
+
+        span {
+          padding: 0 !important;
+        }
+      }
+
+      .wmc-sub-currency {
+        .wmc-currency {
+          padding: var(--s-8);
+
+          a {
+            display: flex;
+            align-items: center;
+            gap: var(--s-8);
+
+            span {
+              font-weight: var(--fw-regular);
+              font-size: var(--fs-small);
+              padding: 0;
+              line-height: 1em;
+
+              &:hover {
+                font-weight: var(--fw-regular);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

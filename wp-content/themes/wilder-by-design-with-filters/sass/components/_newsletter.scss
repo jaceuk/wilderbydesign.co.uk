@@ -1,0 +1,12 @@
+.newsletter {
+  display: grid;
+  gap: var(--scale-8-16);
+  padding: var(--scale-16-32);
+  border-radius: var(--border-radius-med);
+  box-shadow: var(--box-shadow-card);
+  background: var(--c-white);
+
+  .wpforms-container {
+    margin-bottom: 0;
+  }
+}

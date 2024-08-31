@@ -1,0 +1,32 @@
+.benefits-section-slim {
+  padding: var(--scale-16-32) 0;
+  margin-top: 0;
+
+  .inner-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--scale-16-32);
+  }
+
+  .benefit {
+    display: flex;
+    gap: var(--scale-8-16);
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+
+      svg {
+        fill: var(--c-nearly-black);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.page:not(.woocommerce-account) {
+  p,
+  h2 {
+    margin-bottom: var(--scale-16-32);
+
+    &.woocommerce-loop-product__title,
+    &.form-row {
+      margin: 0;
+    }
+  }
+
+  section {
+    h2,
+    p {
+      margin: 0;
+    }
+  }
+
+  ul.text-list {
+    padding-left: var(--scale-16-32);
+    display: grid;
+    gap: var(--s-16);
+    margin-bottom: var(--scale-16-32);
+
+    li {
+      list-style-type: disc;
+    }
+  }
+}

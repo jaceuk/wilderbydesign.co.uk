@@ -19,11 +19,9 @@ body {
 }
 
 .shop {
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 250px auto;
-    gap: var(--scale-32-64);
-  }
+  display: grid;
+  grid-template-columns: 250px auto;
+  gap: var(--scale-32-64);
 
   .filters-toggle {
     display: block;
