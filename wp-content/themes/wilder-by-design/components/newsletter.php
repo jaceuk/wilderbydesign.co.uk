@@ -1,6 +1,6 @@
 <section class="newsletter">
-  <h2>Signup for exclusive deals</h2>
-  <p>Sign up to our newsletter to stay up to date on new arrivals and get exclusive offers. You can cancel at any time.</p>
+  <h2>10% OFF, just for you</h2>
+  <p>Sign up to receive your exclusive discount, and keep up to date on our latest products & offers!</p>
 
   <?php
   echo do_shortcode('[mailpoet_form id="1"]');
