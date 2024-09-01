@@ -1,3 +1,8 @@
+.mailpoet_form_popup_overlay.active {
+  display: flex !important;
+  align-items: center;
+}
+
 .mailpoet_form {
   .mailpoet_submit {
     padding: var(--scale-8-16) var(--scale-16-32) !important;
@@ -19,6 +24,12 @@
     border: 1px solid var(--c-grey-med);
     outline-offset: -2px;
     width: 100%;
+
+    &.parsley-error {
+      background: var(--c-error-pale);
+      color: var(--c-error-dark);
+      border: 1px solid var(--c-error-dark);
+    }
   }
 
   .mailpoet_validate_success {
@@ -64,4 +75,10 @@
       box-shadow: none;
     }
   }
+}
+
+.mailpoet_form_popup {
+  padding: var(--scale-8-16) !important;
+  border-radius: var(--border-radius-med) !important;
+  max-height: fit-content !important;
 }
