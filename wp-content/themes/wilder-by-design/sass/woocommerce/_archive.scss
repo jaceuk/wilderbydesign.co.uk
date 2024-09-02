@@ -61,5 +61,9 @@
   max-width: var(--max-readable-width);
   display: grid;
   gap: var(--scale-8-16);
-  margin: var(--scale-8-16) 0 var(--scale-16-32) 0;
+  margin-top: var(--scale-8-16);
+}
+
+.shop-results-options {
+  margin-top: var(--scale-16-32);
 }
