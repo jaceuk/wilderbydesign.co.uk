@@ -52,21 +52,6 @@ function filter_woocommerce_pagination_args($array)
 };
 add_filter('woocommerce_pagination_args', 'filter_woocommerce_pagination_args', 10, 1);
 
-// show random thumnail from product gallery
-// function modify_woocommerce_product_get_image($image, $product, $size, $attr)
-// {
-//   $image_ids = $product->get_gallery_image_ids();
-//   if ($image_ids) {
-//     $image_ids = array_merge($image_ids, array($product->get_image_id()));
-//     $key = array_rand($image_ids);
-//     $id = $image_ids[$key];
-//     $image = wp_get_attachment_image($id, $size, false, $attr);
-//   }
-//   return $image;
-// }
-// add_filter('woocommerce_product_get_image', 'modify_woocommerce_product_get_image', 99, 4);
-
-
 // show a random variation thumbnail for variable products
 // remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 // add_action('woocommerce_before_shop_loop_item_title', 'set_product_image', 10);
