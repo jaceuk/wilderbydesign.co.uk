@@ -1,6 +1,9 @@
 <ul>
   <li class="mobile-currency-switcher"><?php echo do_shortcode('[woo_multi_currency_layout5 flag_size=0.4]'); ?></li>
   <li><a href="/">Home</a></li>
+
+  <li><a href="/shop-by-animal">Shop by Animal</a></li>
+
   <li><span class="title">Clothing</span>
     <ul>
       <?php

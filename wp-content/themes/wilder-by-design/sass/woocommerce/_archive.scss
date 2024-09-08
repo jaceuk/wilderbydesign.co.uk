@@ -61,7 +61,7 @@
   max-width: var(--max-readable-width);
   display: grid;
   gap: var(--scale-8-16);
-  margin-top: var(--scale-8-16);
+  margin: var(--scale-8-16) 0;
 }
 
 .shop-results-options {

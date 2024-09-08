@@ -256,10 +256,7 @@ nav button {
     .title {
       font-size: var(--s-18);
       font-weight: var(--fw-semi-bold);
-    }
-
-    a {
-      font-size: var(--s-18);
+      margin: var(--scale-8-16) 0;
     }
 
     ul,

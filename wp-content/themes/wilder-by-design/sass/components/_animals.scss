@@ -1,0 +1,23 @@
+.animals {
+  display: grid;
+  gap: var(--scale-16-32);
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  a {
+    display: grid;
+    gap: var(--scale-8-16);
+    text-decoration: none;
+  }
+
+  li.product {
+    margin: 0;
+  }
+
+  .name {
+    margin: 0;
+  }
+}

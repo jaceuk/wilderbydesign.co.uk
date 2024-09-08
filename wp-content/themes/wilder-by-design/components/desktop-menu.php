@@ -16,4 +16,6 @@
       ?>
     </ul>
   </li>
+
+  <li><a href="/shop-by-animal">Shop by Animal</a></li>
 </ul>
