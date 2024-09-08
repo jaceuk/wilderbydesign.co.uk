@@ -21,3 +21,8 @@
     margin: 0;
   }
 }
+
+.animals-header .text {
+  max-width: var(--max-readable-width);
+  padding-bottom: var(--scale-32-64);
+}

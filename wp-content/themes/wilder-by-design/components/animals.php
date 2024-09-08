@@ -1,5 +1,8 @@
-<header>
+<header class="animals-header">
   <?php the_title('<h1 class="animals-header">', '</h1>'); ?>
+  <div class="text">
+    If we're missing your favourite animal or a particular product for your favourite animal please head over to our <a href="/contact">contact page</a> and let us know and we'll see what we can do.
+  </div>
 </header>
 
 <div class="animals">
