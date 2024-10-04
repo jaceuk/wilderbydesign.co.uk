@@ -7,7 +7,7 @@
     </div>
 
     <?php
-    echo do_shortcode('[products limit="8" columns="4" orderby="popularity" best_selling="true" visibility="featured"]');
+    echo do_shortcode('[products limit="8" columns="4" orderby="popularity" best_selling="true"]');
     ?>
   </div>
 </section>
