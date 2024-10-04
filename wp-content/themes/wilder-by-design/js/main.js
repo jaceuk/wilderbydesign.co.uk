@@ -140,14 +140,14 @@ variationButtons.forEach((variationButton) => {
   });
 });
 
-// filters toggle
-const filtersToggleButtons = document.querySelectorAll('.filters-toggle');
-const productFilters = document.querySelector('.product-filters');
+// product meta accordions
+const accordionButtons = document.querySelectorAll('.accordion');
 
-filtersToggleButtons.forEach((filtersToggleButton) => {
-  filtersToggleButton.addEventListener('click', function () {
-    event.preventDefault();
-    productFilters.classList.toggle('visible');
-    document.body.classList.toggle('dialog-visible');
+accordionButtons.forEach((accordionButton) => {
+  accordionButton.addEventListener('click', function () {
+    this.classList.toggle('active');
+
+    const panel = this.nextElementSibling;
+    panel.classList.toggle('active');
   });
 });

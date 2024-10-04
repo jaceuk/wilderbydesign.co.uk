@@ -19,13 +19,7 @@ button.wc-block-components-checkout-place-order-button {
   padding: 0;
 }
 
-.review {
-  border: 1px solid var(--c-primary-button);
-  padding: var(--scale-8-16);
-  border-radius: var(--border-radius-small);
-
-  .review-author {
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-small);
-  }
+.checkout-review {
+  text-align: center;
+  font-style: italic;
 }

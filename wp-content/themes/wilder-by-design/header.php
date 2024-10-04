@@ -43,8 +43,7 @@
 <body <?php body_class(); ?>>
 
 	<?php
-	$site_url = site_url();
-	if ($site_url === 'https://dev.wilderbydesign.co.uk') get_template_part('components/dev-banner');
+	get_template_part('components/dev-banner');
 	?>
 
 	<?php
