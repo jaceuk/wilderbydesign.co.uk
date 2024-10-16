@@ -12,7 +12,7 @@ foreach ($categories as $category) {
 <div class="product-meta">
 
   <?php
-  if ($cat_name === 'premium-t-shirts' || $cat_name === 'sweatshirts') {
+  if ($cat_name === 'premium-t-shirts' || $cat_name === 'sweatshirts' || $cat_name === 'vintage-t-shirts') {
   ?>
 
     <div class="accordion" tabindex="0">
@@ -25,6 +25,7 @@ foreach ($categories as $category) {
       <?php
       if ($cat_name === 'premium-t-shirts') get_template_part('components/bella-canvas-3001-size-guide');
       if ($cat_name === 'sweatshirts') get_template_part('components/gildan-18000-size-guide');
+      if ($cat_name === 'vintage-t-shirts') get_template_part('components/comfort-colors-1717-size-guide');
       ?>
     </div>
   <?php } ?>
