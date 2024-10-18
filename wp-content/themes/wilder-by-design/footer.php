@@ -11,6 +11,7 @@ get_template_part('components/benefits');
 				<div class="h4">Wilder by Design</div>
 				<ul>
 					<li><a href="/">Homepage</a></li>
+					<li><a href="/collections">Collections</a></li>
 					<li><a href="/privacy-policy">Privacy policy</a></li>
 					<li><a href="/terms-of-service">Terms of service</a></li>
 					<li><a href="/wp-sitemap.xml">Sitemap</a></li>

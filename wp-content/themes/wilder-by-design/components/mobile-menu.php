@@ -23,6 +23,7 @@
   <li><span class="title">Support</span>
     <ul>
       <li><a href="/contact">Contact us</a></li>
+      <li><a href="/collections">Collections</a></li>
       <li><a href="/faq">FAQ</a></li>
       <li><a href="/returns">Returns policy</a></li>
       <li><a href="/shipping">Shipping</a></li>
