@@ -1,7 +1,7 @@
-dialog {
+dialog.mobile-menu {
   box-shadow: var(--box-shadow-menu);
   border: 1px solid var(--c-grey-dark);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-extra-small);
   background: var(--c-white);
   padding: var(--scale-16-32);
   z-index: 10;
@@ -23,7 +23,7 @@ dialog {
   }
 
   .logo {
-    height: 49px;
+    height: 60px;
   }
 
   .dialog-content {

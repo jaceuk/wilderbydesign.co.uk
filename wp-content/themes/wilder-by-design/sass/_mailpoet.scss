@@ -54,6 +54,7 @@
     border: 1px solid var(--c-error-dark);
     border-left: none;
     border-right: none;
+    margin: 0 !important;
   }
 }
 
@@ -81,4 +82,8 @@
   padding: var(--scale-8-16) !important;
   border-radius: var(--border-radius-med) !important;
   max-height: fit-content !important;
+}
+
+#mailpoet_form_2 .mailpoet_message {
+  padding: 0 !important;
 }

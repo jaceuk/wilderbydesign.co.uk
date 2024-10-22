@@ -18,7 +18,7 @@ $right_products = array_slice($loop->posts, 4, 4);
 <section class="hero-section">
   <div class="inner-wrapper">
     <div class="title-with-text">
-      <p class="pre-text">Launch event</p>
+      <p class="pre-text">Ferocious sale</p>
       <h1 class="super">10% off everything</h1>
     </div>
 

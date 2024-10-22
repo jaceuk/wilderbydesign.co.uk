@@ -1,3 +1,3 @@
 <section class="top-banner">
-  <div class="inner-wrapper">Launch event: 10% Off Everything</div>
+  <div class="inner-wrapper">Ferocious sale: 10% Off Everything</div>
 </section>

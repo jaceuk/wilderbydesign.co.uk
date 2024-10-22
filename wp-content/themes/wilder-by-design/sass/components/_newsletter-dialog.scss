@@ -1,0 +1,87 @@
+dialog.newsletter-dialog {
+  padding: 0;
+  border-radius: var(--border-radius-med);
+  border: none;
+  position: relative;
+  animation-name: slideUp;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
+
+  &::backdrop {
+    background: var(--c-black-60);
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+  }
+
+  .newsletter-dialog-content {
+    padding: var(--scale-16-32);
+    box-shadow: var(--box-shadow-card);
+    background: var(--c-white);
+    max-width: 560px;
+
+    .mailpoet_form_successfully_send {
+      h2.mailpoet-heading {
+        visibility: visible !important;
+      }
+
+      .mailpoet_form_paragraph,
+      .mailpoet_paragraph {
+        display: none;
+      }
+
+      .mailpoet_validate_success {
+        position: relative;
+        text-align: left;
+      }
+    }
+  }
+
+  .newsletter-dialog-close-button {
+    border-radius: 100px;
+    border: 1px solid var(--c-nearly-black);
+    background: none;
+    padding: var(--s-4);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: var(--scale-16-32);
+    right: var(--scale-16-32);
+    z-index: 200;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .mailpoet_message {
+    padding: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    bottom: -200px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}

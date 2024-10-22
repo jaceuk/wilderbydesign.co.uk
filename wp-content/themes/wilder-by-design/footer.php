@@ -58,6 +58,19 @@ get_template_part('components/benefits');
 	</div>
 </div>
 
+<dialog id="newsletter-dialog" class="newsletter-dialog">
+	<div class="newsletter-dialog-content">
+		<button class="newsletter-dialog-close-button" autofocus="">
+			<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+				<path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+			</svg>
+		</button>
+		<?php
+		echo do_shortcode('[mailpoet_form id="2"]');
+		?>
+	</div>
+</dialog>
+
 <?php wp_footer(); ?>
 
 <?php
