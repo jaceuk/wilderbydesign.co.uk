@@ -2,7 +2,7 @@ button,
 .button,
 .products .button {
   padding: var(--scale-8-16) var(--scale-16-32);
-  border-radius: 100px;
+  border-radius: var(--border-radius-extra-small);
   box-shadow: var(--box-shadow-button);
   border: 1px solid var(--c-grey-dark);
   background-color: var(--c-white);
@@ -29,6 +29,6 @@ button,
     background-color: var(--c-primary-button);
     border: 2px solid var(--c-button-border);
     border-radius: 500px;
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-bold);
   }
 }

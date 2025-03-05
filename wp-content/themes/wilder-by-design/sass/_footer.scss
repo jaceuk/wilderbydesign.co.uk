@@ -1,6 +1,6 @@
 .footer {
   clear: both;
-  background: var(--c-grey-pale);
+  background: var(--c-accent);
   padding: var(--scale-16-32) 0;
 
   .inner-wrapper {
@@ -13,11 +13,19 @@
     }
   }
 
+  .newsletter {
+    padding: var(--scale-16-32);
+    box-shadow: var(--box-shadow-card);
+    background: var(--c-white);
+    border-radius: var(--border-radius-extra-small);
+  }
+
   .legals {
     grid-column-start: 1;
     grid-column-end: span 4;
     margin: 0 auto;
     padding: var(--scale-16-32) 0 0 0;
+    font-size: var(--fs-small);
 
     ul {
       display: flex;
@@ -25,6 +33,10 @@
       gap: var(--scale-8-16);
       flex-direction: row;
       justify-content: center;
+
+      li {
+        text-align: center;
+      }
     }
   }
 
@@ -46,5 +58,9 @@
     svg {
       fill: var(--c-white);
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 }

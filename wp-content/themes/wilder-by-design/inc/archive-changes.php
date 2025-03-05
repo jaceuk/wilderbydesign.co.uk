@@ -75,3 +75,14 @@ add_filter('woocommerce_pagination_args', 'filter_woocommerce_pagination_args', 
 //     }
 //   }
 // }
+
+
+// Show reviews count
+add_filter('woocommerce_product_get_rating_html', function ($html, $rating, $count) {
+  global $product;
+  $review_count = $product->get_review_count();
+  if ($review_count && !is_product()) {
+    $html = '<small class="rating-wrapper">' . $html . '(' . $review_count . ')' . '</small>';
+  }
+  return $html;
+}, 10, 3);

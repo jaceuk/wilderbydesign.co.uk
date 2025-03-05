@@ -18,6 +18,10 @@
       gap: var(--scale-8-16);
       word-break: break-word;
 
+      .star-rating {
+        word-break: normal;
+      }
+
       @media (min-width: 768px) {
         grid-template-columns: 100%;
       }
@@ -48,7 +52,7 @@
 
     a.page-numbers {
       padding: var(--scale-8-16) var(--scale-16-24);
-      border-radius: var(--border-radius-small);
+      border-radius: var(--border-radius-extra-small);
       border: 1px solid var(--c-button-border);
       background-color: var(--c-grey);
       color: var(--c-nearly-black);
@@ -70,4 +74,15 @@
 
 .shop.inner-wrapper #primary.inner-wrapper {
   padding: 0;
+}
+
+.rating-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-4);
+
+  .star-rating {
+    margin: 0 !important;
+  }
 }

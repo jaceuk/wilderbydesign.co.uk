@@ -1,15 +1,53 @@
 .hero-section {
-  background: linear-gradient(
-    to bottom right,
-    rgba(0, 0, 0, 1),
-    rgba(129, 129, 129, 1)
-  );
+  background: var(--c-gradient-bg);
   padding: var(--scale-16-32) 0;
   overflow: hidden;
+  color: var(--c-nearly-black);
+
+  &.valentines {
+    color: var(--c-white);
+    background: var(--c-gradient-red);
+
+    .title-with-text h1 {
+      text-shadow: 3px 3px 2px var(--c-black);
+    }
+
+    .tiles .tile {
+      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.black-friday {
+    color: var(--c-white);
+    background: var(--c-gradient-black);
+
+    .title-with-text h1 {
+      text-shadow: 3px 3px 2px var(--c-black);
+    }
+
+    .tiles .tile {
+      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.christmas {
+    color: var(--c-white);
+    background: #08abe2 url(images/snow.jpg) repeat-x center top;
+
+    .title-with-text h1 {
+      text-shadow: 3px 3px 2px var(--c-black);
+    }
+
+    .tiles .tile {
+      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      text-shadow: 0px 0px 4px var(--c-black);
+    }
+  }
 
   h1 {
-    color: var(--c-white);
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: var(--scale-16-32) 0;
 
     @media (min-width: 768px) {
@@ -18,21 +56,30 @@
   }
 
   .title-with-text {
+    z-index: 10;
+
     h1 {
-      padding-top: 0;
-      padding-bottom: var(--scale-32-64);
+      padding: 0;
       text-transform: uppercase;
+      text-shadow: 3px 3px 2px var(--c-white);
 
       &.super {
         font-size: var(--fs-h1-super);
+
+        @media (min-width: 1250px) {
+          font-size: var(--fs-h1-super);
+        }
       }
     }
 
     .pre-text {
-      color: var(--c-white);
       padding-top: var(--scale-32-64);
-      font-size: var(--fw-light);
-      font-size: var(--fs-h2);
+      font-size: var(--fs-h3);
+    }
+
+    .sub-text {
+      padding-bottom: var(--scale-32-64);
+      font-size: var(--fs-h3);
     }
   }
 
@@ -90,7 +137,7 @@
   .tile {
     width: clamp(5rem, -4.0909rem + 24.2424vw, 25rem);
     height: clamp(5rem, -4.0909rem + 24.2424vw, 25rem);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-extra-small);
     overflow: hidden;
     outline: var(--s-4) solid rgba(255, 255, 255, 0.1);
 
@@ -104,40 +151,4 @@
 
 .brown-gradient {
   background: linear-gradient(to bottom right, #999383, #c9c3b3) !important;
-}
-
-.halloween {
-  background: linear-gradient(to bottom right, #d25800, #994000) !important;
-  padding: var(--scale-32-64) 0;
-
-  .title-with-text {
-    display: grid;
-    gap: var(--scale-8-16);
-    z-index: 1;
-
-    p,
-    h1 {
-      font-family: 'Risque', serif;
-      color: var(--c-white);
-      font-weight: var(--fw-regular);
-      padding: 0;
-      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8),
-        0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-  }
-
-  .actions {
-    padding-top: var(--scale-8-16);
-    display: flex;
-    align-items: center;
-    gap: var(--s-16);
-
-    .button {
-      white-space: nowrap;
-
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-  }
 }

@@ -97,3 +97,56 @@ function add_content_before_product_meta()
 {
   get_template_part('components/product-meta');
 }
+
+/*
+ * Fixed issue where variable products with the same price for all variations display the single proruct price block
+ * instead of the expected variable price block
+ */
+add_filter('woocommerce_available_variation', function ($available_variations, \WC_Product_Variable $variable, \WC_Product_Variation $variation) {
+  if (empty($available_variations['price_html'])) {
+    $available_variations['price_html'] = '<span class="price">' . $variation->get_price_html() . '</span>';
+  }
+
+  return $available_variations;
+}, 10, 3);
+
+
+// Size guide modal
+add_action('woocommerce_before_add_to_cart_button', 'size_guide_modal');
+function size_guide_modal()
+{
+  global $post;
+  // get parent category
+  $categories = get_the_terms($post->ID, 'product_cat');
+
+  foreach ($categories as $category) {
+    $cat_id =  $category->term_id;
+  }
+
+  $cat_size_guide = get_field('cat_size_guide', 'product_cat_' . $cat_id);
+?>
+  <dialog id="size-guide-dialog" class="dialog size-guide">
+    <button id="close-dialog" class="dialog-close-button" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+      </svg>
+    </button>
+
+    <div class="dialog-body">
+      <h2>Size guide (inches)</h2>
+      <?php
+      echo $cat_size_guide;
+      ?>
+    </div>
+  </dialog>
+<?php
+}
+
+
+// show new product reviews first
+add_filter('woocommerce_product_review_list_args', 'new_reviews_first');
+function new_reviews_first($args)
+{
+  $args['reverse_top_level'] = true;
+  return $args;
+}

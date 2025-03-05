@@ -1,0 +1,30 @@
+.benefits-beneath-button {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--scale-16-32);
+  margin: 0 0 var(--scale-16-32) 0;
+
+  .benefit {
+    display: flex;
+    gap: var(--scale-8-16);
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    height: 100%;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+
+      @media (min-width: 1000px) {
+        width: 48px;
+        height: 48px;
+      }
+
+      svg {
+        fill: var(--c-nearly-black);
+      }
+    }
+  }
+}

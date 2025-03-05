@@ -5,7 +5,7 @@
 
   /* Style the buttons that are used to open and close the accordion panel */
   .accordion {
-    border-bottom: 1px solid var(--c-accent-dark);
+    border-bottom: 1px solid var(--c-accent);
     cursor: pointer;
     padding: var(--scale-8-16) 0;
     width: 100%;
@@ -15,7 +15,7 @@
     justify-content: space-between;
 
     &:first-child {
-      border-top: 1px solid var(--c-accent-dark);
+      border-top: 1px solid var(--c-accent);
     }
 
     svg {
@@ -43,45 +43,17 @@
 
     &.active {
       display: flex;
-      border-bottom: 1px solid var(--c-accent-dark);
+      border-bottom: 1px solid var(--c-accent);
     }
 
     ul {
       padding-left: var(--s-32);
       display: flex;
       flex-direction: column;
-      gap: var(--scale-8-16) 0;
+      gap: var(--s-8);
 
       li {
         list-style-type: disc;
-      }
-    }
-
-    table {
-      thead {
-        font-weight: bold;
-
-        td {
-          background: var(--c-accent-dark);
-        }
-      }
-
-      tbody tr {
-        td:first-child {
-          font-weight: bold;
-        }
-      }
-
-      tr {
-        background: var(--c-accent);
-
-        &:nth-child(2n) {
-          background: var(--c-accent-pale);
-        }
-
-        td {
-          padding: var(--s-8);
-        }
       }
     }
   }

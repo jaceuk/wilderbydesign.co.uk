@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '2.1.3');
+	define('_S_VERSION', '2.0.12');
 }
 
 /**
@@ -188,32 +188,6 @@ function fb_opengraph()
 }
 add_action('wp_head', 'fb_opengraph', 5);
 
-
-// change added to cart message
-function custom_add_to_cart_message_html($message, $products)
-{
-	$count = 0;
-	foreach ($products as $product_id => $qty) {
-		$count += $qty;
-	}
-	// The custom message is just below
-	$added_text = sprintf(
-		_n("%s item has %s", "%s items have %s", $count, "woocommerce"),
-		$count,
-		__("been added to your basket.", "woocommerce")
-	);
-
-	// added to cart success message
-	if ('yes' === get_option('woocommerce_cart_redirect_after_add')) {
-		$return_to = apply_filters('woocommerce_continue_shopping_redirect', wc_get_raw_referer() ? wp_validate_redirect(wc_get_raw_referer(), false) : wc_get_page_permalink('shop'));
-		$message   = sprintf('<a href="%s" class="button wc-forward">%s</a> %s', esc_url($return_to), esc_html__('Continue shopping', 'woocommerce'), esc_html($added_text));
-	} else {
-		$message   = sprintf('<a href="%s" class="button wc-forward">%s</a> %s', esc_url(wc_get_page_permalink('cart')), esc_html__('View cart', 'woocommerce'), esc_html($added_text));
-	}
-	return $message;
-}
-add_filter('wc_add_to_cart_message_html', 'custom_add_to_cart_message_html', 10, 2);
-
 // change variabe price format
 function asnp_woocommerce_format_price_range($price, $from, $to)
 {
@@ -222,3 +196,59 @@ function asnp_woocommerce_format_price_range($price, $from, $to)
 add_filter('woocommerce_format_price_range', 'asnp_woocommerce_format_price_range', 100, 3);
 
 require get_template_directory() . '/inc/global-vars.php';
+
+// Add shipping class to products admin dashbaord
+add_filter('manage_edit-product_columns', 'add_admin_products_shipping_class_column', 999);
+function add_admin_products_shipping_class_column($columns)
+{
+	$columns['shipping_class'] = __('Shipping Class', 'woocommerce');
+	return $columns;
+}
+
+add_action('manage_product_posts_custom_column', 'get_admin_products_shipping_class_column_content', 10, 2);
+function get_admin_products_shipping_class_column_content($column, $product_id)
+{
+	if ($column === 'shipping_class') {
+		global $post, $product;
+
+		if (is_a($product, 'WC_Product')) {
+			$shipping_class_id = (int) $product->get_shipping_class_id();
+			$shipping_class    = get_term($shipping_class_id, 'product_shipping_class');
+
+			echo ! is_wp_error($shipping_class) ? $shipping_class->name : '<em>n/a</em>';
+		}
+	}
+}
+
+/*
+ * Tell WP Super Cache to cache requests with the cookie "wmc_current_currency"
+ * separately from other visitors.
+ */
+
+// function add_wpsc_curcy_cookie()
+// {
+// 	do_action('wpsc_add_cookie', 'wmc_current_currency');
+// }
+// add_action('init', 'add_wpsc_curcy_cookie');
+
+// set default currency
+// function get_curcy_default_country()
+// {
+// 	if (class_exists('WOOCS')) {
+// 		global $WOOCS;
+
+// 		// Get user's country based on WooCommerce geolocation
+// 		$user_country = WC_Geolocation::geolocate_ip();
+
+// 		if (!empty($user_country['country'])) {
+// 			return $user_country['country'] === 'GB' ? 'GBP' : 'USD';
+// 		}
+// 	}
+
+// 	return 'USD'; // Fallback default country if CURCY fails
+// }
+
+// // Example usage: Echoing the detected country
+// add_shortcode('curcy_detected_country', function () {
+// 	return get_curcy_default_country();
+// });

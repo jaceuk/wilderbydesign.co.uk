@@ -220,19 +220,6 @@ function get_random_five_stars_products_reviews($atts)
 }
 add_shortcode('woo_reviews', 'get_random_five_stars_products_reviews');
 
-// Add reviewe after place order button
-// function get_review()
-// {
-// 	$html = '<ul>';
-// 	$html .= '<li class="review">';
-// 	$html .= wc_get_rating_html(5);
-// 	$html .= '<div class="review-text">Great design and excellent quality. Highly recommended.</div>';
-// 	$html .= '<div class="review-author">A Fresier</div>';
-// 	$html .= '</li>';
-// 	echo $html . '</ul>';
-// }
-// add_action('woocommerce_review_order_after_submit', 'get_review', 10);
-
 function privacy_terms_notice()
 {
 	$html = '<div><small>';
@@ -245,3 +232,56 @@ require get_template_directory() . '/inc/product-custom-fields.php';
 require get_template_directory() . '/inc/archive-changes.php';
 require get_template_directory() . '/inc/single-changes.php';
 require get_template_directory() . '/inc/order-confirmation-changes.php';
+
+
+
+
+// function remove_image_zoom_support()
+// {
+// 	remove_theme_support('wc-product-gallery-zoom');
+// 	remove_theme_support('wc-product-gallery-lightbox');
+// 	remove_theme_support('wc-product-gallery-slider');
+// }
+// add_action('wp', 'remove_image_zoom_support', 100);
+
+
+function get_best_selling_products_last_2_months($limit = 10)
+{
+	global $wpdb;
+
+	// Get the date for two months ago
+	$date_from = date('Y-m-d H:i:s', strtotime('-6 months'));
+
+	// SQL query to get the best-selling product IDs in the last 2 months
+	$best_selling_products = $wpdb->get_col(
+		$wpdb->prepare("
+					SELECT order_item_meta.meta_value as product_id
+					FROM {$wpdb->prefix}woocommerce_order_items as order_items
+					JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_item_meta
+							ON order_items.order_item_id = order_item_meta.order_item_id
+					JOIN {$wpdb->prefix}posts AS posts
+							ON order_items.order_id = posts.ID
+					WHERE order_item_meta.meta_key = '_product_id'
+							AND posts.post_type = 'shop_order'
+							AND posts.post_status IN ('wc-completed', 'wc-processing')
+							AND posts.post_date >= %s
+					GROUP BY order_item_meta.meta_value
+					ORDER BY COUNT(order_item_meta.meta_value) DESC
+					LIMIT %d
+			", $date_from, $limit)
+	);
+
+	if (empty($best_selling_products)) {
+		return new WP_Query(); // Return empty query if no products found
+	}
+
+	// WP_Query to get product details
+	$query = new WP_Query([
+		'post_type'      => 'product',
+		'posts_per_page' => $limit,
+		'post__in'       => $best_selling_products,
+		'orderby'        => 'post__in', // Maintain order of best sellers
+	]);
+
+	return $query;
+}

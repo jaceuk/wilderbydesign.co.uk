@@ -1,12 +1,8 @@
 dialog.mobile-menu {
-  box-shadow: var(--box-shadow-menu);
-  border: 1px solid var(--c-grey-dark);
-  border-radius: var(--border-radius-extra-small);
   background: var(--c-white);
   padding: var(--scale-16-32);
   z-index: 10;
   overflow: hidden;
-  margin: var(--scale-16-32) auto;
   height: auto;
   max-height: 100%;
 
@@ -37,23 +33,6 @@ dialog.mobile-menu {
 
     * {
       margin: 0 !important;
-    }
-  }
-
-  .dialog-close-button {
-    border-radius: 100px;
-    border: 1px solid var(--c-nearly-black);
-    background: none;
-    padding: var(--s-4);
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: var(--scale-16-32);
-    right: var(--scale-16-32);
-
-    svg {
-      height: 24px;
-      width: 24px;
     }
   }
 }

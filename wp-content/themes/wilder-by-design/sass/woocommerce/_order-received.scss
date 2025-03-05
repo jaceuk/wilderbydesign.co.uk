@@ -22,7 +22,7 @@
         background: var(--c-success-pale);
         border: 1px solid var(--c-button-border);
         color: var(--c-success-dark);
-        border-radius: var(--border-radius-small);
+        border-radius: var(--border-radius-extra-small);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -30,7 +30,7 @@
         gap: var(--scale-16-32);
         padding: var(--scale-8-16);
         overflow: hidden;
-        font-weight: var(--fw-medium);
+        font-weight: var(--fw-bold);
         margin: 0;
       }
 

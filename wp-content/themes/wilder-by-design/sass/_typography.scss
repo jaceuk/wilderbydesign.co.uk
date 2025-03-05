@@ -9,7 +9,7 @@ h4,
 h5,
 .h5 {
   line-height: 1.25;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family-heading);
   font-weight: var(--fw-bold);
   max-width: var(--max-readable-width);
 }
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family-body);
 }
 
 body,
@@ -31,14 +31,14 @@ body,
 
 label,
 .label {
-  font-size: var(--fs-nav);
-  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
 }
 
 button,
 .button {
   font-size: var(--fs-nav);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
 }
 
 small,
@@ -48,7 +48,7 @@ small,
 
 strong,
 .semi-bold {
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-bold);
 }
 
 h1,

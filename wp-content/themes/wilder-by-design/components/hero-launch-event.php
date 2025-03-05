@@ -13,13 +13,16 @@ $args = array(
 $loop = new WP_Query($args);
 $left_products = array_slice($loop->posts, 0, 4);
 $right_products = array_slice($loop->posts, 4, 4);
+
+global $LAUNCH_EVENT_DISCOUNT;
 ?>
 
 <section class="hero-section">
   <div class="inner-wrapper">
     <div class="title-with-text">
-      <p class="pre-text">Ferocious sale</p>
-      <h1 class="super">10% off everything</h1>
+      <p class="pre-text">Historic sale</p>
+      <h1 class="super"><?php echo $LAUNCH_EVENT_DISCOUNT; ?>% off everything</h1>
+      <p class="sub-text">Amusing apparel for fun-loving history buffs</p>
     </div>
 
     <div class="tiles">

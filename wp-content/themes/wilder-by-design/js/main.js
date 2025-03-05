@@ -1,55 +1,3 @@
-/********************/
-/* NEWSLETTER DIALOG */
-/********************/
-function closeNewsletterDialog() {
-  newsletterDialog.close();
-  document.body.classList.remove('dialog-visible');
-
-  // add cookie when newsletter popup has been dismissed
-  const daysTilCookieExpires = 14;
-  const today = new Date();
-  let expire = new Date();
-  expire.setTime(today.getTime() + 3600000 * 24 * daysTilCookieExpires);
-  document.cookie =
-    'newsletter_dismissed=true; expires="' + expire.toGMTString();
-  +'";';
-
-  console.log(expire.toGMTString());
-}
-
-const newsletterDialog = document.querySelector('#newsletter-dialog');
-const newsletterCloseButton = document.querySelector(
-  '#newsletter-dialog .newsletter-dialog-close-button'
-);
-
-// get newsletterDismissed cookie
-const hasNewsletterBeenDismissed = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('newsletter_dismissed='))
-  ?.split('=')[1];
-
-// open the dialog if it hasn't been dismissed within the past daysTilCookieExpires days
-// the newsletter_dismissed cookie should exist
-if (!hasNewsletterBeenDismissed) {
-  setTimeout(() => {
-    newsletterDialog.showModal();
-    document.body.classList.add('dialog-visible');
-  }, 10000);
-}
-
-// "Close" button closes the dialog
-newsletterCloseButton.addEventListener('click', () => {
-  closeNewsletterDialog();
-});
-
-// Check for click in backdrop
-// https://utilitybend.com/blog/a-lot-of-power-with-little-javascript-the-html-dialog-element-is-here/
-newsletterDialog.addEventListener('click', (e) => {
-  if (e.target.classList.contains('newsletter-dialog')) {
-    closeNewsletterDialog();
-  }
-});
-
 /*****************/
 /* COOKIE BANNER */
 /*****************/
@@ -79,10 +27,12 @@ const mobileMenuCloseButton = document.querySelector(
   '#mobile-menu-close-button'
 );
 
-mobileMenuOpenButton.addEventListener('click', () => {
-  mobileMenu.showModal();
-  document.body.classList.add('dialog-visible');
-});
+if (mobileMenuOpenButton) {
+  mobileMenuOpenButton.addEventListener('click', () => {
+    mobileMenu.showModal();
+    document.body.classList.add('dialog-visible');
+  });
+}
 
 mobileMenuCloseButton.addEventListener('click', () => {
   mobileMenu.close();
@@ -254,6 +204,92 @@ accordionButtons.forEach((accordionButton) => {
   });
 });
 
+/*********************/
+/* DIALOGS */
+/*********************/
+function openDialog(dialogSelector) {
+  const dialog = document.querySelector(dialogSelector);
+  if (dialog) {
+    dialog.showModal();
+  } else {
+    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+  }
+}
+
+function closeDialog(dialogSelector) {
+  const dialog = document.querySelector(dialogSelector);
+  if (dialog) {
+    dialog.close();
+  } else {
+    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+  }
+}
+
+function toggleDialog(dialogSelector) {
+  const dialog = document.querySelector(dialogSelector);
+  if (dialog) {
+    dialog.open ? dialog.close() : dialog.showModal();
+  } else {
+    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+  }
+}
+
+function setupDialog(dialogSelector) {
+  const dialog = document.querySelector(dialogSelector);
+  if (dialog) {
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) {
+        closeDialog(dialogSelector);
+      }
+    });
+  } else {
+    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+  }
+}
+
+if (
+  document.getElementById('size-guide-dialog') &&
+  document.getElementById('size-guide-trigger')
+) {
+  setupDialog('#size-guide-dialog');
+  document
+    .getElementById('size-guide-trigger')
+    .addEventListener('click', () => openDialog('#size-guide-dialog'));
+  document
+    .getElementById('close-dialog')
+    .addEventListener('click', () => closeDialog('#size-guide-dialog'));
+}
+
+if (
+  document.getElementById('newsletter-dialog') &&
+  document.getElementById('newsletter-dialog-trigger')
+) {
+  setupDialog('#newsletter-dialog');
+  document
+    .getElementById('newsletter-dialog-trigger')
+    .addEventListener('click', () => openDialog('#newsletter-dialog'));
+  document
+    .getElementById('newsletter-dialog-close-button')
+    .addEventListener('click', () => closeDialog('#newsletter-dialog'));
+
+  document
+    .getElementById('header-newsletter-dialog-trigger')
+    .addEventListener('click', () => openDialog('#newsletter-dialog'));
+}
+
+if (
+  document.getElementById('newsletter-dialog') &&
+  document.getElementById('header-newsletter-dialog-trigger')
+) {
+  setupDialog('#newsletter-dialog');
+  document
+    .getElementById('header-newsletter-dialog-trigger')
+    .addEventListener('click', () => openDialog('#newsletter-dialog'));
+  document
+    .getElementById('newsletter-dialog-close-button')
+    .addEventListener('click', () => closeDialog('#newsletter-dialog'));
+}
+
 // // close mailpoet popup by clicking on the background
 // function waitForElm(selector) {
 //   return new Promise((resolve) => {
@@ -297,3 +333,71 @@ accordionButtons.forEach((accordionButton) => {
 //     +'";';
 //   });
 // });
+
+// Toggle currency
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value, days) {
+  let expires = '';
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toUTCString();
+  }
+  document.cookie = name + '=' + value + '; path=/' + expires;
+}
+
+function toggleCurrency() {
+  const currentCurrency = getCookie('wmc_current_currency');
+  const newCurrency = currentCurrency === 'GBP' ? 'USD' : 'GBP';
+  setCookie('wmc_current_currency', newCurrency, 7);
+
+  location.reload();
+}
+
+function waitForCookie(cookieName, timeout = 5000, interval = 100) {
+  return new Promise((resolve, reject) => {
+    const startTime = Date.now();
+
+    const checkCookie = () => {
+      const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+        const [name, value] = cookie.split('=');
+        acc[name] = value;
+        return acc;
+      }, {});
+
+      if (cookies[cookieName]) {
+        resolve(cookies[cookieName]);
+        return;
+      }
+
+      if (Date.now() - startTime >= timeout) {
+        reject(
+          new Error(
+            `Timeout: Cookie "${cookieName}" not found within ${timeout}ms`
+          )
+        );
+        return;
+      }
+
+      setTimeout(checkCookie, interval);
+    };
+
+    checkCookie();
+  });
+}
+
+waitForCookie('wmc_current_currency', 5000)
+  .then((value) => {
+    document
+      .querySelectorAll('.toggle-currency')
+      .forEach((toggleCurrencyButton) => {
+        toggleCurrencyButton.addEventListener('click', toggleCurrency);
+        toggleCurrencyButton.classList.add(value);
+      });
+  })
+  .catch((error) => console.error(error.message));

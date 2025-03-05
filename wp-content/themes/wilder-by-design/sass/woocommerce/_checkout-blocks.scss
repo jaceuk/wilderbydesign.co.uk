@@ -1,13 +1,16 @@
 // checkout page
 button.wc-block-components-checkout-place-order-button {
-  color: var(--c-nearly-black);
-  background-color: var(--c-primary-button);
-  border: 2px solid var(--c-button-border);
-  border-radius: 500px;
-  width: 100%;
-  text-align: center;
-  padding: var(--scale-16-24);
-  font-weight: var(--fw-medium);
+  width: var(--cta-width);
+  text-align: var(--cta-text-align);
+  color: var(--cta-color);
+  background-color: var(--cta-background-color);
+  border: var(--cta-border);
+  border-radius: var(--cta-border-radius);
+  padding: var(--cta-padding);
+  font-size: var(--cta-font-size);
+  font-family: var(--cta-font-family);
+  font-weight: var(--cta-font-weight);
+  text-decoration: var(--cta-text-decoration);
 }
 
 .wc-block-components-express-payment.wc-block-components-express-payment--checkout {
@@ -19,7 +22,53 @@ button.wc-block-components-checkout-place-order-button {
   padding: 0;
 }
 
+.review {
+  border: 1px solid var(--c-primary-button);
+  padding: var(--scale-8-16);
+  border-radius: var(--border-radius-extra-small);
+
+  .review-author {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-small);
+  }
+}
+.wc-block-components-checkbox label {
+  font-weight: var(--fw-regular) !important;
+
+  span {
+    padding-top: 2px !important;
+  }
+}
+
+.wc-block-components-address-form + .wc-block-components-checkbox label {
+  font-weight: var(--fw-bold) !important;
+
+  div {
+    padding-top: 5px !important;
+  }
+}
+
+.page.woocommerce-checkout {
+  p,
+  h2 {
+    margin: 0 0 16px;
+  }
+}
+
+.delivery-times {
+  font-size: 0.875em;
+}
+
 .checkout-review {
   text-align: center;
   font-style: italic;
+  margin-top: var(--scale-16-32) !important;
+}
+
+.wc-block-components-address-card__edit {
+  text-decoration: underline;
+  box-shadow: none;
+  padding: 0;
+  font-size: var(--fs-body) !important;
+  font-weight: var(--fw-regular);
 }

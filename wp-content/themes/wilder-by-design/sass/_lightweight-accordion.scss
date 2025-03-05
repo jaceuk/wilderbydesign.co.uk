@@ -3,8 +3,31 @@
 
   .lightweight-accordion-title {
     span {
-      font-size: var(--fs-body);
-      font-weight: var(--fw-semi-bold);
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-bold);
+      font-family: var(--font-family-heading);
     }
+  }
+
+  .lightweight-accordion-body {
+    display: flex;
+    gap: var(--scale-8-16);
+    flex-direction: column;
+    padding: var(--scale-8-16);
+
+    p {
+      margin: 0 !important;
+    }
+  }
+}
+
+.wp-block-list {
+  padding-left: var(--s-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+
+  li {
+    list-style: disc;
   }
 }

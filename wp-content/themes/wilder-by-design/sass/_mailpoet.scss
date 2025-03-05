@@ -3,13 +3,38 @@
   align-items: center;
 }
 
-.mailpoet_form {
+form.mailpoet_form {
+  display: grid;
+  gap: var(--scale-8-16);
+
+  .mailpoet_paragraph,
+  .mailpoet-heading,
+  .mailpoet_form_paragraph {
+    margin: 0 !important;
+  }
+
+  .mailpoet-heading {
+    font-size: var(--fs-h2) !important;
+  }
+
+  .mailpoet_form_paragraph {
+    font-size: var(--fs-body) !important;
+  }
+
+  .mailpoet_submit {
+    font-size: var(--fs-nav) !important;
+  }
+
+  .mailpoet_text {
+    font-size: var(--fs-body) !important;
+  }
+
   .mailpoet_submit {
     padding: var(--scale-8-16) var(--scale-16-32) !important;
     border-color: var(--c-grey-dark);
     background: var(--c-nearly-black);
     color: var(--c-white);
-    border-radius: 100px;
+    border-radius: var(--border-radius-extra-small);
     transition: var(--transition);
     width: fit-content;
 
@@ -20,7 +45,7 @@
 
   input.mailpoet_text {
     padding: var(--scale-8-16) !important;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-extra-small);
     border: 1px solid var(--c-grey-med);
     outline-offset: -2px;
     width: 100%;
@@ -68,7 +93,7 @@
     border-color: var(--c-grey-dark);
     background: var(--c-nearly-black);
     color: var(--c-white);
-    border-radius: 100px;
+    border-radius: var(--border-radius-extra-small);
     transition: var(--transition);
     width: fit-content;
 
@@ -79,9 +104,13 @@
 }
 
 .mailpoet_form_popup {
-  padding: var(--scale-8-16) !important;
-  border-radius: var(--border-radius-med) !important;
+  padding: 0 !important;
+  border-radius: var(--border-radius-extra-small) !important;
   max-height: fit-content !important;
+
+  .mailpoet_form_popup {
+    padding: var(--scale-16-32) !important;
+  }
 }
 
 #mailpoet_form_2 .mailpoet_message {

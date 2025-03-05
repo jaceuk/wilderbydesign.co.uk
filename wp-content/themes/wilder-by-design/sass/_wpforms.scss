@@ -6,9 +6,6 @@
 .wpforms-container {
   margin-bottom: 0;
   max-width: var(--max-readable-width);
-  border: 1px solid var(--c-grey);
-  border-radius: var(--border-radius-med);
-  padding: var(--scale-8-16);
 
   div.wpforms-field {
     padding: 0;
@@ -17,7 +14,7 @@
   }
 
   label.wpforms-field-label {
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-bold);
     display: inline-block;
   }
 
@@ -33,7 +30,7 @@
       border-color: var(--c-grey-dark);
       background: var(--c-nearly-black);
       color: var(--c-white);
-      border-radius: 100px;
+      border-radius: var(--border-radius-extra-small);
       transition: var(--transition);
 
       &:hover {
@@ -64,6 +61,10 @@
   border: 1px solid var(--c-error-dark);
   border-left: none;
   border-right: none;
+
+  p {
+    margin: 0 !important;
+  }
 }
 
 .page:not(.woocommerce-account) .wpforms-confirmation-container p {

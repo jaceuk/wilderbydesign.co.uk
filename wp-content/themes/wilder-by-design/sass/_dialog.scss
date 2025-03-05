@@ -1,0 +1,124 @@
+.dialog {
+  border-radius: var(--border-radius-small);
+  border: none;
+  padding: var(--scale-16-32);
+  max-width: calc(100% - 2 * var(--scale-16-32));
+  max-height: calc(100% - 2 * var(--scale-16-32));
+  box-shadow: var(--box-shadow-card);
+  animation-name: slideUp;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
+  overflow: hidden;
+
+  &::backdrop {
+    background: var(--c-black-60);
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+  }
+
+  .dialog-body {
+    display: grid;
+    gap: var(--scale-8-16);
+
+    .mailpoet_form_successfully_send {
+      h2.mailpoet-heading {
+        visibility: visible !important;
+      }
+
+      .mailpoet_form_paragraph,
+      .mailpoet_paragraph {
+        display: none;
+      }
+
+      .mailpoet_validate_success {
+        position: relative;
+        text-align: left;
+      }
+    }
+
+    .parsley-errors-list {
+      font-size: var(--fs-body);
+    }
+  }
+
+  .mailpoet_message {
+    padding: 0 !important;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    bottom: -200px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.dialog-close-button {
+  border-radius: 100px;
+  border: 1px solid var(--c-nearly-black);
+  background: var(--c-white);
+  padding: var(--s-4);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: var(--scale-8-16);
+  right: var(--scale-8-16);
+  z-index: 100;
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.size-guide {
+  table {
+    width: 100%;
+
+    thead {
+      font-weight: bold;
+
+      td {
+        background: var(--c-accent-dark);
+      }
+    }
+
+    tbody tr {
+      td:first-child {
+        font-weight: bold;
+      }
+    }
+
+    tr {
+      background: var(--c-accent);
+
+      &:nth-child(2n) {
+        background: var(--c-accent-pale);
+      }
+
+      td {
+        padding: var(--s-8);
+      }
+    }
+  }
+}

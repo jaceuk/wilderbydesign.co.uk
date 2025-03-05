@@ -1,7 +1,8 @@
 <?php
 // Feature flags
-function flags() {
-	global $LAUNCH_EVENT;
-	$LAUNCH_EVENT = true;
+function flags()
+{
+	global $LAUNCH_EVENT_DISCOUNT;
+	$LAUNCH_EVENT_DISCOUNT = 25;
 }
-add_action( 'after_setup_theme', 'flags' );
+add_action('after_setup_theme', 'flags');

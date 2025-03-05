@@ -3,10 +3,10 @@ form {
   select,
   textarea {
     padding: var(--scale-8-16);
-    border-radius: var(--border-radius-small);
-    border: 1px solid var(--c-grey-med);
+    border: 1px solid var(--c-nearly-black);
     outline-offset: -2px;
     width: 100%;
+    border-radius: var(--border-radius-extra-small);
   }
 
   input[type='checkbox'],
@@ -34,12 +34,12 @@ form {
 
 input[type='submit'] {
   padding: var(--scale-8-16) var(--scale-16-24);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-extra-small);
   box-shadow: var(--box-shadow-button);
   border: 2px solid var(--c-button-border);
   background-color: var(--c-accent);
   color: var(--c-nearly-black);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-bold);
   height: fit-content;
   display: inline-block;
   outline-offset: -2px;
@@ -48,11 +48,11 @@ input[type='submit'] {
 
 .search-form {
   border: 1px solid var(--c-grey-med);
-  border-radius: var(--border-radius-small);
   overflow: hidden;
+  border-radius: var(--border-radius-extra-small);
 
   input {
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-regular);
     border: none;
 
     &[type='search'] {
@@ -60,9 +60,11 @@ input[type='submit'] {
     }
 
     &[type='submit'] {
-      background: var(--c-nearly-black);
-      color: var(--c-white);
+      background: var(--c-accent-pale);
+      color: var(--c-nearly-black);
       border-radius: 0;
+      border-left: 1px solid var(--c-grey-med);
+      box-shadow: none;
     }
   }
 }

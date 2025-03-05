@@ -43,7 +43,7 @@
   --c-primary-button: #ffa41c;
   --c-secondary-button: #ffd814;
 
-  --c-button-border: rgba(0, 0, 0, 0.4);
+  --c-button-border: rgba(0, 0, 0, 0.2);
 
   --c-facebook-blue: #54709f;
 
@@ -71,19 +71,53 @@
   --c-warning-dark: #c33300;
   --c-warning-pale: #fff7eb;
 
+  --c-gradient-bg: linear-gradient(
+    to bottom right,
+    var(--c-accent-dark),
+    var(--c-accent)
+  );
+
+  --c-gradient-black: linear-gradient(
+    to bottom right,
+    var(--c-black),
+    var(--c-grey-dark)
+  );
+
+  --c-gradient-green: linear-gradient(
+    to bottom right,
+    var(--c-success-dark),
+    #1e9862
+  );
+
+  --c-gradient-red: linear-gradient(to bottom right, #9e3133, #da7d7f);
+
+  --c-gradient-blue: linear-gradient(
+    to bottom right,
+    var(--c-info-dark),
+    #156cb5
+  );
+
   /* font size */
-  /* based on viewport fom min 375px to max 1400px */
+  /* based on viewport fom min 375px to max 1200px */
   /* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport */
-  --fs-h1-super: clamp(4.8rem, 3.0439rem + 4.6829vw, 9.6rem);
-  --fs-h1-hero: clamp(3rem, 2.0488rem + 2.5366vw, 5.6rem);
-  --fs-h1: clamp(2.8rem, 2.0958rem + 1.8779vw, 4.8rem);
-  --fs-h2: clamp(2.2rem, 1.5636rem + 1.697vw, 3.6rem);
-  --fs-h3: clamp(1.8rem, 1.5273rem + 0.7273vw, 3rem);
-  --fs-h4: clamp(1.6rem, 1.4182rem + 0.4848vw, 2rem);
-  --fs-body: clamp(1.4rem, 1.2182rem + 0.4848vw, 1.8rem);
-  --fs-nav: clamp(1.4rem, 1.2182rem + 0.4848vw, 1.8rem);
-  --fs-small: clamp(1.2rem, 1.0182rem + 0.4848vw, 1.6rem);
+  /* https://fluid.style */
+  /* https://www.fluid-type-scale.com/ */
+  // --fs-h1-super: clamp(4.8rem, 2.618rem + 5.818vw, 9.6rem);
+  --fs-h1-super: clamp(4.6rem, 2.327rem + 6.061vw, 9.6rem);
+  --fs-h1-hero: clamp(3rem, 1.818rem + 3.152vw, 5.6rem);
+  --fs-h1: clamp(2.8rem, 1.891rem + 2.424vw, 4.8rem);
+  --fs-h2: clamp(2.2rem, 1.564rem + 1.697vw, 3.6rem);
+  --fs-h3: clamp(2rem, 1.545rem + 1.212vw, 3rem);
+  --fs-h4: clamp(1.6rem, 1.418rem + 0.485vw, 2rem);
+  --fs-cta: clamp(2rem, 1.818rem + 0.485vw, 2.4rem);
+  --fs-body: clamp(1.6rem, 1.509rem + 0.242vw, 1.8rem);
+  --fs-nav: clamp(1.6rem, 1.418rem + 0.485vw, 2rem);
+  --fs-small: clamp(1.4rem, 1.309rem + 0.242vw, 1.6rem);
   --fs-tiny: 1.2rem;
+
+  /* font families */
+  --font-family-heading: 'Poppins', sans-serif;
+  --font-family-body: 'Poppins', sans-serif;
 
   /* font weight */
   --fw-light: 300;
@@ -93,12 +127,26 @@
   --fw-bold: 700;
   --fw-black: 900;
 
+  /* Main CTA */
+  --cta-width: 100%;
+  --cta-text-align: center;
+  --cta-color: var(--c-nearly-black);
+  --cta-font-weight: var(--fw-bold);
+  --cta-font-family: var(--font-family-heading);
+  --cta-background-color: var(--c-primary-button);
+  --cta-font-size: var(--fs-cta);
+  --cta-border: 2px solid var(--c-primary-button);
+  --cta-border-radius: var(--border-radius-max);
+  --cta-padding: var(--scale-16-24);
+  --cta-text-decoration: none;
+
   /* misc */
-  --max-readable-width: 70ch;
+  --max-readable-width: 80ch;
   --transition: 0.2s ease;
   --box-shadow-card: 0px 11px 38px 0px rgba(0, 0, 0, 0.15);
   --box-shadow-menu: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
   --box-shadow-button: 0px 4px 4px 0px var(--c-button-border);
+  --border-radius-max: 500px;
   --border-radius-med: var(--scale-8-16);
   --border-radius-small: var(--scale-4-8);
   --border-radius-extra-small: var(--s-4);

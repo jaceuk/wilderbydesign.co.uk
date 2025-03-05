@@ -16,13 +16,13 @@
     margin: auto;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1000px) {
       flex-direction: row;
     }
 
     .icon {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
 
       svg {
         fill: var(--c-nearly-black);

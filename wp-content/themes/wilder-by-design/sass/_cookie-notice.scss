@@ -5,6 +5,7 @@
   background: var(--c-white);
   padding: var(--scale-16-32) 0;
   box-shadow: var(--box-shadow-card);
+  z-index: 100;
 
   .inner-wrapper {
     display: flex;

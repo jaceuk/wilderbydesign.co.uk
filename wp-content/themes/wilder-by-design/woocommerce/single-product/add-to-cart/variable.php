@@ -13,7 +13,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 6.1.0
+ * @version 9.5.0
  */
 
 defined('ABSPATH') || exit;
@@ -28,7 +28,16 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 
 <form class="variations_form cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok.
 																																																																																																																																											?>">
-	<?php do_action('woocommerce_before_variations_form'); ?>
+	<div class="price-and-size-guide-trigger">
+		<?php do_action('woocommerce_before_variations_form'); ?>
+		<button class="size-guide-trigger" id="size-guide-trigger" type="button">
+			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#151922">
+				<path d="m264-569-61 36q-12 8-26 4t-21-17L96-652q-7-12-4.5-25t16.5-21l206-122h56q11 0 17.5 6.5T394-796v12q0 36 25 61t61 25q36 0 61-25t25-61v-12q0-11 6.5-17.5T590-820h56l206 122q14 8 16.5 21t-4.5 25l-60 106q-7 13-21.5 17t-25.5-4l-61-38v397q0 15-9.5 24.5T662-140H298q-15 0-24.5-9.5T264-174v-395Zm54-91v466h324v-466l124 69 42-71-161-96h-33q-9 50-46.5 82T480-644q-53 0-89-32t-45-82h-33l-161 96 42 71 124-69Zm162 184Z"></path>
+			</svg> Size guide
+		</button>
+	</div>
+
+	<button id="newsletter-dialog-trigger" type="button" class="save-button product-page-save-button">Save an extra 10%</button>
 
 	<?php if (empty($available_variations) && false !== $available_variations) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?></p>
@@ -61,6 +70,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		<div class="reset_variations_alert screen-reader-text" role="alert" aria-live="polite" aria-relevant="all"></div>
 		<?php do_action('woocommerce_after_variations_table'); ?>
 
 		<div class="single_variation_wrap">
