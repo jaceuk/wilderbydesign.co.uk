@@ -1,26 +1,8 @@
 .top-banner {
   padding: var(--scale-8-16) 0;
-  background: var(--c-gradient-bg);
+  background: var(--c-gradient-black);
   text-transform: uppercase;
-
-  &.valentines {
-    color: var(--c-white);
-    background: var(--c-gradient-red);
-  }
-
-  &.black-friday {
-    color: var(--c-white);
-    background: var(--c-gradient-black);
-  }
-
-  &.christmas {
-    color: var(--c-white);
-    background: #08abe2;
-
-    .h4 {
-      text-shadow: 0px 0px 4px var(--c-black);
-    }
-  }
+  color: var(--c-white);
 
   .inner-wrapper {
     text-align: center;

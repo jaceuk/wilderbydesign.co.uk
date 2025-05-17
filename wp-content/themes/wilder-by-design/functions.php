@@ -125,12 +125,13 @@ add_action('widgets_init', 'wilder_by_design_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-function rude_by_design_scripts()
+function wilder_by_design_scripts()
 {
-	wp_enqueue_style('rude-by-design-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_enqueue_script('rude-by-design-navigation', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+	wp_enqueue_style('wilder-by-design-style', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_enqueue_script('wilder-by-design-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+	wp_enqueue_script('wilder-by-design-variations', get_template_directory_uri() . '/js/variations.js', array(), _S_VERSION, true);
 }
-add_action('wp_enqueue_scripts', 'rude_by_design_scripts');
+add_action('wp_enqueue_scripts', 'wilder_by_design_scripts');
 
 // remove admin bar
 add_filter('show_admin_bar', '__return_false');
@@ -219,36 +220,3 @@ function get_admin_products_shipping_class_column_content($column, $product_id)
 		}
 	}
 }
-
-/*
- * Tell WP Super Cache to cache requests with the cookie "wmc_current_currency"
- * separately from other visitors.
- */
-
-// function add_wpsc_curcy_cookie()
-// {
-// 	do_action('wpsc_add_cookie', 'wmc_current_currency');
-// }
-// add_action('init', 'add_wpsc_curcy_cookie');
-
-// set default currency
-// function get_curcy_default_country()
-// {
-// 	if (class_exists('WOOCS')) {
-// 		global $WOOCS;
-
-// 		// Get user's country based on WooCommerce geolocation
-// 		$user_country = WC_Geolocation::geolocate_ip();
-
-// 		if (!empty($user_country['country'])) {
-// 			return $user_country['country'] === 'GB' ? 'GBP' : 'USD';
-// 		}
-// 	}
-
-// 	return 'USD'; // Fallback default country if CURCY fails
-// }
-
-// // Example usage: Echoing the detected country
-// add_shortcode('curcy_detected_country', function () {
-// 	return get_curcy_default_country();
-// });

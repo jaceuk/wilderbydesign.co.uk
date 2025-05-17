@@ -1,54 +1,12 @@
 .hero-section {
-  background: var(--c-gradient-bg);
+  background: var(--c-gradient-black);
   padding: var(--scale-16-32) 0;
   overflow: hidden;
-  color: var(--c-nearly-black);
-
-  &.valentines {
-    color: var(--c-white);
-    background: var(--c-gradient-red);
-
-    .title-with-text h1 {
-      text-shadow: 3px 3px 2px var(--c-black);
-    }
-
-    .tiles .tile {
-      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  &.black-friday {
-    color: var(--c-white);
-    background: var(--c-gradient-black);
-
-    .title-with-text h1 {
-      text-shadow: 3px 3px 2px var(--c-black);
-    }
-
-    .tiles .tile {
-      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  &.christmas {
-    color: var(--c-white);
-    background: #08abe2 url(images/snow.jpg) repeat-x center top;
-
-    .title-with-text h1 {
-      text-shadow: 3px 3px 2px var(--c-black);
-    }
-
-    .tiles .tile {
-      outline: var(--s-4) solid rgba(0, 0, 0, 0.2);
-    }
-
-    p {
-      text-shadow: 0px 0px 4px var(--c-black);
-    }
-  }
+  color: var(--c-white);
 
   h1 {
     padding: var(--scale-16-32) 0;
+    text-shadow: 0px 0px 4px var(--c-black);
 
     @media (min-width: 768px) {
       padding: var(--scale-32-64) 0;
@@ -61,7 +19,6 @@
     h1 {
       padding: 0;
       text-transform: uppercase;
-      text-shadow: 3px 3px 2px var(--c-white);
 
       &.super {
         font-size: var(--fs-h1-super);
@@ -147,8 +104,4 @@
       height: 100%;
     }
   }
-}
-
-.brown-gradient {
-  background: linear-gradient(to bottom right, #999383, #c9c3b3) !important;
 }
