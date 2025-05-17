@@ -38,9 +38,9 @@ get_template_part('components/benefits');
 	<div class="inner-wrapper">
 		<div class="legals">
 			<ul>
-				<li>&copy; The Humorous History Company <?php echo date("Y"); ?>, all rights reserved.</li>
+				<li>&copy; Wilder By Design <?php echo date("Y"); ?>, all rights reserved.</li>
 				<li>
-					<a class="facebook" href="https://www.facebook.com/humoroushistory" target="_blank">
+					<a class="facebook" href="https://www.facebook.com/wilderbydesignuk" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="16" height="16" focusable="false" aria-hidden="true">
 							<path fill-rule="evenodd" d="M28.848 50V24.997h6.902l.915-8.616h-7.817l.012-4.313c0-2.247.214-3.45 3.441-3.45h4.315V0h-6.903c-8.291 0-11.21 4.18-11.21 11.209v5.173h-5.168v8.616h5.168V50h10.345Z" clip-rule="evenodd"></path>
 						</svg>
