@@ -17,7 +17,7 @@
         </svg>
       </div>
       <h3 class="h4">Printed locally</h3>
-      <small>Manufactured in locations close to you</small>
+      <small>Manufactured at locations close to you</small>
     </div>
 
     <div class="benefit">
