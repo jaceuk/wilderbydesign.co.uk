@@ -158,7 +158,7 @@ if (! defined('ABSPATH')) {
               padding-bottom: 32px;
               font-weight: bold;
             ">
-					The Humorous History Company
+					Wilder By Design
 				</div>
 				<div
 					class="content"

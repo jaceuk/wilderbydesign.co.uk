@@ -43,7 +43,7 @@ body.cr-body {
     .cr-form-title {
       margin: 0;
       padding: 0;
-      line-height: 1;
+      line-height: 1.25;
       font-family: var(--font-family-heading);
       font-weight: var(--fw-bold);
       font-size: var(--fs-h1);
@@ -230,7 +230,7 @@ body.cr-body {
   .cr-form-title {
     margin: 0;
     padding: 0 0 var(--scale-16-32) 0;
-    line-height: 1;
+    line-height: 1.25;
     font-family: var(--font-family-heading);
     font-weight: var(--fw-bold);
     font-size: var(--fs-h1);
