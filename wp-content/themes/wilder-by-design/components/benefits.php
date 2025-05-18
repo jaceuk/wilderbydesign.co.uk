@@ -17,7 +17,7 @@
         </svg>
       </div>
       <h3 class="h4">Printed locally</h3>
-      <small>Manufactured in the UK and USA</small>
+      <small>Manufactured in locations close to you</small>
     </div>
 
     <div class="benefit">
@@ -27,7 +27,7 @@
         </svg>
       </div>
       <h3 class="h4">Fast local Shipping</h3>
-      <small>Ships from the UK and USA</small>
+      <small>Ships from locations close to you</small>
     </div>
   </div>
 </section>
