@@ -96,7 +96,7 @@ function bbloomer_product_add_on_display_cart($data, $cart_item)
 // -----------------------------------------
 // 5. Save custom input field value into order item meta
 
-add_action('woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_item_meta', 10, 2);
+add_action('woocommerce_new_order_item', 'bbloomer_product_add_on_order_item_meta', 10, 2);
 
 function bbloomer_product_add_on_order_item_meta($item_id, $values)
 {
