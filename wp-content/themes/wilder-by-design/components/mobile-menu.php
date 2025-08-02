@@ -28,14 +28,6 @@
           </ul>
         </li>
 
-        <li><span class="title">Home & Living</span>
-          <ul>
-            <?php
-            get_template_part('components/home-living-menu-items');
-            ?>
-          </ul>
-        </li>
-
         <li><span class="title">Support</span>
           <ul>
             <li><a href="/contact">Contact us</a></li>
