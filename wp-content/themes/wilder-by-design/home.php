@@ -14,7 +14,7 @@ get_header();
   get_template_part('components/benefits-slim');
   get_template_part('components/best-sellers');
   get_template_part('components/new-arrivals');
-  // get_template_part('components/about');
+  get_template_part('components/about');
   ?>
 </main>
 

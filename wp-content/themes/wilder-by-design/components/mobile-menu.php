@@ -15,26 +15,22 @@
 
     <nav>
       <ul>
-        <li class="mobile-currency-switcher"><?php echo do_shortcode('[woo_multi_currency_layout5 flag_size=0.4]'); ?></li>
+        <li class="mobile-currency-switcher"><?php get_template_part('components/currency-switcher'); ?></li>
         <li><a href="/">Home</a></li>
 
-        <li><a href="/shop-by-animal">Shop by Animal</a></li>
-
-        <li><span class="title">Clothing</span>
+        <li><span class="title">Apparel</span>
           <ul>
-            <?php
-            get_template_part('components/clothing-menu-items');
-            ?>
+            <li>
+              <a href="/product-category/t-shirts">T-shirts</a>
+            </li>
           </ul>
         </li>
 
         <li><span class="title">Support</span>
           <ul>
             <li><a href="/contact">Contact us</a></li>
-            <li><a href="/collections">Collections</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/returns">Returns policy</a></li>
-            <li><a href="/shipping">Shipping</a></li>
           </ul>
         </li>
 

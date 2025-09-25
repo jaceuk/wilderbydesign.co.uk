@@ -9,7 +9,7 @@
 	<?php
 	if (is_home() || is_front_page()) {
 	?>
-		<meta name="description" content="Amusing apparel for fun-loving history buffs">
+		<meta name="description" content="Gifts for Animal Lovers and Pet Owners">
 	<?php
 	}
 	?>
@@ -47,7 +47,7 @@
 	?>
 
 	<?php
-	// get_template_part('components/top-banner');
+	// get_template_part('components/top-banner-halloween');
 	?>
 
 	<header class="header">
@@ -71,16 +71,14 @@
 
 				<nav class="account-and-basket">
 					<ul>
-						<li><a href="/my-account">
+						<li><a href="/my-account" aria-label="My Account">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
 									<path d="M247.85-260.62q51-36.69 108.23-58.03Q413.31-340 480-340t123.92 21.35q57.23 21.34 108.23 58.03 39.62-41 63.73-96.84Q800-413.31 800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 66.69 24.12 122.54 24.11 55.84 63.73 96.84ZM480.02-460q-50.56 0-85.29-34.71Q360-529.42 360-579.98q0-50.56 34.71-85.29Q429.42-700 479.98-700q50.56 0 85.29 34.71Q600-630.58 600-580.02q0 50.56-34.71 85.29Q530.58-460 480.02-460ZM480-120q-75.31 0-141-28.04t-114.31-76.65Q176.08-273.31 148.04-339 120-404.69 120-480t28.04-141q28.04-65.69 76.65-114.31 48.62-48.61 114.31-76.65Q404.69-840 480-840t141 28.04q65.69 28.04 114.31 76.65 48.61 48.62 76.65 114.31Q840-555.31 840-480t-28.04 141q-28.04 65.69-76.65 114.31-48.62 48.61-114.31 76.65Q555.31-120 480-120Zm0-40q55.31 0 108.85-19.35 53.53-19.34 92.53-52.96-39-31.31-90.23-49.5Q539.92-300 480-300q-59.92 0-111.54 17.81-51.61 17.81-89.84 49.88 39 33.62 92.53 52.96Q424.69-160 480-160Zm0-340q33.69 0 56.85-23.15Q560-546.31 560-580t-23.15-56.85Q513.69-660 480-660t-56.85 23.15Q400-613.69 400-580t23.15 56.85Q446.31-500 480-500Zm0-80Zm0 350Z" />
-								</svg>
-								Account</a></li>
-						<li><a href="/basket">
+								</svg></a></li>
+						<li><a href="/basket" aria-lable="Basket">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
 									<path d="M241.77-160q-21.62 0-39.15-12.65-17.54-12.66-23.24-34.04L91.23-519q-4.23-15.15 5.35-28.08Q106.15-560 122.31-560H310l143.69-216.62q5-7.23 11.69-10.69 6.7-3.46 15.16-3.46t15.15 3.85q6.69 3.84 11.69 11.07L649.54-560h188.15q16.16 0 26.12 12.92 9.96 12.93 4.96 28.08l-89.69 312.31q-5.7 21.38-23.23 34.04Q738.31-160 716.69-160H241.77Zm-3.31-40h483.08q8.46 0 14.61-5 6.16-5 8.47-13.46L828-520H132l83.38 301.54q2.31 8.46 8.47 13.46 6.15 5 14.61 5ZM480-320q16.08 0 28.04-11.96T520-360q0-16.08-11.96-28.04T480-400q-16.08 0-28.04 11.96T440-360q0 16.08 11.96 28.04T480-320ZM358.54-560h242.69L479.77-744.92 358.54-560ZM480-360Z" />
 								</svg>
-								Basket
 								<?php if (sizeof(WC()->cart->get_cart()) > 0) {
 									echo '<div class="badge">' . WC()->cart->get_cart_contents_count() . '</div>';
 								} ?>
@@ -93,7 +91,7 @@
 						<?php
 						get_search_form();
 						?>
-						<button id="header-newsletter-dialog-trigger" type="button" class="save-button">Save 10%</button>
+						<button id="header-newsletter-dialog-trigger" type="button" class="save-button" onclick="openDialog('newsletter-dialog')">Save 10%</button>
 					</div>
 				</div>
 		</div>

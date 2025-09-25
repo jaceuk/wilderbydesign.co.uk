@@ -5,6 +5,15 @@
 // breadcrumbs
 .woocommerce-breadcrumb {
   margin: var(--scale-16-32) 0;
+  display: none;
+
+  .single-product & {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
 }
 
 // header
@@ -91,7 +100,7 @@ li.product {
   background: var(--c-accent);
   border: 1px solid var(--c-button-border);
   color: var(--c-nearly-black);
-  margin-bottom: var(--scale-16-32);
+  margin: var(--scale-16-32) 0;
   border-radius: var(--border-radius-extra-small);
   display: flex;
   flex-direction: row;
@@ -100,6 +109,10 @@ li.product {
   gap: var(--scale-16-32);
   padding: var(--scale-8-16);
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    margin: 0 0 var(--scale-16-32) 0;
+  }
 
   a {
     order: 2;

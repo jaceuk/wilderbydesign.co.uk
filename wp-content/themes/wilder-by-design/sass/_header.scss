@@ -157,65 +157,79 @@
   .currency-switcher {
     display: flex;
   }
+}
 
-  .menu {
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+
+  a {
+    padding: var(--scale-8-16) 0;
+    text-decoration: none;
     display: flex;
-    flex-direction: row;
+    font-size: var(--fs-nav);
+    position: relative;
+
+    .new {
+      color: var(--c-error-dark);
+      font-size: var(--fs-small);
+      position: absolute;
+      top: calc(var(--s-8) * -1);
+      right: 0;
+
+      @media (min-width: 768px) {
+        top: calc(var(--s-4) * -1);
+        right: calc(var(--s-12) * -1);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0;
+    flex-direction: row;
+    gap: var(--scale-16-32);
+  }
+
+  ul.drop-down {
+    position: absolute;
+    background: var(--c-white);
+    z-index: 10;
+    box-shadow: var(--box-shadow-menu);
+    padding: var(--scale-8-16) var(--scale-16-32);
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--scale-8-16);
+    flex-direction: column;
+    align-items: start;
+
+    &.hidden {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
 
     a {
-      padding: var(--scale-8-16) 0;
-      text-decoration: none;
-      display: flex;
-      font-size: var(--fs-nav);
+      padding: 0;
     }
 
-    ul {
+    li {
       display: flex;
-      align-items: center;
-      flex-direction: row;
-      gap: var(--scale-16-32);
-    }
-
-    ul.drop-down {
-      position: absolute;
-      background: var(--c-white);
-      z-index: 10;
-      box-shadow: var(--box-shadow-menu);
-      padding: var(--scale-8-16) var(--scale-16-32);
-      display: flex;
-      justify-content: flex-start;
+      align-items: flex-start;
       gap: var(--scale-8-16);
       flex-direction: column;
-      align-items: start;
 
-      &.hidden {
-        @media (min-width: 768px) {
-          display: none;
-        }
-      }
-
-      a {
-        padding: 0;
-      }
-
-      li {
+      ul {
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
         gap: var(--scale-8-16);
         flex-direction: column;
-
-        ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: var(--scale-8-16);
-          flex-direction: column;
-          margin-left: var(--scale-8-16);
-        }
+        margin-left: var(--scale-8-16);
       }
     }
   }

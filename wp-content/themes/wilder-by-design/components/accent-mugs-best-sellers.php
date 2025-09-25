@@ -1,13 +1,18 @@
 <section class="products-section">
   <div class="inner-wrapper">
-    <div class="title">
-      <h2>Best Sellers</h2>
-      <div class="divider">&nbsp;</div>
-      <a href="/product-category/t-shirts" class="more">View all</a>
+    <div class="title-row">
+      <div class="title">
+        <h2>Best Sellers</h2>
+        <div class="divider">&nbsp;</div>
+        <a href="/product-category/accent-mugs" class="more">View all</a>
+      </div>
+
+      <button class="link" onclick="openDialog('cant-find-dialog')">More designs?</button>
     </div>
 
+
     <?php
-    echo do_shortcode('[products limit="8" columns="4" orderby="popularity"]');
+    echo do_shortcode('[products limit="8" columns="4" orderby="popularity" category="accent-mugs"]');
     // $best_sellers = get_best_selling_products_last_2_months();
 
     // if ($best_sellers->have_posts()) :

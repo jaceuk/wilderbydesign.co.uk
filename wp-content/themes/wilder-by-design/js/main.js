@@ -110,87 +110,28 @@ accordionButtons.forEach((accordionButton) => {
 /*********************/
 /* DIALOGS */
 /*********************/
-function openDialog(dialogSelector) {
-  const dialog = document.querySelector(dialogSelector);
+function openDialog(element) {
+  const dialog = document.getElementById(element);
   if (dialog) {
-    dialog.showModal();
-  } else {
-    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+    dialog.showModal(); // or dialog.show() for non-modal
+    document.body.classList.add('no-scroll');
   }
+
+  // Close when clicking the backdrop
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+      document.body.classList.remove('no-scroll');
+    }
+  });
 }
 
-function closeDialog(dialogSelector) {
-  const dialog = document.querySelector(dialogSelector);
+function closeDialog(element) {
+  const dialog = document.getElementById(element);
   if (dialog) {
     dialog.close();
-  } else {
-    console.error(`Dialog with selector "${dialogSelector}" not found.`);
+    document.body.classList.remove('no-scroll');
   }
-}
-
-function toggleDialog(dialogSelector) {
-  const dialog = document.querySelector(dialogSelector);
-  if (dialog) {
-    dialog.open ? dialog.close() : dialog.showModal();
-  } else {
-    console.error(`Dialog with selector "${dialogSelector}" not found.`);
-  }
-}
-
-function setupDialog(dialogSelector) {
-  const dialog = document.querySelector(dialogSelector);
-  if (dialog) {
-    dialog.addEventListener('click', (event) => {
-      if (event.target === dialog) {
-        closeDialog(dialogSelector);
-      }
-    });
-  } else {
-    console.error(`Dialog with selector "${dialogSelector}" not found.`);
-  }
-}
-
-if (
-  document.getElementById('size-guide-dialog') &&
-  document.getElementById('size-guide-trigger')
-) {
-  setupDialog('#size-guide-dialog');
-  document
-    .getElementById('size-guide-trigger')
-    .addEventListener('click', () => openDialog('#size-guide-dialog'));
-  document
-    .getElementById('close-dialog')
-    .addEventListener('click', () => closeDialog('#size-guide-dialog'));
-}
-
-if (
-  document.getElementById('newsletter-dialog') &&
-  document.getElementById('newsletter-dialog-trigger')
-) {
-  setupDialog('#newsletter-dialog');
-  document
-    .getElementById('newsletter-dialog-trigger')
-    .addEventListener('click', () => openDialog('#newsletter-dialog'));
-  document
-    .getElementById('newsletter-dialog-close-button')
-    .addEventListener('click', () => closeDialog('#newsletter-dialog'));
-
-  document
-    .getElementById('header-newsletter-dialog-trigger')
-    .addEventListener('click', () => openDialog('#newsletter-dialog'));
-}
-
-if (
-  document.getElementById('newsletter-dialog') &&
-  document.getElementById('header-newsletter-dialog-trigger')
-) {
-  setupDialog('#newsletter-dialog');
-  document
-    .getElementById('header-newsletter-dialog-trigger')
-    .addEventListener('click', () => openDialog('#newsletter-dialog'));
-  document
-    .getElementById('newsletter-dialog-close-button')
-    .addEventListener('click', () => closeDialog('#newsletter-dialog'));
 }
 
 // // close mailpoet popup by clicking on the background
@@ -304,3 +245,13 @@ waitForCookie('wmc_current_currency', 5000)
       });
   })
   .catch((error) => console.error(error.message));
+
+// product page select list to go to other propducts with the same design
+const productsSelect = document.querySelector('#products-select');
+
+productsSelect?.addEventListener('change', function () {
+  const url = this.value;
+  if (url) {
+    window.location.href = url;
+  }
+});

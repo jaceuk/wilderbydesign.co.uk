@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '2.0.12');
+	define('_S_VERSION', '2.6.1');
 }
 
 /**
@@ -125,13 +125,12 @@ add_action('widgets_init', 'wilder_by_design_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-function wilder_by_design_scripts()
+function custom_scripts()
 {
-	wp_enqueue_style('wilder-by-design-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_enqueue_script('wilder-by-design-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
-	wp_enqueue_script('wilder-by-design-variations', get_template_directory_uri() . '/js/variations.js', array(), _S_VERSION, true);
+	wp_enqueue_style('custom-style', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_enqueue_script('custom-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 }
-add_action('wp_enqueue_scripts', 'wilder_by_design_scripts');
+add_action('wp_enqueue_scripts', 'custom_scripts');
 
 // remove admin bar
 add_filter('show_admin_bar', '__return_false');
@@ -220,3 +219,120 @@ function get_admin_products_shipping_class_column_content($column, $product_id)
 		}
 	}
 }
+
+/*
+ * Tell WP Super Cache to cache requests with the cookie "wmc_current_currency"
+ * separately from other visitors.
+ */
+
+// function add_wpsc_curcy_cookie()
+// {
+// 	do_action('wpsc_add_cookie', 'wmc_current_currency');
+// }
+// add_action('init', 'add_wpsc_curcy_cookie');
+
+// set default currency
+// function get_curcy_default_country()
+// {
+// 	if (class_exists('WOOCS')) {
+// 		global $WOOCS;
+
+// 		// Get user's country based on WooCommerce geolocation
+// 		$user_country = WC_Geolocation::geolocate_ip();
+
+// 		if (!empty($user_country['country'])) {
+// 			return $user_country['country'] === 'GB' ? 'GBP' : 'USD';
+// 		}
+// 	}
+
+// 	return 'USD'; // Fallback default country if CURCY fails
+// }
+
+// // Example usage: Echoing the detected country
+// add_shortcode('curcy_detected_country', function () {
+// 	return get_curcy_default_country();
+// });
+
+
+/**
+ * @snippet       View Thank You Page @ Edit Order Admin
+ * @how-to        businessbloomer.com/woocommerce-customization
+ * @author        Rodolfo Melogli, Business Bloomer
+ * @compatible    WooCommerce 9
+ * @community     https://businessbloomer.com/club/
+ */
+
+// add_filter('woocommerce_order_actions', 'bbloomer_show_thank_you_page_order_admin_actions', 9999, 2);
+
+// function bbloomer_show_thank_you_page_order_admin_actions($actions, $order)
+// {
+// 	if ($order->has_status(wc_get_is_paid_statuses())) {
+// 		$actions['view_thankyou'] = 'Display thank you page';
+// 	}
+// 	return $actions;
+// }
+
+// add_action('woocommerce_order_action_view_thankyou', 'bbloomer_redirect_thank_you_page_order_admin_actions');
+
+// function bbloomer_redirect_thank_you_page_order_admin_actions($order)
+// {
+// 	$url = add_query_arg('adm', $order->get_customer_id(), $order->get_checkout_order_received_url());
+// 	wp_safe_redirect($url);
+// 	exit;
+// }
+
+// add_filter('determine_current_user', 'bbloomer_admin_becomes_user_if_viewing_thank_you_page');
+
+// function bbloomer_admin_becomes_user_if_viewing_thank_you_page($user_id)
+// {
+// 	if (! empty($_GET['adm'])) {
+// 		$user_id = wc_clean(wp_unslash($_GET['adm']));
+// 	}
+// 	return $user_id;
+// }
+// add_filter('woocommerce_order_received_verify_known_shoppers', '__return_false');
+
+/**
+ * Add current page URL to WPForms entry and email.
+ */
+// add_action('wpforms_process', function ($fields, $entry, $form_data) {
+
+// 	// Get the current page URL.
+// 	$page_url = home_url(add_query_arg([], $_SERVER['REQUEST_URI']));
+
+// 	// Add it to the entry fields.
+// 	$fields['page_url'] = [
+// 		'name'  => 'Page URL',
+// 		'value' => esc_url($page_url),
+// 	];
+
+// 	// Save it back to the process data so it's included in emails and entries.
+// 	wpforms()->process->fields = $fields;
+// }, 10, 3);
+
+
+function pw_bulk_edit_custom_columns($columns)
+{
+	$columns[] = array(
+		'name' => 'GBP price',
+		'type' => 'text',
+		'table' => 'meta',
+		'field' => '_regular_price_wmcp',
+		'visibility' => 'both',
+		'readonly' => false,
+		'sortable' => 'false'
+	);
+
+	$columns[] = array(
+		'name' => 'GBP sale price',
+		'type' => 'text',
+		'table' => 'meta',
+		'field' => '_sale_price_wmcp',
+		'visibility' => 'both',
+		'readonly' => false,
+		'sortable' => 'false'
+	);
+
+	return $columns;
+}
+add_filter('pwbe_product_columns', 'pw_bulk_edit_custom_columns');

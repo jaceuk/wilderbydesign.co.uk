@@ -9,7 +9,6 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.4s;
-  overflow: hidden;
 
   &::backdrop {
     background: var(--c-black-60);
@@ -21,7 +20,18 @@
 
   .dialog-body {
     display: grid;
-    gap: var(--scale-8-16);
+    gap: var(--scale-16-32);
+    overflow-y: auto;
+
+    > *:not(button) {
+      margin: 0 !important;
+    }
+
+    img {
+      border: 1px solid var(--c-button-border);
+      border-radius: var(--border-radius-med);
+      margin: 0 auto !important;
+    }
 
     .mailpoet_form_successfully_send {
       h2.mailpoet-heading {

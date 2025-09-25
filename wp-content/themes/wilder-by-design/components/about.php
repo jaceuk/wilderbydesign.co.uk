@@ -1,4 +1,4 @@
-<section class="about">
+<!-- <section class="about">
   <div class="inner-wrapper">
     <div class="about-row">
       <div class="left">
@@ -19,4 +19,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

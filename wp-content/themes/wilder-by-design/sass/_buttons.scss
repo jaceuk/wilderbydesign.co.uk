@@ -31,4 +31,21 @@ button,
     border-radius: 500px;
     font-weight: var(--fw-bold);
   }
+
+  &.confirm-button {
+    width: fit-content;
+    margin: auto;
+    background: var(--c-nearly-black);
+    color: var(--c-white);
+    font-weight: var(--fw-regular);
+  }
+
+  &.link {
+    text-decoration: underline;
+    font-weight: var(--fw-regular);
+    font-size: var(--font-body);
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
 }

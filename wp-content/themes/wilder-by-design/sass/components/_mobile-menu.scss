@@ -1,3 +1,40 @@
+.hero-links {
+  background: var(--c-white);
+  box-shadow: var(--box-shadow-menu);
+  z-index: 1;
+  position: relative;
+
+  .inner-wrapper {
+    width: auto;
+    display: flex;
+    gap: var(--scale-8-16);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--s-4);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  ul {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  li {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  a {
+    text-decoration: none;
+    padding: var(--scale-8-16);
+    font-size: var(--fs-small);
+  }
+}
+
 dialog.mobile-menu {
   background: var(--c-white);
   padding: var(--scale-16-32);

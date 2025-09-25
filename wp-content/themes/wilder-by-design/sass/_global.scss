@@ -66,9 +66,13 @@ a {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.align-center {
+  text-align: center;
 }
