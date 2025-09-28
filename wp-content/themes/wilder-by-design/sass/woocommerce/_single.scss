@@ -540,7 +540,8 @@
 }
 
 .product-type-variable .summary .woocommerce-variation-price,
-.product-type-variable .summary .woocommerce-variation-price .price {
+.product-type-variable .summary .woocommerce-variation-price .price,
+.product-type-simple .summary .price {
   display: flex;
   align-items: center;
   gap: 2px;
