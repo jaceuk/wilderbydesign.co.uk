@@ -8,7 +8,7 @@ get_template_part('components/benefits');
 
 		<div class="inner-wrapper">
 			<div class="footer-menu">
-				<div class="h4">The Humorous History Company</div>
+				<div class="h4">Wilder By Design</div>
 				<ul>
 					<li><a href="/">Homepage</a></li>
 					<li><a href="/privacy-policy">Privacy policy</a></li>
@@ -38,9 +38,7 @@ get_template_part('components/benefits');
 
 	<div class="inner-wrapper">
 		<div class="legals">
-			<small>&copy; The Humorous History Company <?php echo date("Y"); ?>, all rights reserved.
-				The Humorous History Company Limited, 20 Shooting Field., Steyning, UK, BN44 3RQ.
-				Company number: 16475930, Registered in England and Wales.</small>
+			<small>&copy; Wilder By Design <?php echo date("Y"); ?>, all rights reserved.</small>
 		</div>
 	</div>
 </footer>
